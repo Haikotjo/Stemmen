@@ -29,3 +29,11 @@ export const getPositions = (topic, party) => {
 
     return position;
 };
+
+export const selectTopic = (selectedTopic) => {
+    if (Object.keys(positionsData).includes(selectedTopic)) {
+        console.log(`You have selected ${selectedTopic}`);
+    } else {
+        console.log('Invalid topic');
+    }
+};
