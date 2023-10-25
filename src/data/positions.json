@@ -2,11 +2,11 @@
   "Onderwerp1": {
     "VVD": "Dummy standpunt van VVD over Onderwerp 1",
     "NSC": "Dummy standpunt van NSC over Onderwerp 1",
-    "NSC": "Dummy standpunt van Partij B over Onderwerp 1"
+    "Groenlinks PVDA": "Dummy standpunt van GroenlinksPVDA over Onderwerp 1"
   },
   "Onderwerp2": {
-    "PartijA": "Dummy standpunt van VVD over Onderwerp 2",
+    "VVD": "Dummy standpunt van VVD over Onderwerp 2",
     "NSC": "Dummy standpunt van NSC over Onderwerp 2",
-    "NSC": "Dummy standpunt van GroenlinksPVDA over Onderwerp 2"
+    "Groenlinks PVDA": "Dummy standpunt van Groenlinks PVDA over Onderwerp 2"
   }
 }
