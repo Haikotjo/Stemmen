@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { getPositions } from '../../utils/utils';
 import partiesData from '../../data/parties.json'; // Importeer de partijen uit een JSON-bestand
+import positionsData from '../../data/positions.json';
+
+
 
 function ElectionHelper() {
     const [selectedParties, setSelectedParties] = useState([]);
@@ -9,6 +12,8 @@ function ElectionHelper() {
     const [partyScores, setPartyScores] = useState({});
     const [answeredQuestions, setAnsweredQuestions] = useState({});
     const [givenAnswers, setGivenAnswers] = useState({});
+    const topics = Object.keys(positionsData);
+
 
     useEffect(() => {
         // Initialiseer de scores
@@ -82,8 +87,10 @@ function ElectionHelper() {
             {partiesData.partijen.map((party) => (
                 <button key={party} onClick={() => togglePartySelection(party)}>{party}</button>
             ))}
-            <button onClick={() => handleTopicSelection('Onderwerp1')}>Select Onderwerp1</button>
-            <button onClick={() => handleTopicSelection('Onderwerp2')}>Select Onderwerp2</button>
+            {topics.map((topic) => (
+                <button key={topic} onClick={() => handleTopicSelection(topic)}>Select {topic}</button>
+            ))}
+
 
             {selectedParties.length > 0 && <h1>Selected Parties: {selectedParties.join(', ')}</h1>}
             {Object.keys(positions).map((party) => (
