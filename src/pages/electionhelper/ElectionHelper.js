@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getPositions } from '../../utils/utils';
-import partiesData from '../../data/parties.json'; // Importeer de partijen uit een JSON-bestand
+import partiesData from '../../data/parties.json';
 import positionsData from '../../data/positions.json';
-
-
 
 function ElectionHelper() {
     const [selectedParties, setSelectedParties] = useState([]);
@@ -14,7 +12,6 @@ function ElectionHelper() {
     const [givenAnswers, setGivenAnswers] = useState({});
     const topics = Object.keys(positionsData);
 
-
     useEffect(() => {
         // Initialiseer de scores
         const initialScores = {};
@@ -22,6 +19,12 @@ function ElectionHelper() {
             initialScores[party] = 0;
         });
         setPartyScores(initialScores);
+
+        // Ophalen van opgeslagen scores uit localStorage bij het laden van de component
+        const storedScores = localStorage.getItem('partyScores');
+        if (storedScores) {
+            setPartyScores(JSON.parse(storedScores));
+        }
     }, []);
 
     useEffect(() => {
@@ -48,10 +51,15 @@ function ElectionHelper() {
     };
 
     const updateScore = (party, score) => {
-        setPartyScores(prevScores => ({
-            ...prevScores,
-            [party]: (prevScores[party] || 0) + score,
-        }));
+        setPartyScores(prevScores => {
+            const updatedScores = {
+                ...prevScores,
+                [party]: (prevScores[party] || 0) + score,
+            };
+            // Opslaan van de bijgewerkte scores in localStorage
+            localStorage.setItem('partyScores', JSON.stringify(updatedScores));
+            return updatedScores;
+        });
         setGivenAnswers(prevAnswers => ({
             ...prevAnswers,
             [`${selectedTopic}_${party}`]: score,
@@ -60,9 +68,8 @@ function ElectionHelper() {
             ...prevQuestions,
             [`${selectedTopic}_${party}`]: true,
         }));
-        console.log(`Updated score for ${party}:`, (partyScores[party] || 0) + score); // Log de nieuwe score
+        console.log(`Updated score for ${party}:`, (partyScores[party] || 0) + score);
     };
-
 
     const undoAnswer = (party) => {
         const undoScore = givenAnswers[`${selectedTopic}_${party}`] || 0;
@@ -90,8 +97,6 @@ function ElectionHelper() {
             {topics.map((topic) => (
                 <button key={topic} onClick={() => handleTopicSelection(topic)}>Select {topic}</button>
             ))}
-
-
             {selectedParties.length > 0 && <h1>Selected Parties: {selectedParties.join(', ')}</h1>}
             {Object.keys(positions).map((party) => (
                 <div key={party}>
@@ -103,7 +108,7 @@ function ElectionHelper() {
                     <button disabled={answeredQuestions[`${selectedTopic}_${party}`]} onClick={() => updateScore(party, 1)}>Eens</button>
                     <button disabled={answeredQuestions[`${selectedTopic}_${party}`]} onClick={() => updateScore(party, 0)}>Neutraal</button>
                     <button disabled={answeredQuestions[`${selectedTopic}_${party}`]} onClick={() => updateScore(party, -1)}>Oneens</button>
-                    {answeredQuestions[`${selectedTopic}_${party}`] && <button onClick={() => undoAnswer(party, 0)}>Ongedaan Maken</button>}
+                    {answeredQuestions[`${selectedTopic}_${party}`] && <button onClick={() => undoAnswer(party)}>Ongedaan Maken</button>}
                 </div>
             ))}
             <div>
