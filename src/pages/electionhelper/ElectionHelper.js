@@ -1,10 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { getPositions } from '../../utils/utils';
+import partiesData from '../../data/parties.json'; // Importeer de partijen uit een JSON-bestand
 
 function ElectionHelper() {
     const [selectedParties, setSelectedParties] = useState([]);
     const [selectedTopic, setSelectedTopic] = useState(null);
     const [positions, setPositions] = useState({});
+    const [partyScores, setPartyScores] = useState({});
+    const [answeredQuestions, setAnsweredQuestions] = useState({});
+    const [givenAnswers, setGivenAnswers] = useState({});
+
+    useEffect(() => {
+        // Initialiseer de scores
+        const initialScores = {};
+        partiesData.partijen.forEach((party) => {
+            initialScores[party] = 0;
+        });
+        setPartyScores(initialScores);
+    }, []);
 
     useEffect(() => {
         if (selectedParties.length > 0 && selectedTopic) {
@@ -29,11 +42,46 @@ function ElectionHelper() {
         setSelectedTopic(topic);
     };
 
+    const updateScore = (party, score) => {
+        setPartyScores(prevScores => ({
+            ...prevScores,
+            [party]: (prevScores[party] || 0) + score,
+        }));
+        setGivenAnswers(prevAnswers => ({
+            ...prevAnswers,
+            [`${selectedTopic}_${party}`]: score,
+        }));
+        setAnsweredQuestions(prevQuestions => ({
+            ...prevQuestions,
+            [`${selectedTopic}_${party}`]: true,
+        }));
+        console.log(`Updated score for ${party}:`, (partyScores[party] || 0) + score); // Log de nieuwe score
+    };
+
+
+    const undoAnswer = (party) => {
+        const undoScore = givenAnswers[`${selectedTopic}_${party}`] || 0;
+        setPartyScores(prevScores => ({
+            ...prevScores,
+            [party]: (prevScores[party] || 0) - undoScore,
+        }));
+        setAnsweredQuestions(prevQuestions => {
+            const newQuestions = { ...prevQuestions };
+            delete newQuestions[`${selectedTopic}_${party}`];
+            return newQuestions;
+        });
+        setGivenAnswers(prevAnswers => {
+            const newAnswers = { ...prevAnswers };
+            delete newAnswers[`${selectedTopic}_${party}`];
+            return newAnswers;
+        });
+    };
+
     return (
         <div className="App">
-            <button onClick={() => togglePartySelection('VVD')}>VVD</button>
-            <button onClick={() => togglePartySelection('NSC')}>NSC</button>
-            <button onClick={() => togglePartySelection('Groenlinks PVDA')}>GroenlinksPVDA</button>
+            {partiesData.partijen.map((party) => (
+                <button key={party} onClick={() => togglePartySelection(party)}>{party}</button>
+            ))}
             <button onClick={() => handleTopicSelection('Onderwerp1')}>Select Onderwerp1</button>
             <button onClick={() => handleTopicSelection('Onderwerp2')}>Select Onderwerp2</button>
 
@@ -45,8 +93,20 @@ function ElectionHelper() {
                     <p>
                         {positions[party]}
                     </p>
+                    <button disabled={answeredQuestions[`${selectedTopic}_${party}`]} onClick={() => updateScore(party, 1)}>Eens</button>
+                    <button disabled={answeredQuestions[`${selectedTopic}_${party}`]} onClick={() => updateScore(party, 0)}>Neutraal</button>
+                    <button disabled={answeredQuestions[`${selectedTopic}_${party}`]} onClick={() => updateScore(party, -1)}>Oneens</button>
+                    {answeredQuestions[`${selectedTopic}_${party}`] && <button onClick={() => undoAnswer(party, 0)}>Ongedaan Maken</button>}
                 </div>
             ))}
+            <div>
+                <h2>Party Scores</h2>
+                {Object.keys(partyScores).map((party) => (
+                    <div key={party}>
+                        {party}: {partyScores[party]}
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }
