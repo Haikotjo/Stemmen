@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import positionsData from '../../data/positions.json';
 import TopicList from "../../Components/topicList/TopicList";
-import usePositions from "../../hooks/usePositions"; // Zorg ervoor dat dit pad correct is
+import usePositions from "../../hooks/usePositions";
+import PartyPosition from "../../Components/partyPosition/PartyPosition";
 
+//weergeven van de naam van de partij en hun standpunt voor een geselecteerd onderwerp.
 function PositionsPage() {
     const [selectedTopic, setSelectedTopic] = useState(null);
     const positions = usePositions(selectedTopic);
-    const topics = Object.keys(positionsData); // Haal de onderwerpen uit positionsData
-
+    const topics = Object.keys(positionsData);
 
     const handleTopicSelection = (topic) => {
         setSelectedTopic(topic);
@@ -20,13 +21,8 @@ function PositionsPage() {
                 selectedTopic={selectedTopic}
                 handleTopicSelection={handleTopicSelection}
             />
-
             {Object.keys(positions).map((party) => (
-                <div key={party}>
-                    <h1>{party}</h1>
-                    <h3>{selectedTopic}:</h3>
-                    <p>{positions[party]}</p>
-                </div>
+                <PartyPosition key={party} party={party} position={positions[party]} topic={selectedTopic} />
             ))}
         </div>
     );
