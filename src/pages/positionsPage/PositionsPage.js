@@ -1,25 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import positionsData from '../../data/positions.json';
-import partiesData from '../../data/parties.json';
-import TopicList from "../../Components/topicList/TopicList"; // Zorg ervoor dat dit pad correct is
+import TopicList from "../../Components/topicList/TopicList";
+import usePositions from "../../hooks/usePositions"; // Zorg ervoor dat dit pad correct is
 
 function PositionsPage() {
     const [selectedTopic, setSelectedTopic] = useState(null);
-    const [positions, setPositions] = useState({});
+    const positions = usePositions(selectedTopic);
     const topics = Object.keys(positionsData); // Haal de onderwerpen uit positionsData
 
-    useEffect(() => {
-        if (selectedTopic) {
-            const newPositions = {};
-            partiesData.partijen.forEach((party) => {
-                const position = positionsData[selectedTopic][party];
-                if (position) {
-                    newPositions[party] = position;
-                }
-            });
-            setPositions(newPositions);
-        }
-    }, [selectedTopic]);
 
     const handleTopicSelection = (topic) => {
         setSelectedTopic(topic);
