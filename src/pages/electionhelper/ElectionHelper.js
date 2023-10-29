@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getPositions } from '../../utils/utils';
 import partiesData from '../../data/parties.json';
 import positionsData from '../../data/positions.json';
+import StyledButton from "../../Components/button/StyledButton";
 
 function ElectionHelper() {
     const [selectedParties, setSelectedParties] = useState([]);
@@ -106,10 +107,10 @@ function ElectionHelper() {
     return (
         <div className="App">
             {partiesData.partijen.map((party) => (
-                <button key={party} onClick={() => togglePartySelection(party)}>{party}</button>
+                <StyledButton key={party} label={party} onClick={() => togglePartySelection(party)} />
             ))}
             {topics.map((topic) => (
-                <button key={topic} onClick={() => handleTopicSelection(topic)}>Select {topic}</button>
+                <StyledButton key={topic} label={`Select ${topic}`} onClick={() => handleTopicSelection(topic)} />
             ))}
             {selectedParties.length > 0 && <h1>Selected Parties: {selectedParties.join(', ')}</h1>}
             {Object.keys(positions).map((party) => (
@@ -119,10 +120,10 @@ function ElectionHelper() {
                     <p>
                         {positions[party]}
                     </p>
-                    <button disabled={answeredQuestions[`${selectedTopic}_${party}`]} onClick={() => updateScore(party, 1)}>Eens</button>
-                    <button disabled={answeredQuestions[`${selectedTopic}_${party}`]} onClick={() => updateScore(party, 0)}>Neutraal</button>
-                    <button disabled={answeredQuestions[`${selectedTopic}_${party}`]} onClick={() => updateScore(party, -1)}>Oneens</button>
-                    {answeredQuestions[`${selectedTopic}_${party}`] && <button onClick={() => undoAnswer(party)}>Ongedaan Maken</button>}
+                    <StyledButton disabled={answeredQuestions[`${selectedTopic}_${party}`]} label="Eens" onClick={() => updateScore(party, 1)} />
+                    <StyledButton disabled={answeredQuestions[`${selectedTopic}_${party}`]} label="Neutraal" onClick={() => updateScore(party, 0)} />
+                    <StyledButton disabled={answeredQuestions[`${selectedTopic}_${party}`]} label="Oneens" onClick={() => updateScore(party, -1)} />
+                    {answeredQuestions[`${selectedTopic}_${party}`] && <StyledButton label="Ongedaan Maken" onClick={() => undoAnswer(party)} />}
                 </div>
             ))}
             <div>
@@ -133,7 +134,7 @@ function ElectionHelper() {
                     </div>
                 ))}
             </div>
-            <button onClick={resetScores}>Reset Scores</button>
+            <StyledButton label="Reset Scores" onClick={resetScores} />
         </div>
     );
 }
