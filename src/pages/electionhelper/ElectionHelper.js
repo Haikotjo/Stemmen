@@ -59,9 +59,13 @@ function ElectionHelper() {
                     <p>
                         {positions[party]}
                     </p>
-                    <StyledButton disabled={answeredQuestions[`${selectedTopic}_${party}`]} label="Eens" onClick={() => updateScore(party, 1, selectedTopic)} />
-                    <StyledButton disabled={answeredQuestions[`${selectedTopic}_${party}`]} label="Neutraal" onClick={() => updateScore(party, 0, selectedTopic)} />
-                    <StyledButton disabled={answeredQuestions[`${selectedTopic}_${party}`]} label="Oneens" onClick={() => updateScore(party, -1, selectedTopic)} />
+                    {!answeredQuestions[`${selectedTopic}_${party}`] && (
+                        <>
+                            <StyledButton label="Eens" onClick={() => updateScore(party, 1, selectedTopic)} />
+                            <StyledButton label="Neutraal" onClick={() => updateScore(party, 0, selectedTopic)} />
+                            <StyledButton label="Oneens" onClick={() => updateScore(party, -1, selectedTopic)} />
+                        </>
+                    )}
                     {answeredQuestions[`${selectedTopic}_${party}`] && <StyledButton label="Ongedaan Maken" onClick={() => undoAnswer(party, selectedTopic)} />}
                 </div>
             ))}
