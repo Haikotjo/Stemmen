@@ -89,6 +89,20 @@ function ElectionHelper() {
         });
     };
 
+    const resetScores = () => {
+        // Leeg de localStorage
+        localStorage.removeItem('partyScores');
+
+        // Reset de componenttoestand
+        const initialScores = {};
+        partiesData.partijen.forEach((party) => {
+            initialScores[party] = 0;
+        });
+        setPartyScores(initialScores);
+        setAnsweredQuestions({});
+        setGivenAnswers({});
+    };
+
     return (
         <div className="App">
             {partiesData.partijen.map((party) => (
@@ -119,6 +133,7 @@ function ElectionHelper() {
                     </div>
                 ))}
             </div>
+            <button onClick={resetScores}>Reset Scores</button>
         </div>
     );
 }
