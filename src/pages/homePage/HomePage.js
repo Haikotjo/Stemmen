@@ -1,6 +1,7 @@
 import React from 'react';
 import textData from '../../data/textData .json';
 import logo from '../../assets/images/Stemspectrum.svg';
+
 const HomePage = () => {
     return (
         <div>
