@@ -3,30 +3,18 @@ import { getPositions } from '../../utils/utils';
 import partiesData from '../../data/parties.json';
 import positionsData from '../../data/positions.json';
 import StyledButton from "../../Components/button/StyledButton";
+import PartyList from "../../Components/partyList/PartyList";
+import TopicList from "../../Components/topicList/TopicList";
+import useInitialScores from "../../hooks/useInitialScores";
 
 function ElectionHelper() {
+    const [partyScores, setPartyScores] = useInitialScores(partiesData);
     const [selectedParties, setSelectedParties] = useState([]);
     const [selectedTopic, setSelectedTopic] = useState(null);
     const [positions, setPositions] = useState({});
-    const [partyScores, setPartyScores] = useState({});
     const [answeredQuestions, setAnsweredQuestions] = useState({});
     const [givenAnswers, setGivenAnswers] = useState({});
     const topics = Object.keys(positionsData);
-
-    useEffect(() => {
-        // Initialiseer de scores
-        const initialScores = {};
-        partiesData.partijen.forEach((party) => {
-            initialScores[party] = 0;
-        });
-        setPartyScores(initialScores);
-
-        // Ophalen van opgeslagen scores uit localStorage bij het laden van de component
-        const storedScores = localStorage.getItem('partyScores');
-        if (storedScores) {
-            setPartyScores(JSON.parse(storedScores));
-        }
-    }, []);
 
     useEffect(() => {
         if (selectedParties.length > 0 && selectedTopic) {
@@ -106,12 +94,16 @@ function ElectionHelper() {
 
     return (
         <div className="App">
-            {partiesData.partijen.map((party) => (
-                <StyledButton key={party} label={party} onClick={() => togglePartySelection(party)} />
-            ))}
-            {topics.map((topic) => (
-                <StyledButton key={topic} label={`Select ${topic}`} onClick={() => handleTopicSelection(topic)} />
-            ))}
+            <PartyList
+                parties={partiesData.partijen}
+                selectedParties={selectedParties}
+                togglePartySelection={togglePartySelection}
+            />
+            <TopicList
+                topics={topics}
+                selectedTopic={selectedTopic}
+                handleTopicSelection={handleTopicSelection}
+            />
             {selectedParties.length > 0 && <h1>Selected Parties: {selectedParties.join(', ')}</h1>}
             {Object.keys(positions).map((party) => (
                 <div key={party}>

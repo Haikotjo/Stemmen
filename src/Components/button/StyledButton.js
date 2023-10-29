@@ -1,9 +1,8 @@
-import React from 'react';
 import styles from './StyledButton.module.scss';
 
-const StyledButton = ({ label, onClick }) => {
+const StyledButton = ({ label, onClick, className }) => {
     return (
-        <button className={styles['styled-button']} onClick={onClick}>
+        <button className={`${styles['styled-button']} ${className || ''}`} onClick={onClick}>
             {label}
         </button>
     );
