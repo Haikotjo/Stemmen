@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import positionsData from '../../data/positions.json';
 import partiesData from '../../data/parties.json';
+import TopicList from "../../Components/topicList/TopicList"; // Zorg ervoor dat dit pad correct is
 
 function PositionsPage() {
     const [selectedTopic, setSelectedTopic] = useState(null);
     const [positions, setPositions] = useState({});
+    const topics = Object.keys(positionsData); // Haal de onderwerpen uit positionsData
 
     useEffect(() => {
         if (selectedTopic) {
             const newPositions = {};
-            partiesData.partijen.forEach((party) => {  // Let op de .partijen hier
+            partiesData.partijen.forEach((party) => {
                 const position = positionsData[selectedTopic][party];
                 if (position) {
                     newPositions[party] = position;
@@ -25,8 +27,11 @@ function PositionsPage() {
 
     return (
         <div className="PositionsPage">
-            <button onClick={() => handleTopicSelection('Onderwerp1')}>Onderwerp1</button>
-            <button onClick={() => handleTopicSelection('Onderwerp2')}>Onderwerp2</button>
+            <TopicList
+                topics={topics}
+                selectedTopic={selectedTopic}
+                handleTopicSelection={handleTopicSelection}
+            />
 
             {Object.keys(positions).map((party) => (
                 <div key={party}>
