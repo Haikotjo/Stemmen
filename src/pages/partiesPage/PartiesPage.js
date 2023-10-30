@@ -1,29 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { getPositions } from '../../utils/utils';
-import positionsData from '../../data/positions.json';
-import partiesData from '../../data/parties.json';
+import React, { useState } from 'react';
 import PartyList from "../../Components/partyList/PartyList";
-import TopicList from "../../Components/topicList/TopicList";
 import PartyPosition from "../../Components/partyPosition/PartyPosition";
+import usePartyPositions from "../../hooks/usePartyPositions";
+import partiesData from '../../data/parties.json';
 
 function PartiesPage() {
     const [selectedParty, setSelectedParty] = useState(null);
-    const [positions, setPositions] = useState({});
-    const [currentTopics, setCurrentTopics] = useState([]);
-
-    useEffect(() => {
-        if (selectedParty) {
-            const newPositions = {};
-            const newTopics = [];
-            Object.keys(positionsData).forEach((topic) => {
-                const position = getPositions(topic, selectedParty);
-                newPositions[topic] = position;
-                newTopics.push(topic);
-            });
-            setPositions(newPositions);
-            setCurrentTopics(newTopics);
-        }
-    }, [selectedParty]);
+    const [positions, currentTopics] = usePartyPositions(selectedParty);
 
     const handlePartySelection = (party) => {
         setSelectedParty(party);
@@ -39,13 +22,6 @@ function PartiesPage() {
 
             {selectedParty && <h1>Selected Party: {selectedParty}</h1>}
 
-            {selectedParty && (
-                <TopicList
-                    topics={currentTopics}
-                    selectedTopic={null} // Je kunt dit vervangen door je huidige geselecteerde topic
-                    handleTopicSelection={() => {}} // Je functie om de topic selectie te veranderen
-                />
-            )}
             {Object.keys(positions).map((topic) => (
                 <PartyPosition
                     key={topic}
