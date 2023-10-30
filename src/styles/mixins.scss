@@ -1,0 +1,29 @@
+// Extra small screens (mobile phones)
+@media (max-width: 576px) {
+  /* Styles for extra small screens */
+}
+
+// Small screens (tablets in portrait mode)
+@media (min-width: 577px) and (max-width: 768px) {
+  /* Styles for small screens */
+}
+
+// Medium screens (tablets in landscape mode and small laptops)
+@media (min-width: 769px) and (max-width: 992px) {
+  /* Styles for medium screens */
+}
+
+// Large screens (desktops and large laptops)
+@media (min-width: 993px) and (max-width: 1200px) {
+  /* Styles for large screens */
+}
+
+// Extra large screens (larger desktop screens)
+@media (min-width: 1201px) {
+  /* Styles for extra large screens */
+}
+
+// container width
+@mixin max-container-width {
+  max-width: 1440px;
+}
