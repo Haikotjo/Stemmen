@@ -2,7 +2,7 @@
   "Economie": {
     "VVD": "De VVD pleit voor een vrije markteconomie met minimale staatsinterventie.",
     "NSC": "De NSC wil een duurzamere economie met nadruk op lokale productie.",
-    "GroenLinks PVDA": "Streeft naar een duurzame economie en sociale gelijkheid.",
+    "Groenlinks PVDA": "Streeft naar een duurzame economie en sociale gelijkheid.",
     "PVV": "De PVV is voor belastingverlaging en economische groei door deregulering.",
     "CDA": "Het CDA wil een balans tussen markt en overheid met sociale voorzieningen.",
     "Volt": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking."
@@ -10,7 +10,7 @@
   "Gezondheidszorg": {
     "VVD": "De VVD wil meer marktwerking in de gezondheidszorg.",
     "NSC": "NSC streeft naar universele gezondheidszorg gefinancierd door de staat.",
-    "GroenLinks PVDA": "Focus op gezondheidszorg via preventie en toegankelijkheid.",
+    "Groenlinks PVDA": "Focus op gezondheidszorg via preventie en toegankelijkheid.",
     "PVV": "PVV wil terug naar een nationaal zorgstelsel zonder eigen risico.",
     "CDA": "CDA wil zorg toegankelijk en betaalbaar houden door publiek-private samenwerking.",
     "Volt": "Volt wil gezondheidszorg moderniseren door technologische innovaties."
@@ -26,7 +26,7 @@
   "Onderwijs": {
     "VVD": "De VVD wil meer investeren in technisch onderwijs en hogere eisen voor leraren.",
     "NSC": "NSC streeft naar kleinschalig onderwijs met veel persoonlijke aandacht.",
-    "GroenLinks PVDA": "Progressieve belastinghervorming ter bevordering van economische gelijkheid.",
+    "Groenlinks PVDA": "Progressieve belastinghervorming ter bevordering van economische gelijkheid.",
     "PVV": "PVV wil minder administratieve lasten voor docenten en strengere toelatingseisen.",
     "CDA": "CDA wil brede vorming van het individu met nadruk op normen en waarden.",
     "Volt": "Volt wil moderner onderwijs met nadruk op digitale vaardigheden."
@@ -34,7 +34,7 @@
   "Belastingen": {
     "VVD": "De VVD pleit voor een eenvoudiger belastingstelsel en verlaging van de inkomstenbelasting.",
     "NSC": "NSC wil een progressief belastingstelsel met hogere belastingen voor grote bedrijven.",
-    "GroenLinks PVDA": "Investering in groene en efficiënte infrastructuur.",
+    "Groenlinks PVDA": "Investering in groene en efficiënte infrastructuur.",
     "PVV": "PVV wil belastingverlaging voor de middenklasse en strenge belasting op immigratie.",
     "CDA": "CDA wil een evenwichtig belastingstelsel dat zowel ondernemers als werknemers ondersteunt.",
     "Volt": "Volt pleit voor een Europees belastingbeleid om belastingontwijking aan te pakken."
@@ -42,7 +42,7 @@
   "Defensie en veiligheid": {
     "VVD": "De VVD wil investeren in defensie en pleit voor sterke internationale samenwerking.",
     "NSC": "NSC pleit voor een defensie gericht op vredesmissies en humanitaire interventies.",
-    "GroenLinks PVDA": "Veiligheid door diplomatie en multilaterale samenwerking.",
+    "Groenlinks PVDA": "Veiligheid door diplomatie en multilaterale samenwerking.",
     "PVV": "PVV wil een sterker leger en minder afhankelijkheid van internationale organisaties.",
     "CDA": "CDA wil een integrale veiligheidsbenadering met een sterke rol voor lokale gemeenschappen.",
     "Volt": "Volt ziet Europese defensiesamenwerking als het pad naar een veiliger continent."
@@ -50,7 +50,7 @@
   "Immigratie en integratie": {
     "VVD": "De VVD wil strengere immigratieregels en meer nadruk op integratie.",
     "NSC": "NSC pleit voor een humaan maar selectief immigratiebeleid.",
-    "GroenLinks PVDA": "Bevordering van inclusieve immigratie en integratie.",
+    "Groenlinks PVDA": "Bevordering van inclusieve immigratie en integratie.",
     "PVV": "PVV wil een strenger immigratiebeleid en assimilatie boven integratie.",
     "CDA": "CDA wil evenwichtige immigratie met focus op gezinshereniging en werkgelegenheid.",
     "Volt": "Volt wil een gezamenlijk Europees immigratiebeleid met hervormde asielprocedures."
@@ -58,7 +58,7 @@
   "Innovatie en technologie": {
     "VVD": "De VVD ziet technologische innovatie als drijfveer voor economische groei.",
     "NSC": "NSC wil technologie inzetten voor sociale en ecologische doelen.",
-    "GroenLinks PVDA": "Streven naar een rechtvaardig en toegankelijk rechtssysteem.",
+    "Groenlinks PVDA": "Streven naar een rechtvaardig en toegankelijk rechtssysteem.",
     "PVV": "PVV is terughoudend over het inzetten van technologie in publieke diensten.",
     "CDA": "CDA wil innovatie stimuleren maar met ethische overwegingen.",
     "Volt": "Volt wil technologische innovatie versnellen door Europese samenwerking."
@@ -66,7 +66,7 @@
   "Onderwijs": {
     "VVD": "VVD pleit voor meer autonomie voor scholen en hogere salarissen voor docenten.",
     "NSC": "NSC wil investeren in gelijke onderwijskansen en aandacht voor persoonlijke ontwikkeling.",
-    "GroenLinks PVDA": "Bevordering van inclusieve immigratie en integratie.",
+    "Groenlinks PVDA": "Bevordering van inclusieve immigratie en integratie.",
     "PVV": "PVV wil meer nadruk op klassieke vakken en minder politieke correctheid in het onderwijs.",
     "CDA": "CDA wil een brede vorming in het onderwijs en meer investeringen in het technisch onderwijs.",
     "Volt": "Volt wil een Europese onderwijsagenda met nadruk op digitale vaardigheden."
@@ -74,7 +74,7 @@
   "Werkgelegenheid": {
     "VVD": "VVD wil flexibele arbeidsmarktwetgeving en minder regels voor ondernemers.",
     "NSC": "NSC wil een werkgelegenheidsprogramma gericht op groene banen.",
-    "GroenLinks PVDA": "Streven naar een rechtvaardig en toegankelijk rechtssysteem.",
+    "Groenlinks PVDA": "Streven naar een rechtvaardig en toegankelijk rechtssysteem.",
     "PVV": "PVV wil meer banen voor Nederlanders door restricties op arbeidsmigratie.",
     "CDA": "CDA wil een arbeidsmarkt die zowel flexibiliteit als zekerheid biedt.",
     "Volt": "Volt pleit voor een Europese aanpak van werkgelegenheid met focus op reskilling."
@@ -82,7 +82,7 @@
   "Huisvesting": {
     "VVD": "VVD wil meer nieuwbouw en minder regulering in de woningmarkt.",
     "NSC": "NSC wil investeren in sociale woningbouw en duurzame huizen.",
-    "GroenLinks PVDA": "Duurzaam en verantwoord buitenlands beleid.",
+    "Groenlinks PVDA": "Duurzaam en verantwoord buitenlands beleid.",
     "PVV": "PVV wil een stop op sociale huurwoningen voor nieuwkomers.",
     "CDA": "CDA wil meer diversiteit in woningaanbod en ondersteuning voor starters.",
     "Volt": "Volt ziet Europese samenwerking als oplossing voor betaalbare huisvesting."
@@ -90,7 +90,7 @@
   "Energiebeleid": {
     "VVD": "VVD wil inzetten op kernenergie als aanvulling op hernieuwbare energie.",
     "NSC": "NSC wil volledige transitie naar duurzame energiebronnen.",
-    "GroenLinks PVDA": "Transitie naar hernieuwbare energiebronnen met sociaal beleid.",
+    "Groenlinks PVDA": "Transitie naar hernieuwbare energiebronnen met sociaal beleid.",
     "PVV": "PVV is sceptisch over klimaatbeleid en wil behoud van fossiele brandstoffen.",
     "CDA": "CDA wil een mix van duurzame en traditionele energiebronnen.",
     "Volt": "Volt pleit voor een Europese energie-unie voor snellere vergroening."
