@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { getPositions } from '../../utils/utils';
 import positionsData from '../../data/positions.json';
-import partiesData from '../../data/parties.json'; // Importeer de partijen data
+import partiesData from '../../data/parties.json';
 import PartyList from "../../Components/partyList/PartyList";
 import TopicList from "../../Components/topicList/TopicList";
+import PartyPosition from "../../Components/partyPosition/PartyPosition";
 
 function PartiesPage() {
     const [selectedParty, setSelectedParty] = useState(null);
@@ -45,12 +46,12 @@ function PartiesPage() {
                     handleTopicSelection={() => {}} // Je functie om de topic selectie te veranderen
                 />
             )}
-
             {Object.keys(positions).map((topic) => (
-                <div key={topic}>
-                    <h3>{topic}:</h3>
-                    <p>{positions[topic]}</p>
-                </div>
+                <PartyPosition
+                    key={topic}
+                    topic={topic}
+                    position={positions[topic]}
+                />
             ))}
         </div>
     );
