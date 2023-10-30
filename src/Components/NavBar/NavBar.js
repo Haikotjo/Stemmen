@@ -11,7 +11,7 @@ function NavBar() {
             <div className={styles.container}>
                 <div className={styles.icon}>
                     <NavLink to="/" exact>
-                        <FontAwesomeIcon icon={faHome} color="white" />
+                        <FontAwesomeIcon icon={faHome} color="white" size="2x" />
                     </NavLink>
                 </div>
                 <div className={styles.links}>
@@ -21,6 +21,7 @@ function NavBar() {
                     >
                         Kies Hulp
                     </NavLink>
+
                     <NavLink
                         to="/partij-pagina"
                         className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}
@@ -34,8 +35,6 @@ function NavBar() {
                     >
                         Standpunten Pagina
                     </NavLink>
-
-
                 </div>
             </div>
         </div>
