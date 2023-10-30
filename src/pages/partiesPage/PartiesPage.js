@@ -1,56 +1,44 @@
-import React, { useEffect, useState } from 'react';
-import { getPositions } from '../../utils/utils';
-import positionsData from '../../data/positions.json';
-import partiesData from '../../data/parties.json'; // Importeer de partijen data
+import React, { useState } from 'react';
+// Importing the PartyList component to display the list of parties
 import PartyList from "../../Components/partyList/PartyList";
-import TopicList from "../../Components/topicList/TopicList";
+// Importing the PartyPosition component to display the positions of the selected party
+import PartyPosition from "../../Components/partyPosition/PartyPosition";
+// Importing the custom hook to get the positions and topics based on the selected party
+import usePartyPositions from "../../hooks/usePartyPositions";
+// Importing the parties data from a JSON file
+import partiesData from '../../data/parties.json';
 
+// Main PartiesPage component
 function PartiesPage() {
+    // State to keep track of the selected party
     const [selectedParty, setSelectedParty] = useState(null);
-    const [positions, setPositions] = useState({});
-    const [currentTopics, setCurrentTopics] = useState([]);
+    // Using the custom hook to get the positions and current topics based on the selected party
+    const [positions] = usePartyPositions(selectedParty);
 
-    useEffect(() => {
-        if (selectedParty) {
-            const newPositions = {};
-            const newTopics = [];
-            Object.keys(positionsData).forEach((topic) => {
-                const position = getPositions(topic, selectedParty);
-                newPositions[topic] = position;
-                newTopics.push(topic);
-            });
-            setPositions(newPositions);
-            setCurrentTopics(newTopics);
-        }
-    }, [selectedParty]);
-
+    // Function to handle the selection of a party
     const handlePartySelection = (party) => {
         setSelectedParty(party);
     };
 
     return (
         <div className="PartiesPage">
+            {/* Displaying the list of parties using the PartyList component */}
             <PartyList
-                parties={partiesData.partijen} // Gebruik de partijen uit parties.json
-                selectedParties={[selectedParty]} // Je huidige geselecteerde partij
-                togglePartySelection={handlePartySelection} // Je functie om de selectie te veranderen
+                parties={partiesData.partijen} // Using the parties from parties.json
+                selectedParties={[selectedParty]} // The currently selected party
+                togglePartySelection={handlePartySelection} // Function to change the selected party
             />
 
+            {/* Displaying the name of the selected party, if any */}
             {selectedParty && <h1>Selected Party: {selectedParty}</h1>}
 
-            {selectedParty && (
-                <TopicList
-                    topics={currentTopics}
-                    selectedTopic={null} // Je kunt dit vervangen door je huidige geselecteerde topic
-                    handleTopicSelection={() => {}} // Je functie om de topic selectie te veranderen
-                />
-            )}
-
+            {/* Displaying the positions of the selected party using the PartyPosition component */}
             {Object.keys(positions).map((topic) => (
-                <div key={topic}>
-                    <h3>{topic}:</h3>
-                    <p>{positions[topic]}</p>
-                </div>
+                <PartyPosition
+                    key={topic}
+                    topic={topic}
+                    position={positions[topic]}
+                />
             ))}
         </div>
     );
