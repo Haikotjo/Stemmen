@@ -1,0 +1,43 @@
+// _reset.scss
+
+/* Box sizing rules */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Remove default margin and padding */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set default font family and size */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Remove list styles (bullet points and numbers) */
+ul, ol {
+  list-style: none;
+}
+
+/* Remove underlines from links */
+a {
+  text-decoration: none;
+}
+
+/* Remove outline on focus */
+a:focus, button:focus {
+  outline: none;
+}
+
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}

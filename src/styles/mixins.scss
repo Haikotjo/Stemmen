@@ -1,0 +1,39 @@
+// Extra small screens (mobile phones)
+@mixin extra-small-screen {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+// Small screens (tablets in portrait mode)
+@mixin small-screen {
+  @media (min-width: 577px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+// Medium screens (tablets in landscape mode and small laptops)
+@mixin medium-screen {
+  @media (min-width: 769px) and (max-width: 992px) {
+    @content;
+  }
+}
+
+// Large screens (desktops and large laptops)
+@mixin large-screen {
+  @media (min-width: 993px) and (max-width: 1200px) {
+    @content;
+  }
+}
+
+// Extra large screens (larger desktop screens)
+@mixin extra-large-screen {
+  @media (min-width: 1201px) {
+    @content;
+  }
+}
+
+// Container width
+@mixin max-container-width {
+  max-width: 1440px;
+}

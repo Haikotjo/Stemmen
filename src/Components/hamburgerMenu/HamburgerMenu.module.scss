@@ -1,0 +1,45 @@
+@import '../../styles/globals';
+@import '../../styles/mixins';
+
+.hamburgerMenu {
+  display: none; // Standaard verborgen
+
+  @include extra-small-screen {
+    display: block; // Toon op extra kleine schermen
+  }
+
+  @include small-screen {
+    display: block; // Toon op kleine schermen
+  }
+
+  position: relative;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: $primary-color;
+  width: auto; // Aangepast van 100% naar auto
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.link {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  border-top: 1px solid #ccc;
+  color: white;
+
+  &:hover {
+    background: #ddd;
+  }
+
+  &.active {
+    background: $secondary-color;
+  }
+}
