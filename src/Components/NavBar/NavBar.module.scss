@@ -1,9 +1,9 @@
 @import '../../styles/globals';
-
+@import '../../styles/mixins';
 
 .navbar {
   width: 100%;
-  background-color: $secondary-color;
+  background-color: $primary-color;
   color: white;
 
   .container {
@@ -11,16 +11,28 @@
     margin: auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;  // Voeg deze regel toe om items te centreren op de verticale as
+    align-items: center;
+    @include extra-small-screen {
+      justify-content: space-around; // Of een andere flexbox eigenschap
+    }
+
+    @include small-screen {
+      justify-content: space-around; // Of een andere flexbox eigenschap
+    }
 
     .icon {
       margin-left: 3rem;
-      display: flex;  // Voeg deze regel toe om het icoon te centreren
-      align-items: center;  // Voeg deze regel toe om het icoon te centreren
+      display: flex;
+      align-items: center;
+      padding-block: 20px;
+      @include extra-small-screen {
+       margin-left: 0;
+        font-size: small;
+      }
     }
 
     .links {
-      display: flex;
+      display: flex; // Standaard zichtbaar
       gap: 20px;
       margin-right: 3rem;
 
@@ -33,9 +45,24 @@
       }
 
       .active {
-        background-color: $primary-color;
+        background-color: $secondary-color;
         border-bottom: 2px solid white;
       }
+
+      @include extra-small-screen {
+        display: none; // Verberg op extra kleine schermen
+      }
+
+      @include small-screen {
+        display: none; // Verberg op kleine schermen
+      }
     }
+  }
+}
+
+.hamburgerMenu{
+  @include extra-small-screen {
+    margin-right: 2rem;
+    font-size: small;
   }
 }

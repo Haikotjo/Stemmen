@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import styles from './NavBar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
+import HamburgerMenu from "../hamburgerMenu/HamburgerMenu";
 
 function NavBar() {
     console.log(styles);
@@ -10,7 +11,7 @@ function NavBar() {
         <div className={styles.navbar}>
             <div className={styles.container}>
                 <div className={styles.icon}>
-                    <NavLink to="/" exact>
+                    <NavLink to="/">
                         <FontAwesomeIcon icon={faHome} color="white" size="2x" />
                     </NavLink>
                 </div>
@@ -35,6 +36,9 @@ function NavBar() {
                     >
                         Standpunten Pagina
                     </NavLink>
+                </div>
+                <div className={styles.hamburgerMenu}>
+                    <HamburgerMenu />  {/* Dit vervangt de normale navlinks op kleine schermen */}
                 </div>
             </div>
         </div>
