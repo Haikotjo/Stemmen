@@ -21,9 +21,11 @@ const HomePage = () => {
             <h2>Extra Informatie</h2>
             <p>{textData.nl.extraStory}</p>
             <h2>Pagina Beschrijvingen</h2>
-            {Object.entries(textData.nl.pageDescriptions).map(([key, value]) => (
-                <PageDescriptionBlock key={key} route={routesMap[key]} description={value} />
-            ))}
+            <div className={styles.pageDescriptionsContainer}>
+                {Object.entries(textData.nl.pageDescriptions).map(([key, value]) => (
+                    <PageDescriptionBlock key={key} route={routesMap[key]} description={value} />
+                ))}
+            </div>
         </div>
     );
 };
