@@ -1,0 +1,28 @@
+@import '../../styles/globals';
+@import '../../styles/mixins';
+// Buitenste container
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+// Logo stijlen
+.logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+// Titels en tekst
+h1, h2, p {
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
