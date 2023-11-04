@@ -1,0 +1,63 @@
+// Modal.module.scss
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); // Halfdoorzichtige achtergrond
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; // Hoog z-index om bovenop te komen
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1001; // Zorg ervoor dat de modal boven de overlay staat
+  position: relative; // Voor positionering van de sluitknop
+  width: 80%; // Of een andere breedte naar keuze
+  max-width: 600px; // Zorg voor een maximale breedte
+
+  // Centreren van de modal in de viewport
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modalHeader {
+  position: relative;
+  width: 100%;
+}
+
+.headerImage {
+  width: 100%;
+  height: auto; // Behoud de aspect ratio
+  display: block; // Verwijder witruimte onder de afbeelding
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; // Ruimte tussen tekstregels
+}
