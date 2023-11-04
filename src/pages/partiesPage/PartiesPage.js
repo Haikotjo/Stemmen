@@ -8,6 +8,8 @@ import usePartyPositions from "../../hooks/usePartyPositions";
 // Importing the parties data from a JSON file
 import partiesData from '../../data/parties.json';
 
+import styles from './PartiesPage.module.scss';
+
 // Main PartiesPage component
 function PartiesPage() {
     // State to keep track of the selected party
@@ -30,16 +32,18 @@ function PartiesPage() {
             />
 
             {/* Displaying the name of the selected party, if any */}
-            {selectedParty && <h1>Selected Party: {selectedParty}</h1>}
-
-            {/* Displaying the positions of the selected party using the PartyPosition component */}
-            {Object.keys(positions).map((topic) => (
-                <PartyPosition
-                    key={topic}
-                    topic={topic}
-                    position={positions[topic]}
-                />
-            ))}
+            {selectedParty && (
+                <div className={styles.selectedPartyContainer}>
+                    <h1>Selected Party: {selectedParty}</h1>
+                    {Object.keys(positions).map((topic) => (
+                        <PartyPosition
+                            key={topic}
+                            topic={topic}
+                            position={positions[topic]}
+                        />
+                    ))}
+                </div>
+            )}
         </div>
     );
 }
