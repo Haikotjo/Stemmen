@@ -6,3 +6,49 @@ $secondary-color: #083948;
 $third-color: #41D3BD;
 $fourth-color: #FB3640;
 
+// Importeer de lettertypen
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,800;1,300&family=Roboto:ital,wght@0,300;0,400;0,900;1,100;1,300;1,400&display=swap');
+
+// Definieer typografie variabelen
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Montserrat', sans-serif;
+
+// Mixins voor typografische stijlen
+@mixin font-primary($weight: 400, $style: normal) {
+  font-family: $font-primary;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+@mixin font-secondary($weight: 400, $style: normal) {
+  font-family: $font-secondary;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+// Globale stijlen
+body {
+  @include font-primary(200);
+}
+
+h1 {
+  @include font-secondary(800);
+}
+
+h2 {
+  @include font-secondary(400);
+}
+
+// Voorbeeld van italic stijl
+em {
+  @include font-primary(400, italic);
+}
+
+// Specifieke klassen voor hergebruik
+.primary-bold {
+  @include font-primary(900);
+}
+
+.secondary-italic {
+  @include font-secondary(300, italic);
+}

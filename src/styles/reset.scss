@@ -10,7 +10,7 @@ html {
 }
 
 /* Remove default margin and padding */
-body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+body, ul, ol, li, figure, figcaption, blockquote, dl, dd {
   margin: 0;
   padding: 0;
 }
@@ -20,6 +20,28 @@ body {
   font-family: Arial, sans-serif;
   font-size: 16px;
 }
+
+/* Set default margins for headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1em; // Voegt een standaard ondermarge toe
+}
+
+/* Adjust heading margins for more specificity */
+h1 {
+  margin-bottom: 1.2em;
+}
+
+h2 {
+  margin-bottom: 1.1em;
+}
+
+h3 {
+  margin-bottom: 1em;
+}
+
+// Voeg hier eventueel specifieke marges toe voor h4, h5, h6
 
 /* Remove list styles (bullet points and numbers) */
 ul, ol {
