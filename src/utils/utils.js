@@ -37,3 +37,10 @@ export const selectTopic = (selectedTopic) => {
         console.log('Invalid topic');
     }
 };
+
+const headerImages = ['eenSoortToespraak', 'GroteToespraak', 'toespraak']; // Namen van je afbeeldingen zonder de extensie
+
+export const getRandomImage = () => {
+    const randomIndex = Math.floor(Math.random() * headerImages.length);
+    return `/images/headers/${headerImages[randomIndex]}.png`;
+};

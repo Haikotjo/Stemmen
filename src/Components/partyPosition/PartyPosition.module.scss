@@ -1,0 +1,24 @@
+@import '../../styles/mixins';
+@import '../../styles/globals';
+
+// PartyPosition.module.scss
+.partyPositionContainer {
+  // Stijlen voor de container van de partijpositie
+}
+
+.positionList {
+  list-style-type: none; // Verwijdert de standaard bullets van de lijst
+  padding: 0; // Verwijdert de standaard padding
+  margin: 0; // Verwijdert de standaard margin
+
+  li {
+    display: flex; // Maakt een flex container van elk list item
+    align-items: center; // Centreert de items verticaal
+    justify-content: space-between; // Verdeelt de ruimte tussen de topic en de positie
+    padding: 8px 0; // Voegt wat padding toe voor ruimte rond de items
+
+    strong {
+      margin-right: 10px; // Voegt wat ruimte toe tussen de topic en de positie
+    }
+  }
+}

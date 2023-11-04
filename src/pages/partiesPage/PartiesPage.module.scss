@@ -1,2 +1,20 @@
 @import '../../styles/mixins';
 @import '../../styles/globals';
+
+.partiesPageContainer {
+  display: grid;
+  grid-template-columns: 1fr; // Standaard één kolom
+  gap: 20px;
+  padding: 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+// Je kunt deze stijlen verwijderen of aanpassen voor gebruik binnen de modal.
+.selectedPartyInfo {
+  // Stijlen specifiek voor de modal content
+  padding: 20px; // Voeg padding toe voor de inhoud van de modal
+  max-width: 600px; // Maximale breedte voor de modal inhoud
+  margin: 0 auto; // Centreer de modal inhoud indien nodig
+  // Voeg hier eventuele andere stijlen toe die je nodig hebt voor de inhoud van de modal
+}
