@@ -1,0 +1,14 @@
+@import '../../styles/mixins';
+@import '../../styles/globals';
+
+// ParallaxBackground.scss
+
+.parallax {
+  height: 100vh; // Hiermee geef je de parallax-achtergrond de volledige hoogte van het scherm
+  background-attachment: fixed; // Hiermee wordt de achtergrondafbeelding vastgezet
+  background-position: center; // Plaatsing van de achtergrondafbeelding in het midden
+  background-repeat: no-repeat; // Geen herhaling van de achtergrondafbeelding
+  background-size: cover; // Hiermee wordt de achtergrondafbeelding schermvullend weergegeven
+
+  // Voeg hier andere stijlen toe voor het parallax-effect, zoals transformaties of overgangen
+}
