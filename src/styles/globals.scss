@@ -29,6 +29,13 @@ $font-secondary: 'Montserrat', sans-serif;
 // Globale stijlen
 body {
   @include font-primary(200);
+  margin-top: 72px;
+  @include extra-small-screen {
+    margin-top: 66px; // Voor extra kleine schermen
+  }
+  @include small-screen {
+    margin-top: 72px; // Voor kleine schermen
+  }
 }
 
 h1 {

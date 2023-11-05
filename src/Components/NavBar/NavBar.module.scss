@@ -1,7 +1,12 @@
 @import '../../styles/globals';
 @import '../../styles/mixins';
 
+
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
   width: 100%;
   background-color: $primary-color;
   color: white;
@@ -66,3 +71,4 @@
     font-size: small;
   }
 }
+
