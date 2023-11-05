@@ -4,11 +4,12 @@
 // ParallaxBackground.scss
 
 .parallax {
-  height: 100vh; // Hiermee geef je de parallax-achtergrond de volledige hoogte van het scherm
-  background-attachment: fixed; // Hiermee wordt de achtergrondafbeelding vastgezet
-  background-position: center; // Plaatsing van de achtergrondafbeelding in het midden
-  background-repeat: no-repeat; // Geen herhaling van de achtergrondafbeelding
-  background-size: cover; // Hiermee wordt de achtergrondafbeelding schermvullend weergegeven
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain; // Wijzig de waarde naar 'contain'
+  max-width: 100%;
 
-  // Voeg hier andere stijlen toe voor het parallax-effect, zoals transformaties of overgangen
+  // Voeg hier andere stijlen toe voor het parallax-effect
 }
