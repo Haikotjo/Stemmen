@@ -1,21 +1,27 @@
+@import '../../styles/mixins';
+@import '../../styles/globals';
+
+
 // Modal.module.scss
-.overlay {
+.modalOverlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); // Halfdoorzichtige achtergrond
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; // Hoog z-index om bovenop te komen
+  z-index: 1000;
 }
 
-.wrapper {
+.modalContainer {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .modal {
@@ -23,41 +29,34 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1001; // Zorg ervoor dat de modal boven de overlay staat
-  position: relative; // Voor positionering van de sluitknop
-  width: 80%; // Of een andere breedte naar keuze
-  max-width: 600px; // Zorg voor een maximale breedte
-
-  // Centreren van de modal in de viewport
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.modalHeader {
+  z-index: 1001;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
   position: relative;
-  width: 100%;
-}
-
-.headerImage {
-  width: 100%;
-  height: auto; // Behoud de aspect ratio
-  display: block; // Verwijder witruimte onder de afbeelding
+  max-height: calc(100vh - 40px); /* Hier wordt de hoogte beperkt om delen aan de bovenkant en onderkant te voorkomen */
+  display: flex;
+  flex-direction: column;
+  overflow: auto; /* Voeg scroll toe aan de modal-inhoud indien nodig */
 }
 
 .closeButton {
   background: transparent;
   border: none;
-  font-size: 1.5rem;
+  font-size: 4rem;
   cursor: pointer;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  line-height: 1;
+  color: #ffffff; /* Hier kun je de kleur aanpassen */
 }
 
-.modalContent {
-  display: flex;
-  flex-direction: column;
-  gap: 10px; // Ruimte tussen tekstregels
+
+.headerImage {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
 }

@@ -24,7 +24,8 @@ function PartiesPage() {
 
     return (
         <div>
-            <ParallaxBackground backgroundImage="/images/backgrounds/keuzes.png" />
+            {/*<ParallaxBackground backgroundImage="/images/backgrounds/keuzes.png" />*/}
+            <img src="/images/backgrounds/banner%20kies.png" alt="Achtergrondafbeelding" className={styles.backgroundImage} />
             <div className={styles.partiesPageContainer}>
                 <PartyList
                     parties={partiesData.partijen}

@@ -4,6 +4,7 @@ import positionsData from '../../data/positions.json';
 import TopicList from "../../Components/topicList/TopicList";
 import usePositions from "../../hooks/usePositions";
 import PartyPosition from "../../Components/partyPosition/PartyPosition";
+import styles from "../partiesPage/PartiesPage.module.scss";
 
 // PositionsPage component definition
 // This component displays the positions of various parties on a selected topic
@@ -25,6 +26,7 @@ function PositionsPage() {
     // Render the component
     return (
         <div className="PositionsPage">
+            <img src="/images/backgrounds/kiezen.png" alt="Achtergrondafbeelding" className={styles.backgroundImage} />
             {/* TopicList component to display the list of topics */}
             <TopicList
                 topics={topics}

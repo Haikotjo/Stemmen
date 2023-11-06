@@ -1,0 +1,11 @@
+@import '../../styles/mixins';
+@import '../../styles/globals';
+
+.backgroundImage {
+  max-width: 100%; // Maximale breedte is 100% van de viewportbreedte
+  max-height: 100vh; // Maximale hoogte is 100% van de viewporthoogte
+  width: auto; // Behoud de oorspronkelijke verhoudingen van de afbeelding
+  height: auto; // Behoud de oorspronkelijke verhoudingen van de afbeelding
+  display: block; // Zorgt voor een correcte weergave van de afbeelding
+  margin: 0 auto 1rem;
+}
