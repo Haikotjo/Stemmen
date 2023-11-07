@@ -7,6 +7,11 @@
       "positionsPage": "Benieuwd naar de standpunten van verschillende partijen over belangrijke onderwerpen? Bezoek onze Standpunten Pagina om een helder overzicht te krijgen.",
       "partiesPage": "Wil je meer weten over de partijen zelf en wat ze vertegenwoordigen? Ga naar onze Partijen Pagina voor een diepgaande blik op elke partij.",
       "electionHelper": "Ontdek je politieke match met onze Kies Hulp pagina! Kies de partijen en standpunten die je interessant vindt en geef ze een score van plus, min of neutraal. Aan het einde krijg je een overzicht te zien van de partijen waarmee je het meest overeenkomt. Zo kun je een weloverwogen keuze maken bij de stembus."
+    },
+    "pageDescriptionsDetails": {
+      "partiesPage": "Ontdek de doelstellingen en standpunten van elke politieke partij.",
+      "positionsPage": "Bekijk gedetailleerde informatie over de standpunten van politieke partijen.",
+      "electionHelper": "Vind jouw politieke match en vergelijk je voorkeuren met de partijen."
     }
   }
 }

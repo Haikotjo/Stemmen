@@ -1,6 +1,14 @@
 @import '../../styles/globals';
 @import '../../styles/mixins';
 
+.backgroundImage {
+  max-width: 100%; // Maximale breedte is 100% van de viewportbreedte
+  max-height: 100vh; // Maximale hoogte is 100% van de viewporthoogte
+  width: auto; // Behoud de oorspronkelijke verhoudingen van de afbeelding
+  height: auto; // Behoud de oorspronkelijke verhoudingen van de afbeelding
+  display: block; // Zorgt voor een correcte weergave van de afbeelding
+  margin: 0 auto 1rem;
+}
 // Buitenste container
 .container {
   max-width: 1440px;
@@ -11,12 +19,6 @@
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 
 
-  // Logo stijlen
-  .logo {
-    width: 240px;
-    height: auto;
-    margin-bottom: 30px;
-  }
 
   h1 {
     font-size: 2.4rem;

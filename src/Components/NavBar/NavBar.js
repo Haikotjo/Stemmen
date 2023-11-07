@@ -36,6 +36,13 @@ function NavBar() {
                     >
                         Standpunten Pagina
                     </NavLink>
+                    
+                    <NavLink
+                        to="/testpagina" // Voeg de link naar de testpagina toe
+                        className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}
+                    >
+                        Testpagina
+                    </NavLink>
                 </div>
                 <div className={styles.hamburgerMenu}>
                     <HamburgerMenu />  {/* Dit vervangt de normale navlinks op kleine schermen */}
