@@ -11,7 +11,7 @@ import styles from "./ElectionHelper.module.scss";
 
 function ElectionHelper() {
     const initialScores = {}; // Je kunt dit ook vanuit partiesData genereren als dat nodig is
-    const [partyScores, updateScore, undoAnswer, givenAnswers, answeredQuestions, resetScores] = useScoreUpdater(initialScores);
+    const [partyScores, updateScore, undoAnswer, answeredQuestions, resetScores] = useScoreUpdater(initialScores);
     const [selectedParties, setSelectedParties] = useState([]);
     const [selectedTopic, setSelectedTopic] = useState(null);
     const [positions, setPositions] = useState({});
