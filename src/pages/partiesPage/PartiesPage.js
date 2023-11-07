@@ -5,7 +5,8 @@ import usePartyPositions from "../../hooks/usePartyPositions";
 import partiesData from '../../data/parties.json';
 import styles from './PartiesPage.module.scss';
 import Modal from "../../Components/modal/Modal";
-import ParallaxBackground from "../../Components/parallaxBackground/ParallaxBackground";
+import textData from '../../data/textData.json';
+
 
 
 function PartiesPage() {
@@ -27,6 +28,9 @@ function PartiesPage() {
             {/*<ParallaxBackground backgroundImage="/images/backgrounds/keuzes.png" />*/}
             <img src="/images/backgrounds/banner%20kies.png" alt="Achtergrondafbeelding" className={styles.backgroundImage} />
             <div className={styles.partiesPageContainer}>
+                <div className={styles.pageDescriptionsDetails}>
+                    <h2>{textData.nl.pageDescriptionsDetails.partiesPage}</h2>
+                </div>
                 <PartyList
                     parties={partiesData.partijen}
                     selectedParties={[selectedParty]}
