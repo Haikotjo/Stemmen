@@ -4,7 +4,7 @@ import positionsData from '../../data/positions.json';
 import TopicList from "../../Components/topicList/TopicList";
 import usePositions from "../../hooks/usePositions";
 import PartyPosition from "../../Components/partyPosition/PartyPosition";
-import styles from "../partiesPage/PartiesPage.module.scss";
+import styles from "./PositionsPage.module.scss";
 import {getRandomImage} from "../../utils/utils";
 
 // PositionsPage component definition
@@ -38,14 +38,15 @@ function PositionsPage() {
                 <img src={randomImage} alt="Header" className={styles.backgroundImage} />
                 <h1 className={styles.headerText}>STANDPUNTEN</h1>
             </div>
-            <div className="PositionsPage">
+            <div className={styles.positionPageContainer}>
                 {/* TopicList component to display the list of topics */}
+                <div className={styles.topicsContainer}>
                 <TopicList
                     topics={topics}
                     selectedTopic={selectedTopic}
                     handleTopicSelection={handleTopicSelection}
                 />
-
+                </div>
                 {/*
                 Loop through the positions object and render a PartyPosition component for each party.
                 Pass the party name, position, and selected topic as props.

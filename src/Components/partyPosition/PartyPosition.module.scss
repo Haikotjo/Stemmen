@@ -13,6 +13,16 @@
   .partyName{
     color: $secondary-color;
     text-align: center;
+
+    @include extra-small-screen {
+      font-weight: bold;
+      font-size: 1.5rem; // kleinere grootte voor kleine schermen
+    }
+
+    @include small-screen {
+      font-weight: bold;
+      font-size: 2rem; // kleinere grootte voor kleine schermen
+    }
   }
 
   // Styling for the list of positions

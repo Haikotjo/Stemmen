@@ -1,6 +1,19 @@
 @import '../../styles/mixins';
 @import '../../styles/globals';
 
+.positionPageContainer {
+  max-width: 1440px;
+  margin: 0 auto; // Horizontaal centreren van de container zelf
+  display: flex; // Maak dit een flex-container
+  justify-content: center; // Horizontaal centreren van inhoud binnen de flex-container
+  align-items: center; // Verticaal centreren van inhoud binnen de flex-container
+  flex-direction: column; // Stapel kinderen verticaal
+}
+
+.topicsContainer{
+  margin-bottom: 2rem;
+}
+
 .backgroundImage {
   max-width: 100%; // Maximale breedte is 100% van de viewportbreedte
   max-height: 100vh; // Maximale hoogte is 100% van de viewporthoogte
