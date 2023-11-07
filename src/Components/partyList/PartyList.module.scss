@@ -40,7 +40,7 @@
 }
 
 .selectedButton {
-  background-color: #ff0000; // Sets the background color of the selected button to red
+  background-color: $third-color; // Sets the background color of the selected button to red
   width: 100%; // Ensures the button fills the width of its container
   padding: 10px 0; // Adds padding to the top and bottom of the button
   margin-top: auto; // Pushes the button to the bottom of the container

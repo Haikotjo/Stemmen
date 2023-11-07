@@ -40,17 +40,17 @@
   overflow: auto; /* Voeg scroll toe aan de modal-inhoud indien nodig */
 }
 
-.closeButton {
-  background: transparent;
+.styled-button.close {
+  //background: transparent;
   border: none;
-  font-size: 4rem;
+  font-size: 2rem;
   cursor: pointer;
   position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 10px;
+  top: 15px;
+  right: 15px;
+  padding: 1px 5px;
   line-height: 1;
-  color: $secondary-color; /* Hier kun je de kleur aanpassen */
+  color: white; /* Hier kun je de kleur aanpassen */
 }
 
 

@@ -1,13 +1,16 @@
+@import '../../styles/mixins';
+@import '../../styles/globals';
+
 .styled-button {
-  background-color: #007bff;
+  background-color: $fourth-color;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: $third-color;
   }
 }
