@@ -6,6 +6,7 @@ import partiesData from '../../data/parties.json';
 import styles from './PartiesPage.module.scss';
 import Modal from "../../Components/modal/Modal";
 import textData from '../../data/textData.json';
+import {getPartyImage} from "../../utils/utils";
 
 
 
@@ -40,7 +41,13 @@ function PartiesPage() {
                 <Modal isShowing={isModalOpen} hide={closeModal}>
                     {selectedParty && (
                         <div className={styles.selectedPartyInfo}>
-                            <h1>Selected Party: {selectedParty}</h1>
+                            <h1>{selectedParty}</h1>
+                            <img
+                                src={getPartyImage(selectedParty)}
+                                alt={`${selectedParty} logo`}
+                                className={styles.partyImage}
+                                onError={(e) => { e.target.onerror = null; e.target.src = `${process.env.PUBLIC_URL}/images/puppets/default.png`; }}
+                            />
                             {Object.keys(positions).map((topic) => (
                                 <PartyPosition
                                     key={topic}

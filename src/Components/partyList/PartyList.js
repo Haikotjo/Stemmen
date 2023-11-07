@@ -3,21 +3,13 @@ import React from 'react';
 import StyledButton from '../button/StyledButton';
 import styles from './PartyList.module.scss';
 import ParallaxBackground from "../parallaxBackground/ParallaxBackground";
+import {getPartyImage} from "../../utils/utils";
 
 // PartyList component definition
 // It takes three props: parties, selectedParties, and togglePartySelection
 const PartyList = ({ parties, selectedParties, togglePartySelection }) => {
     // Helper function to determine if a party is selected
     const isSelected = (party) => selectedParties.includes(party);
-
-    // Function to get the image path based on the party name
-// Converts the party name to lowercase and replaces spaces with nothing
-// Then appends '.png' to match the image file extension
-    const getPartyImage = (party) => {
-        const imageName = party.toLowerCase().replace(/\s+/g, '') + '.png';
-        // Build the path to the image in the public folder
-        return `${process.env.PUBLIC_URL}/images/puppets/${imageName}`;
-    };
 
     // Render the component
     return (
@@ -26,8 +18,6 @@ const PartyList = ({ parties, selectedParties, togglePartySelection }) => {
             {parties.map((party) => {
                 // Check if the current party is selected
                 const partyIsSelected = isSelected(party);
-                // Get the image for the current party
-                const partyImage = getPartyImage(party);
 
                 return (
                     <div key={party} className={`${styles.partyItem} ${partyIsSelected ? styles.selected : ''}`}>
