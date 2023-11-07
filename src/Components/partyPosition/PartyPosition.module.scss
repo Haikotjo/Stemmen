@@ -5,8 +5,7 @@
 .partyPositionContainer {
   background-color: #f8f9fa; // Light background color for better readability
   border-radius: 8px; // Rounded corners for aesthetic appeal
-  border: 1px solid $secondary-color; // Border line
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); // Subtle shadow for depth
   margin-bottom: 16px; // Space between each party position container
   padding: 16px; // Internal spacing
   max-width: 100%; // Ensures the container does not exceed the parent's width

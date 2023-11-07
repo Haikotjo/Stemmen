@@ -46,11 +46,11 @@
   font-size: 4rem;
   cursor: pointer;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 10px;
+  right: 10px;
   padding: 10px;
   line-height: 1;
-  color: #ffffff; /* Hier kun je de kleur aanpassen */
+  color: $secondary-color; /* Hier kun je de kleur aanpassen */
 }
 
 
@@ -59,4 +59,6 @@
   height: auto;
   display: block;
   margin: 0 auto 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 }

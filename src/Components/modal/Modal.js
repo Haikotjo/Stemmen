@@ -20,9 +20,9 @@ const Modal = ({ isShowing, hide, children }) => {
                     <button type="button" className={styles.closeButton} onClick={hide}>
                         &times;
                     </button>
-                    {randomImage && (
-                        <img src={randomImage} alt="Header" className={styles.headerImage} />
-                    )}
+                    {/*{randomImage && (*/}
+                    {/*    <img src={randomImage} alt="Header" className={styles.headerImage} />*/}
+                    {/*)}*/}
                     <div className={styles.modalContent}>
                         {children}
                     </div>
