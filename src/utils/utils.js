@@ -38,6 +38,8 @@ export const selectTopic = (selectedTopic) => {
     }
 };
 
+
+// Radom images
 const headerImages = ['eenSoortToespraak', 'GroteToespraak', 'toespraak', ]; // Namen van je afbeeldingen zonder de extensie
 
 export const getRandomImage = () => {
@@ -45,11 +47,13 @@ export const getRandomImage = () => {
     return `/images/headers/${headerImages[randomIndex]}.png`;
 };
 
-const randomImages = ['eenSoortToespraak', 'GroteToespraak', 'toespraak', ]; // Namen van je afbeeldingen zonder de extensie
+
+// Radom images
+const randomImages = ['allemaal', 'banner kies', 'echtGeenIdee', 'goedOfKwaad', 'keuzes', 'kiezen', 'welkeKantOp' ]; // Namen van je afbeeldingen zonder de extensie
 
 export const getRandomImagePage = () => {
     const randomIndex = Math.floor(Math.random() * randomImages.length);
-    return `/images/headers/${randomImages[randomIndex]}.png`;
+    return `/images/backgrounds/${randomImages[randomIndex]}.png`;
 };
 
 // Function to get the image path based on the party name

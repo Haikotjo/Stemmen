@@ -10,3 +10,28 @@
   margin: 0 auto 1rem;
 }
 
+.headerWrapper {
+  position: relative; // Dit zorgt ervoor dat alle absolute elementen binnen deze div relatief zijn aan deze div.
+  text-align: center; // Als je de tekst in het midden wilt hebben
+}
+.headerText {
+  position: absolute; // Dit positioneert de tekst over de afbeelding.
+  top: 20%; // Centreert de tekst verticaal.
+  left: 50%; // Centreert de tekst horizontaal.
+  transform: translate(-50%, -50%); // Nauwkeurige centrering ongeacht de tekstgrootte.
+  color: white; // Als je een lichte tekstkleur wilt.
+  font-size: 5rem;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 1);
+  //background-color: white;
+  @include extra-small-screen {
+    font-size: 2rem; // kleinere grootte voor kleine schermen
+  }
+
+  @include small-screen {
+    font-size: 3rem; // kleinere grootte voor kleine schermen
+  }
+
+  @include medium-screen {
+    font-size: 4rem; // middelgrote grootte voor middelgrote schermen
+  }
+}
