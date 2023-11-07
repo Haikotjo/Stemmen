@@ -1,6 +1,6 @@
 // Importing required modules
 import React from 'react';
-import styles from './PartyPosition.module.scss'; // Zorg ervoor dat je de juiste pad naar je SCSS-bestand hebt
+import styles from './PartyPosition.module.scss'; // Ensure you have the correct path to your SCSS file
 
 // PartyPosition component definition
 // This component displays the position of a single party on a specific topic
@@ -14,7 +14,10 @@ const PartyPosition = ({ party, position, topic }) => {
             {/* Display the topic and the party's position on that topic as a list */}
             <ul className={styles.positionList}>
                 <li>
-                    <strong>{topic}:</strong> {position}
+                    {/* The topic name is bolded for emphasis */}
+                    <strong>{topic}:</strong>
+                    {/* The party's position on the topic is displayed next to the topic name */}
+                    {position}
                 </li>
             </ul>
         </div>

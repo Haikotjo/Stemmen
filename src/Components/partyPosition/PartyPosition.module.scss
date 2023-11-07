@@ -1,24 +1,37 @@
 @import '../../styles/mixins';
 @import '../../styles/globals';
 
-// PartyPosition.module.scss
+// Container for the position of a party
 .partyPositionContainer {
-  // Stijlen voor de container van de partijpositie
-}
+  background-color: #f8f9fa; // Light background color for better readability
+  border-radius: 8px; // Rounded corners for aesthetic appeal
+  border: 1px solid $secondary-color; // Border line
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+  margin-bottom: 16px; // Space between each party position container
+  padding: 16px; // Internal spacing
+  max-width: 100%; // Ensures the container does not exceed the parent's width
 
-.positionList {
-  list-style-type: none; // Verwijdert de standaard bullets van de lijst
-  padding: 0; // Verwijdert de standaard padding
-  margin: 0; // Verwijdert de standaard margin
+  // Styling for the list of positions
+  .positionList {
+    list-style-type: none; // Removes default list styling
+    padding: 0; // Resets padding to maintain container size
+    margin: 0; // Resets margin to maintain layout consistency
+    display: grid; // Utilizes grid for a structured layout
+    grid-template-columns: 1fr 2fr; // Allocates space for topic and position
+    column-gap: 16px; // Space between the columns for visual separation
 
-  li {
-    display: flex; // Maakt een flex container van elk list item
-    align-items: center; // Centreert de items verticaal
-    justify-content: space-between; // Verdeelt de ruimte tussen de topic en de positie
-    padding: 8px 0; // Voegt wat padding toe voor ruimte rond de items
+    li {
+      display: contents; // Allows children to be laid out as if they are direct children of the grid
 
-    strong {
-      margin-right: 10px; // Voegt wat ruimte toe tussen de topic en de positie
+      strong {
+        font-weight: bold; // Emphasizes the topic
+        color: #333; // Dark color for the topic for contrast
+        grid-column: 1; // Aligns topic to the first column
+      }
+
+      span {
+        grid-column: 2; // Aligns position to the second column
+      }
     }
   }
 }
