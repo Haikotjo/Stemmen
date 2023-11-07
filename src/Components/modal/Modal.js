@@ -23,9 +23,9 @@ const Modal = ({ isShowing, hide, children }) => {
                         onClick={hide}
                         className={`${styles['styled-button']} ${styles.close}`}
                     />
-                    {/*{randomImage && (*/}
-                    {/*    <img src={randomImage} alt="Header" className={styles.headerImage} />*/}
-                    {/*)}*/}
+                    {randomImage && (
+                        <img src={randomImage} alt="Header" className={styles.headerImage} />
+                    )}
                     <div className={styles.modalContent}>
                         {children}
                     </div>

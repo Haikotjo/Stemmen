@@ -6,7 +6,7 @@ import partiesData from '../../data/parties.json';
 import styles from './PartiesPage.module.scss';
 import Modal from "../../Components/modal/Modal";
 import textData from '../../data/textData.json';
-import {getPartyImage} from "../../utils/utils";
+import {getPartyImage, getRandomImagePage} from "../../utils/utils";
 
 
 
@@ -14,6 +14,7 @@ function PartiesPage() {
     const [selectedParty, setSelectedParty] = useState(null);
     const [positions] = usePartyPositions(selectedParty);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const randomHeaderImage =  getRandomImagePage();
 
     const handlePartySelection = (party) => {
         setSelectedParty(party);
@@ -27,7 +28,10 @@ function PartiesPage() {
     return (
         <div>
             {/*<ParallaxBackground backgroundImage="/images/backgrounds/keuzes.png" />*/}
-            <img src="/images/backgrounds/banner%20kies.png" alt="Achtergrondafbeelding" className={styles.backgroundImage} />
+            <div className={styles.headerWrapper}>
+                <img src={randomHeaderImage} alt="Header" className={styles.backgroundImage} />
+                <h1 className={styles.headerText}>DE PARTIJEN</h1>
+            </div>
             <div className={styles.partiesPageContainer}>
                 <div className={styles.pageDescriptionsDetails}>
                     <h2>{textData.nl.pageDescriptionsDetails.partiesPage}</h2>

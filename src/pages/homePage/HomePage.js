@@ -2,8 +2,13 @@ import React from 'react';
 import textData from '../../data/textData.json';
 import styles from './Hompage.module.scss'
 import PageDescriptionBlock from "../../Components/pageDescriptionBlock/PageDescriptionBlock";
+import {getRandomImage, getRandomImagePage} from "../../utils/utils";
 
 const HomePage = () => {
+
+    const randomImage =  getRandomImage();
+    const randomHeaderImage =  getRandomImagePage();
+
     const routesMap = {
         "positionsPage": "/standpunten-pagina",
         "partiesPage": "/partij-pagina",
@@ -11,16 +16,17 @@ const HomePage = () => {
     };
 
     return (
-        <div>
-            <img src="/images/backgrounds/welkeKantOp.png" alt="Achtergrondafbeelding" className={styles.backgroundImage} />
-            {/* Andere inhoud van de pagina hier */}
+        <>
+            <div className={styles.headerWrapper}>
+                <img src={randomHeaderImage} alt="Header" className={styles.backgroundImage} />
+            </div>
 
             <div className={styles.container}>
                 <h1>Welkom bij StemSpectrum</h1>
                 <p>{textData.nl.introText}</p>
                 <h2>Verkiezingsinformatie</h2>
                 <p>{textData.nl.electionInfo}</p>
-                <img src="/images/backgrounds/echtGeenIdee.png" alt="Achtergrondafbeelding" className={styles.backgroundImage} />
+                <img src={randomImage} alt="Header" className={styles.backgroundImage} />
                 <h2>Extra Informatie</h2>
                 <p>{textData.nl.extraStory}</p>
                 <h2>Pagina Beschrijvingen</h2>
@@ -31,7 +37,7 @@ const HomePage = () => {
                 </div>
                 <img src="/images/backgrounds/goedOfKwaad.png" alt="Achtergrondafbeelding" className={styles.backgroundImage} />
             </div>
-        </div>
+        </>
     );
 };
 
