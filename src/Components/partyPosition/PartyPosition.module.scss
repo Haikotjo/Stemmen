@@ -10,6 +10,11 @@
   padding: 16px; // Internal spacing
   max-width: 100%; // Ensures the container does not exceed the parent's width
 
+  .partyName{
+    color: $secondary-color;
+    text-align: center;
+  }
+
   // Styling for the list of positions
   .positionList {
     list-style-type: none; // Removes default list styling
@@ -21,10 +26,12 @@
 
     li {
       display: contents; // Allows children to be laid out as if they are direct children of the grid
+      color: $secondary-color;
+
 
       strong {
         font-weight: bold; // Emphasizes the topic
-        color: #333; // Dark color for the topic for contrast
+        color: $secondary-color; // Dark color for the topic for contrast
         grid-column: 1; // Aligns topic to the first column
       }
 
@@ -34,3 +41,4 @@
     }
   }
 }
+

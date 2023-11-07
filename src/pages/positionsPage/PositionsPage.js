@@ -1,5 +1,5 @@
 // Importing required modules and components
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import positionsData from '../../data/positions.json';
 import TopicList from "../../Components/topicList/TopicList";
 import usePositions from "../../hooks/usePositions";
@@ -14,6 +14,8 @@ function PositionsPage() {
     // State to keep track of the selected topic
     const [selectedTopic, setSelectedTopic] = useState(null);
 
+    const positionsRef = useRef(null);
+
     // Custom hook to get the positions of parties on the selected topic
     const positions = usePositions(selectedTopic);
 
@@ -23,6 +25,10 @@ function PositionsPage() {
     // Handler function to set the selected topic
     const handleTopicSelection = (topic) => {
         setSelectedTopic(topic);
+        // Check if positionsRef.current is not null and then scroll into view
+        if(positionsRef.current) {
+            positionsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     };
 
     // Render the component
@@ -44,9 +50,11 @@ function PositionsPage() {
                 Loop through the positions object and render a PartyPosition component for each party.
                 Pass the party name, position, and selected topic as props.
             */}
-                {Object.keys(positions).map((party) => (
-                    <PartyPosition key={party} party={party} position={positions[party]} topic={selectedTopic} />
-                ))}
+                <div ref={positionsRef}>
+                    {Object.keys(positions).map((party) => (
+                        <PartyPosition key={party} party={party} position={positions[party]} topic={selectedTopic} />
+                    ))}
+                </div>
             </div>
         </>
     );

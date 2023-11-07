@@ -8,17 +8,17 @@ import styles from './TopicList.module.scss';
 const TopicList = ({ topics, selectedTopic, handleTopicSelection }) => {
     // Render the component
     return (
-        <div>
+        <div className={styles.topicListContainer}>
             {/*
                 Loop through the topics array and render a StyledButton for each topic.
                 The button label will show "(selected)" next to the topic name if it's the selected topic.
             */}
             {topics.map((topic) => (
                 <StyledButton
-                    key={topic}  // Unique key for each button, required by React
-                    label={topic === selectedTopic ? `${topic}` : topic}  // Button label
-                    onClick={() => handleTopicSelection(topic)}  // onClick handler
-                    className={topic === selectedTopic ? styles.selected : ''}  // Conditional styling
+                    key={topic}
+                    label={topic === selectedTopic ? `${topic}` : topic}
+                    onClick={() => handleTopicSelection(topic)}
+                    className={`${styles.styledButton} ${topic === selectedTopic ? styles.selected : ''}`} // Hier voegt u extra classes toe indien nodig
                 />
             ))}
         </div>
