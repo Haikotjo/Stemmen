@@ -1,6 +1,41 @@
 @import '../../styles/mixins';
 @import '../../styles/globals';
 
+// Container voor de topiclijst, zorgt dat deze gecentreerd en niet breder dan 1140px is
+.topicListContainer {
+  display: flex;
+  flex-direction: row; // Horizontale uitlijning
+  flex-wrap: wrap; // Zorgt ervoor dat de knoppen naar de volgende regel gaan als er geen ruimte is
+  gap: 10px; // Geeft ruimte tussen de knoppen
+
+  // Zorg ervoor dat de container niet breder is dan 1440px
+  max-width: 1440px;
+  margin: 0 auto; // Centreert de container in de viewport
+
+  // Als de container een beperkte hoogte heeft en u wilt scrollen voor extra knoppen
+  // overflow-y: auto;
+}
+
+// Standaard stijl voor elke button
+.topicListContainer .styledButton {
+  flex: 1; // Knoppen groeien om de beschikbare ruimte op te vullen
+  min-width: min-content; // De minimum breedte is de breedte van de langste tekst in de knoppen
+  cursor: pointer;
+  padding: 10px 20px;
+  text-transform: uppercase; // Maakt alle letters kapitaal
+  font-weight: bold;
+  transition: background-color 0.3s ease; // Animatie voor de achtergrondkleur
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1);
+
+  &:hover {
+    background-color: lighten($third-color, 10%); // Lichtere kleur bij hover
+  }
+}
+
 .selected {
   background-color: $third-color; // of een andere kleur naar keuze
+  color: white; // Tekstkleur voor geselecteerde item
+  &:hover {
+    background-color: darken($third-color, 10%); // Donkere kleur bij hover voor geselecteerde item
+  }
 }

@@ -9,7 +9,7 @@ const PartyPosition = ({ party, position, topic }) => {
     return (
         <div className={styles.partyPositionContainer}>
             {/* Display the name of the party */}
-            <h1>{party}</h1>
+            <h1 className={styles.partyName}>{party}</h1>
             
 
             {/* Display the topic and the party's position on that topic as a list */}
