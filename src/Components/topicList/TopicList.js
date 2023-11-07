@@ -16,7 +16,7 @@ const TopicList = ({ topics, selectedTopic, handleTopicSelection }) => {
             {topics.map((topic) => (
                 <StyledButton
                     key={topic}  // Unique key for each button, required by React
-                    label={topic === selectedTopic ? `${topic} (selected)` : topic}  // Button label
+                    label={topic === selectedTopic ? `${topic}` : topic}  // Button label
                     onClick={() => handleTopicSelection(topic)}  // onClick handler
                     className={topic === selectedTopic ? styles.selected : ''}  // Conditional styling
                 />

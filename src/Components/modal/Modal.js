@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './Modal.module.scss';
 import { getRandomImage } from '../../utils/utils';
+import StyledButton from "../button/StyledButton";
 
 const Modal = ({ isShowing, hide, children }) => {
     const randomImage = isShowing ? getRandomImage() : null;
@@ -17,9 +18,11 @@ const Modal = ({ isShowing, hide, children }) => {
         <div className={styles.modalOverlay} onClick={hide}>
             <div className={styles.modalContainer}>
                 <div className={styles.modal}>
-                    <button type="button" className={styles.closeButton} onClick={hide}>
-                        &times;
-                    </button>
+                    <StyledButton
+                        label="&times;"
+                        onClick={hide}
+                        className={`${styles['styled-button']} ${styles.close}`}
+                    />
                     {/*{randomImage && (*/}
                     {/*    <img src={randomImage} alt="Header" className={styles.headerImage} />*/}
                     {/*)}*/}
