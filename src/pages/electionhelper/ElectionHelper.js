@@ -10,14 +10,17 @@ import {ScoreContext} from "../../context/ScoreContext";
 import useHandleAnswer from "../../hooks/useHandleAnswer";
 import useUndoAnswer from "../../hooks/useUndoAnswer";
 import useToggleParty from "../../hooks/useToggleParty";
+import useHandleTopicSelection from "../../hooks/useHandleTopicSelection";
+import useReset from "../../hooks/useReset";
 
 function ElectionHelper() {
-    const [selectedTopic, setSelectedTopic] = useState(null);
     const [positions, setPositions] = useState({});
     const topics = Object.keys(positionsData);
 
-    const { selectedParties, togglePartySelection, resetSelectedParties } = useToggleParty();
-    const { partyScores, setPartyScores, answeredQuestions, setAnsweredQuestions } = useContext(ScoreContext);
+    const { selectedParties, togglePartySelection } = useToggleParty();
+    const { partyScores, answeredQuestions } = useContext(ScoreContext);
+    const { selectedTopic, handleTopicSelection } = useHandleTopicSelection();
+    const handleReset = useReset();
     const handleAnswer = useHandleAnswer();
     const undoAnswer = useUndoAnswer();
 
@@ -31,25 +34,6 @@ function ElectionHelper() {
             setPositions(newPositions);
         }
     }, [selectedParties, selectedTopic]);
-
-    const handleTopicSelection = (topic) => {
-        setSelectedTopic(topic);
-    };
-
-    const handleReset = () => {
-        if (window.confirm("Weet je zeker dat je alles wilt resetten en opnieuw wilt beginnen?")) {
-            resetSelectedParties(); // Reset selected parties via de hook
-            setSelectedTopic(null);
-            setPositions({});
-            setAnsweredQuestions({});
-            setPartyScores({});
-            // Verwijder items uit de lokale opslag
-            localStorage.removeItem('answeredQuestions');
-            localStorage.removeItem('partyScores');
-        }
-    };
-
-
 
     return (
         <>
@@ -101,14 +85,6 @@ function ElectionHelper() {
                     <ul>
                         {Object.keys(partyScores).map((party) => (
                             <li key={party}>{party}: {partyScores[party]}</li>
-                        ))}
-                    </ul>
-                </div>
-                <div>
-                    <h1>Aantal beantwoorde vragen per partij:</h1>
-                    <ul>
-                        {Object.keys(partyScores).map((party) => (
-                            <li key={party}>{party}: {Object.keys(answeredQuestions).filter((key) => key.startsWith(`${selectedTopic}_${party}`)).length}</li>
                         ))}
                     </ul>
                 </div>
