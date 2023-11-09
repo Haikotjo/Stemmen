@@ -5,7 +5,7 @@ import PartyList from "../../Components/partyList/PartyList";
 import TopicList from "../../Components/topicList/TopicList";
 import StyledButton from "../../Components/button/StyledButton";
 import styles from "./ElectionHelper.module.scss";
-import {getPartyImage, getPositions} from "../../utils/utils";
+import {getPartyImage, getPositions, getRandomImagePage} from "../../utils/utils";
 import { ScoreContext } from "../../context/ScoreContext";
 import useHandleAnswer from "../../hooks/useHandleAnswer";
 import useUndoAnswer from "../../hooks/useUndoAnswer";
@@ -24,6 +24,7 @@ function ElectionHelper() {
     const handleReset = useReset();
     const handleAnswer = useHandleAnswer();
     const undoAnswer = useUndoAnswer();
+    const randomHeaderImage =  getRandomImagePage();
 
     useEffect(() => {
         if (selectedParties.length > 0 && selectedTopic) {
@@ -38,6 +39,10 @@ function ElectionHelper() {
 
     return (
         <>
+            <div className={styles.headerWrapper}>
+                <img src={randomHeaderImage} alt="Header" className={styles.backgroundImage} />
+                <h1 className={styles.headerText}>KIES HULP</h1>
+            </div>
             <div className={styles.electionHelperContainer}>
                 <h1>Kies de partijen die je wilt vergelijken</h1>
                 <PartyList
