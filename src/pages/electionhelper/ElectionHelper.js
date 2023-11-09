@@ -1,12 +1,12 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import partiesData from '../../data/parties.json';
 import positionsData from '../../data/positions.json';
 import PartyList from "../../Components/partyList/PartyList";
 import TopicList from "../../Components/topicList/TopicList";
-import StyledButton from "../../Components/button/StyledButton"; // Importeer StyledButton
+import StyledButton from "../../Components/button/StyledButton";
 import styles from "./ElectionHelper.module.scss";
-import { getPositions } from "../../utils/utils";
-import {ScoreContext} from "../../context/ScoreContext";
+import {getPartyImage, getPositions} from "../../utils/utils";
+import { ScoreContext } from "../../context/ScoreContext";
 import useHandleAnswer from "../../hooks/useHandleAnswer";
 import useUndoAnswer from "../../hooks/useUndoAnswer";
 import useToggleParty from "../../hooks/useToggleParty";
@@ -60,15 +60,12 @@ function ElectionHelper() {
                         {Object.keys(positions).map((party) => (
                             <div key={party}>
                                 <p>{party}: {positions[party]}</p>
-                                {/* Controleer of de vraag al is beantwoord */}
                                 {answeredQuestions[`${selectedTopic}_${party}`] ? (
-                                    // Als de vraag is beantwoord, toon de knop voor "ongedaan maken"
                                     <StyledButton
                                         label="Ongedaan maken"
                                         onClick={() => undoAnswer(party, selectedTopic)}
                                     />
                                 ) : (
-                                    // Als de vraag niet is beantwoord, toon de knoppen voor "eens", "oneens" en "neutraal"
                                     <>
                                         <StyledButton label="Eens" onClick={() => handleAnswer(party, selectedTopic, 'Eens')} />
                                         <StyledButton label="Oneens" onClick={() => handleAnswer(party, selectedTopic, 'Oneens')} />
@@ -79,14 +76,23 @@ function ElectionHelper() {
                         ))}
                     </div>
                 )}
-                {/* Toon de score en beantwoorde vragen per partij */}
                 <div>
                     <h1>Score per partij:</h1>
-                    <ul>
-                        {Object.keys(partyScores).map((party) => (
-                            <li key={party}>{party}: {partyScores[party]}</li>
+                    <div className={styles.selectedPartiesContainer}>
+                        {selectedParties.map((party) => (
+                            <div key={party} className={styles.selectedPartyItem}>
+                                <img
+                                    src={getPartyImage(party)}
+                                    alt={`${party} logo`}
+                                    className={styles.partyLogo}
+                                    onError={(e) => { e.target.onerror = null; e.target.src = `${process.env.PUBLIC_URL}/images/parties/default.png`; }}
+                                />
+                                <span>{party}</span>
+                                {partyScores[party] !== undefined && <span>: {partyScores[party]}</span>}
+                            </div>
                         ))}
-                    </ul>
+                    </div>
+
                 </div>
             </div>
             <StyledButton label="Reset" onClick={handleReset} />
