@@ -12,6 +12,7 @@ import useUndoAnswer from "../../hooks/useUndoAnswer";
 import useToggleParty from "../../hooks/useToggleParty";
 import useHandleTopicSelection from "../../hooks/useHandleTopicSelection";
 import useReset from "../../hooks/useReset";
+import SelectedPartyItem from "../../Components/selectedPartyItem/SelectedPartyItem";
 
 function ElectionHelper() {
     const [positions, setPositions] = useState({});
@@ -44,56 +45,31 @@ function ElectionHelper() {
                     selectedParties={selectedParties}
                     togglePartySelection={togglePartySelection}
                 />
+
                 <h1>Kies een onderwerp</h1>
                 <TopicList
                     topics={topics}
                     selectedTopic={selectedTopic}
                     handleTopicSelection={handleTopicSelection}
                 />
-                {selectedParties.length > 0 && selectedTopic && (
-                    <div>
-                        <h1>Geselecteerde Partijen:</h1>
-                        <p>{selectedParties.join(', ')}</p>
-                        <h1>Geselecteerd Onderwerp:</h1>
-                        <p>{selectedTopic}</p>
-                        <h1>Posities:</h1>
-                        {Object.keys(positions).map((party) => (
-                            <div key={party}>
-                                <p>{party}: {positions[party]}</p>
-                                {answeredQuestions[`${selectedTopic}_${party}`] ? (
-                                    <StyledButton
-                                        label="Ongedaan maken"
-                                        onClick={() => undoAnswer(party, selectedTopic)}
-                                    />
-                                ) : (
-                                    <>
-                                        <StyledButton label="Eens" onClick={() => handleAnswer(party, selectedTopic, 'Eens')} />
-                                        <StyledButton label="Oneens" onClick={() => handleAnswer(party, selectedTopic, 'Oneens')} />
-                                        <StyledButton label="Neutraal" onClick={() => handleAnswer(party, selectedTopic, 'Neutraal')} />
-                                    </>
-                                )}
-                            </div>
-                        ))}
-                    </div>
-                )}
-                <div>
-                    <h1>Score per partij:</h1>
-                    <div className={styles.selectedPartiesContainer}>
-                        {selectedParties.map((party) => (
-                            <div key={party} className={styles.selectedPartyItem}>
-                                <img
-                                    src={getPartyImage(party)}
-                                    alt={`${party} logo`}
-                                    className={styles.partyLogo}
-                                    onError={(e) => { e.target.onerror = null; e.target.src = `${process.env.PUBLIC_URL}/images/parties/default.png`; }}
-                                />
-                                <span>{party}</span>
-                                {partyScores[party] !== undefined && <span>: {partyScores[party]}</span>}
-                            </div>
-                        ))}
-                    </div>
 
+                <div className={styles.selectedPartiesContainer}>
+                    <h1>Geselecteerde Partijen:</h1>
+                    {selectedParties.map((party) => (
+                        <SelectedPartyItem
+                            key={party}
+                            party={party}
+                            partyScores={partyScores}
+                            getPartyImage={getPartyImage}
+                            positions={positions}
+                            handleAnswer={handleAnswer}
+                            undoAnswer={undoAnswer}
+                            answeredQuestions={answeredQuestions}
+                            selectedTopic={selectedTopic}
+                        />
+                    ))}
                 </div>
+
             </div>
             <StyledButton label="Reset" onClick={handleReset} />
         </>

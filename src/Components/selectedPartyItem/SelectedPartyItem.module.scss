@@ -1,0 +1,61 @@
+.selectedPartyItemContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.selectedPartyItem {
+  display: flex; // Gebruik flex in plaats van grid
+  align-items: center; // Centreer items verticaal
+  width: 100%;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.partyLogo {
+  flex: 0 0 auto; // Logo niet laten schalen
+  max-width: 100px; // Max breedte voor het logo
+  margin-right: 16px; // Afstand tussen logo en tekst
+}
+
+.partyInfo {
+  flex: 1; // Laat de partij info groeien en vullen de beschikbare ruimte
+  padding-right: 16px; // Afstand tussen partij info en knoppen
+}
+
+.buttonContainer {
+  flex: 0 0 auto; // Knoppen niet laten schalen
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > button {
+    margin-bottom: 4px; // Ruimte tussen de knoppen, aanpassen naar wens
+  }
+}
+
+@media (max-width: 768px) {
+  .selectedPartyItem {
+    flex-direction: column; // Stapel de items op kleine schermen
+    align-items: flex-start; // Uitlijnen naar de start
+  }
+
+  .partyLogo {
+    max-width: 80px; // Kleinere max breedte voor het logo op kleine schermen
+    margin-right: 0; // Verwijder de marge rechts op mobiel
+    margin-bottom: 8px; // Voeg een marge toe aan de onderkant tussen logo en info
+  }
+
+  .partyInfo {
+    padding-right: 0; // Verwijder padding rechts op mobiel
+  }
+
+  .buttonContainer {
+    width: 100%; // Laat de knoppencontainer de volledige breedte innemen
+    flex-direction: row; // Verander de richting naar rij om knoppen naast elkaar te zetten
+    justify-content: space-evenly; // Verdeel de ruimte gelijkmatig
+    margin-top: 8px; // Voeg wat ruimte toe boven de knoppen
+  }
+}

@@ -41,8 +41,37 @@
 }
 
 .electionHelperContainer {
-  width: 1440px;
-  margin-left: auto; // Voeg deze regel toe om horizontaal te centreren
-  margin-right: auto; // Voeg deze regel toe om horizontaal te centreren
+  max-width: 1440px; // Stel een maximale breedte in zodat het niet uitrekt op grotere schermen
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px; // Voeg padding toe voor kleinere schermen
+
+  @include extra-small-screen {
+    padding: 0 10px; // Minder padding voor extra kleine schermen
+  }
+
+  // Je kunt verdere aanpassingen maken met media queries
+  @media (max-width: 768px) {
+    max-width: 100%; // Laat de container de volledige breedte innemen op kleine schermen
+  }
+}
+
+// En pas je mixins aan als ze dat nog niet zijn:
+@mixin extra-small-screen {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin small-screen {
+  @media (min-width: 601px) and (max-width: 960px) {
+    @content;
+  }
+}
+
+@mixin medium-screen {
+  @media (min-width: 961px) and (max-width: 1280px) {
+    @content;
+  }
 }
 
