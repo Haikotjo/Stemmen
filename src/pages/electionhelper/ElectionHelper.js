@@ -7,6 +7,8 @@ import StyledButton from "../../Components/button/StyledButton"; // Importeer St
 import styles from "./ElectionHelper.module.scss";
 import { getPositions } from "../../utils/utils";
 import {ScoreContext} from "../../context/ScoreContext";
+import useHandleAnswer from "../../hooks/useHandleAnswer";
+import useUndoAnswer from "../../hooks/useUndoAnswer";
 
 function ElectionHelper() {
     const [selectedParties, setSelectedParties] = useState([]);
@@ -15,6 +17,8 @@ function ElectionHelper() {
     const topics = Object.keys(positionsData);
 
     const { partyScores, setPartyScores, answeredQuestions, setAnsweredQuestions } = useContext(ScoreContext);
+    const handleAnswer = useHandleAnswer();
+    const undoAnswer = useUndoAnswer();
 
 
     useEffect(() => {
@@ -38,72 +42,6 @@ function ElectionHelper() {
 
     const handleTopicSelection = (topic) => {
         setSelectedTopic(topic);
-    };
-
-    const handleAnswer = (party, topic, answer) => {
-        // Maak een kopie van de huidige staat answeredQuestions
-        const newAnsweredQuestions = { ...answeredQuestions };
-
-        // Markeer de huidige vraag als beantwoord voor de combinatie van topic en partij
-        newAnsweredQuestions[`${topic}_${party}`] = answer;
-
-        // Maak een kopie van de huidige staat partyScores
-        const newPartyScores = { ...partyScores };
-
-        // Controleer of de partij al een score heeft, zo niet, stel deze in op 0
-        if (!newPartyScores[party]) {
-            newPartyScores[party] = 0;
-        }
-
-        // Bereken de nieuwe score op basis van het antwoord en update de score voor de partij
-        if (answer === 'Eens') {
-            newPartyScores[party] += 1;
-        } else if (answer === 'Oneens') {
-            newPartyScores[party] -= 1;
-        }
-
-        // Werk de staat answeredQuestions en partyScores bij
-        setAnsweredQuestions(newAnsweredQuestions);
-        setPartyScores(newPartyScores);
-
-        // Sla de bijgewerkte answeredQuestions en partyScores op in de lokale opslag
-        localStorage.setItem('answeredQuestions', JSON.stringify(newAnsweredQuestions));
-        localStorage.setItem('partyScores', JSON.stringify(newPartyScores));
-    };
-
-    const handleUndoAnswer = (party, topic) => {
-        // Maak een kopie van de huidige staat answeredQuestions
-        const newAnsweredQuestions = { ...answeredQuestions };
-
-        // Controleer welk antwoord eerder is gegeven voor de combinatie van topic en party
-        const previousAnswer = newAnsweredQuestions[`${topic}_${party}`];
-
-        // Verwijder de markering van de vraag als beantwoord voor de combinatie van topic en party
-        delete newAnsweredQuestions[`${topic}_${party}`];
-
-        // Voeg console.log-verklaringen toe om de waarden te bekijken
-        console.log(`Vorig antwoord voor partij: ${party}, topic: ${topic} was: ${previousAnswer}`);
-
-        // Maak een kopie van de huidige staat partyScores
-        const newPartyScores = { ...partyScores };
-
-        // Bereken de nieuwe score op basis van het verwijderde antwoord en update de score voor de partij
-        if (previousAnswer === 'Eens') {
-            newPartyScores[party] -= 1; // Trek een punt af omdat de eens-reactie wordt teruggedraaid.
-        } else if (previousAnswer === 'Oneens') {
-            newPartyScores[party] += 1; // Voeg een punt toe omdat de oneens-reactie wordt teruggedraaid.
-        }
-
-        // Werk de staat answeredQuestions en partyScores bij
-        setAnsweredQuestions(newAnsweredQuestions);
-        setPartyScores(newPartyScores);
-
-        // Sla de bijgewerkte answeredQuestions en partyScores op in de lokale opslag
-        localStorage.setItem('answeredQuestions', JSON.stringify(newAnsweredQuestions));
-        localStorage.setItem('partyScores', JSON.stringify(newPartyScores));
-
-        // Voeg een console.log toe om te controleren wat er gebeurt wanneer de knop wordt ingedrukt
-        console.log(`Ongedaan maken gedrukt voor partij: ${party}, topic: ${topic}`);
     };
 
     const handleReset = () => {
@@ -155,7 +93,7 @@ function ElectionHelper() {
                                     // Als de vraag is beantwoord, toon de knop voor "ongedaan maken"
                                     <StyledButton
                                         label="Ongedaan maken"
-                                        onClick={() => handleUndoAnswer(party, selectedTopic)}
+                                        onClick={() => undoAnswer(party, selectedTopic)}
                                     />
                                 ) : (
                                     // Als de vraag niet is beantwoord, toon de knoppen voor "eens", "oneens" en "neutraal"
