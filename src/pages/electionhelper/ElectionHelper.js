@@ -9,17 +9,17 @@ import { getPositions } from "../../utils/utils";
 import {ScoreContext} from "../../context/ScoreContext";
 import useHandleAnswer from "../../hooks/useHandleAnswer";
 import useUndoAnswer from "../../hooks/useUndoAnswer";
+import useToggleParty from "../../hooks/useToggleParty";
 
 function ElectionHelper() {
-    const [selectedParties, setSelectedParties] = useState([]);
     const [selectedTopic, setSelectedTopic] = useState(null);
     const [positions, setPositions] = useState({});
     const topics = Object.keys(positionsData);
 
+    const { selectedParties, togglePartySelection, resetSelectedParties } = useToggleParty();
     const { partyScores, setPartyScores, answeredQuestions, setAnsweredQuestions } = useContext(ScoreContext);
     const handleAnswer = useHandleAnswer();
     const undoAnswer = useUndoAnswer();
-
 
     useEffect(() => {
         if (selectedParties.length > 0 && selectedTopic) {
@@ -32,33 +32,21 @@ function ElectionHelper() {
         }
     }, [selectedParties, selectedTopic]);
 
-    const togglePartySelection = (party) => {
-        setSelectedParties((prevSelectedParties) =>
-            prevSelectedParties.includes(party)
-                ? prevSelectedParties.filter((p) => p !== party)
-                : [...prevSelectedParties, party]
-        );
-    };
-
     const handleTopicSelection = (topic) => {
         setSelectedTopic(topic);
     };
 
     const handleReset = () => {
-        // Reset de state naar de initiële waarden
-        setSelectedParties([]);
-        setSelectedTopic(null);
-        setPositions({});
-        setAnsweredQuestions({});
-        setPartyScores({});
-
-        // Verwijder de items uit de lokale opslag
-        localStorage.removeItem('answeredQuestions');
-        localStorage.removeItem('partyScores');
         if (window.confirm("Weet je zeker dat je alles wilt resetten en opnieuw wilt beginnen?")) {
-            // Reset logica hier
+            resetSelectedParties(); // Reset selected parties via de hook
+            setSelectedTopic(null);
+            setPositions({});
+            setAnsweredQuestions({});
+            setPartyScores({});
+            // Verwijder items uit de lokale opslag
+            localStorage.removeItem('answeredQuestions');
+            localStorage.removeItem('partyScores');
         }
-        // Voeg indien nodig extra logica toe om de reset te voltooien
     };
 
 
