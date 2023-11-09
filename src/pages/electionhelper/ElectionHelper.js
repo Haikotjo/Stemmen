@@ -1,25 +1,28 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import partiesData from '../../data/parties.json';
 import positionsData from '../../data/positions.json';
 import PartyList from "../../Components/partyList/PartyList";
 import TopicList from "../../Components/topicList/TopicList";
-import StyledButton from "../../Components/button/StyledButton";
+import StyledButton from "../../Components/button/StyledButton"; // Importeer StyledButton
 import styles from "./ElectionHelper.module.scss";
 import { getPositions } from "../../utils/utils";
-import { ScoreContext } from '../../context/ScoreContext'; // Zorg dat dit pad klopt!
+import {ScoreContext} from "../../context/ScoreContext";
 
 function ElectionHelper() {
     const [selectedParties, setSelectedParties] = useState([]);
     const [selectedTopic, setSelectedTopic] = useState(null);
     const [positions, setPositions] = useState({});
-    const { partyScores, setPartyScores, answeredQuestions, setAnsweredQuestions } = useContext(ScoreContext);
     const topics = Object.keys(positionsData);
+
+    const { partyScores, setPartyScores, answeredQuestions, setAnsweredQuestions } = useContext(ScoreContext);
+
 
     useEffect(() => {
         if (selectedParties.length > 0 && selectedTopic) {
             const newPositions = {};
             selectedParties.forEach((party) => {
-                newPositions[party] = getPositions(selectedTopic, party);
+                const position = getPositions(selectedTopic, party); // Implementeer getPositions-functie om de positie op te halen
+                newPositions[party] = position;
             });
             setPositions(newPositions);
         }
@@ -37,63 +40,87 @@ function ElectionHelper() {
         setSelectedTopic(topic);
     };
 
-
     const handleAnswer = (party, topic, answer) => {
-        // Eerst het vorige antwoord controleren en indien nodig de score aanpassen
-        const previousAnswer = answeredQuestions[`${topic}_${party}`];
-        setPartyScores(prevScores => {
-            const newScores = { ...prevScores };
-            // Als er al een antwoord is, pas de score aan
-            if (previousAnswer) {
-                if (previousAnswer === 'Eens') {
-                    newScores[party] -= 1;
-                } else if (previousAnswer === 'Oneens') {
-                    newScores[party] += 1;
-                }
-            }
-            // Voeg nu de nieuwe score toe
-            if (answer === 'Eens') {
-                newScores[party] = (newScores[party] || 0) + 1;
-            } else if (answer === 'Oneens') {
-                newScores[party] = (newScores[party] || 0) - 1;
-            }
-            return newScores;
-        });
+        // Maak een kopie van de huidige staat answeredQuestions
+        const newAnsweredQuestions = { ...answeredQuestions };
 
-        // Update de answeredQuestions met het nieuwe antwoord
-        setAnsweredQuestions(prevAnswers => ({ ...prevAnswers, [`${topic}_${party}`]: answer }));
+        // Markeer de huidige vraag als beantwoord voor de combinatie van topic en partij
+        newAnsweredQuestions[`${topic}_${party}`] = answer;
+
+        // Maak een kopie van de huidige staat partyScores
+        const newPartyScores = { ...partyScores };
+
+        // Controleer of de partij al een score heeft, zo niet, stel deze in op 0
+        if (!newPartyScores[party]) {
+            newPartyScores[party] = 0;
+        }
+
+        // Bereken de nieuwe score op basis van het antwoord en update de score voor de partij
+        if (answer === 'Eens') {
+            newPartyScores[party] += 1;
+        } else if (answer === 'Oneens') {
+            newPartyScores[party] -= 1;
+        }
+
+        // Werk de staat answeredQuestions en partyScores bij
+        setAnsweredQuestions(newAnsweredQuestions);
+        setPartyScores(newPartyScores);
+
+        // Sla de bijgewerkte answeredQuestions en partyScores op in de lokale opslag
+        localStorage.setItem('answeredQuestions', JSON.stringify(newAnsweredQuestions));
+        localStorage.setItem('partyScores', JSON.stringify(newPartyScores));
     };
 
     const handleUndoAnswer = (party, topic) => {
-        // Verwijder het antwoord en pas de score dienovereenkomstig aan
-        const previousAnswer = answeredQuestions[`${topic}_${party}`];
-        setPartyScores(prevScores => {
-            const newScores = { ...prevScores };
-            if (previousAnswer === 'Eens') {
-                newScores[party] -= 1;
-            } else if (previousAnswer === 'Oneens') {
-                newScores[party] += 1;
-            }
-            return newScores;
-        });
+        // Maak een kopie van de huidige staat answeredQuestions
+        const newAnsweredQuestions = { ...answeredQuestions };
 
-        // Verwijder het antwoord uit answeredQuestions
-        setAnsweredQuestions(prevAnswers => {
-            const newAnswers = { ...prevAnswers };
-            delete newAnswers[`${topic}_${party}`];
-            return newAnswers;
-        });
+        // Controleer welk antwoord eerder is gegeven voor de combinatie van topic en party
+        const previousAnswer = newAnsweredQuestions[`${topic}_${party}`];
+
+        // Verwijder de markering van de vraag als beantwoord voor de combinatie van topic en party
+        delete newAnsweredQuestions[`${topic}_${party}`];
+
+        // Voeg console.log-verklaringen toe om de waarden te bekijken
+        console.log(`Vorig antwoord voor partij: ${party}, topic: ${topic} was: ${previousAnswer}`);
+
+        // Maak een kopie van de huidige staat partyScores
+        const newPartyScores = { ...partyScores };
+
+        // Bereken de nieuwe score op basis van het verwijderde antwoord en update de score voor de partij
+        if (previousAnswer === 'Eens') {
+            newPartyScores[party] -= 1; // Trek een punt af omdat de eens-reactie wordt teruggedraaid.
+        } else if (previousAnswer === 'Oneens') {
+            newPartyScores[party] += 1; // Voeg een punt toe omdat de oneens-reactie wordt teruggedraaid.
+        }
+
+        // Werk de staat answeredQuestions en partyScores bij
+        setAnsweredQuestions(newAnsweredQuestions);
+        setPartyScores(newPartyScores);
+
+        // Sla de bijgewerkte answeredQuestions en partyScores op in de lokale opslag
+        localStorage.setItem('answeredQuestions', JSON.stringify(newAnsweredQuestions));
+        localStorage.setItem('partyScores', JSON.stringify(newPartyScores));
+
+        // Voeg een console.log toe om te controleren wat er gebeurt wanneer de knop wordt ingedrukt
+        console.log(`Ongedaan maken gedrukt voor partij: ${party}, topic: ${topic}`);
     };
 
-
     const handleReset = () => {
+        // Reset de state naar de initiële waarden
+        setSelectedParties([]);
+        setSelectedTopic(null);
+        setPositions({});
+        setAnsweredQuestions({});
+        setPartyScores({});
+
+        // Verwijder de items uit de lokale opslag
+        localStorage.removeItem('answeredQuestions');
+        localStorage.removeItem('partyScores');
         if (window.confirm("Weet je zeker dat je alles wilt resetten en opnieuw wilt beginnen?")) {
-            setSelectedParties([]);
-            setSelectedTopic(null);
-            setPositions({});
-            setAnsweredQuestions({});
-            setPartyScores({});
+            // Reset logica hier
         }
+        // Voeg indien nodig extra logica toe om de reset te voltooien
     };
 
 
