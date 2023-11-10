@@ -1,158 +1,255 @@
 {
   "Economie": {
-    "VVD": "De VVD pleit voor een vrije markteconomie met minimale staatsinterventie.",
-    "NSC": "De NSC wil een duurzamere economie met nadruk op lokale productie.",
+    "VVD": "VVD streeft naar duurzame welvaart. De partij richt zich op het stimuleren van slimme en schone groei door beter betaalde banen, ondernemerschap, en innovatie. Klimaatneutraliteit in 2050 is een belangrijk doel, met de nadruk op het verminderen van CO₂-uitstoot en het aanmoedigen van duurzame keuzes bij burgers en bedrijven. Innovatie in het bedrijfsleven en technologie wordt gezien als essentieel voor toekomstige verdienmogelijkheden, waarbij samenwerking tussen diverse sectoren centraal staat. De VVD erkent de noodzaak van het beheren van schaarste en pleit voor een rechtvaardige industriepolitiek en realistische uitstootnormen. Regionale ontwikkeling wordt benadrukt, waarbij de unieke kracht van elke regio wordt erkend en benut. Tot slot worden gezonde overheidsfinanciën als cruciaal beschouwd voor het realiseren van deze doelstellingen, met een focus op stabiliteit en het opvangen van economische schokken.",
+    "NSC": "Eerlijk werk in een sterke economie. Het NSC-verkiezingsprogramma legt een sterke nadruk op het creëren van een eerlijke en inclusieve arbeidsmarkt. De focus ligt op het verminderen van de kloof tussen vaste en flexibele arbeid, het stimuleren van ondernemerschap en het waarborgen van bestaanszekerheid via werk. Er wordt een hernieuwde nadruk gelegd op het Rijnlands model, waarin de markt de mens dient, niet andersom, en waarbij internationale samenwerking essentieel is\u200B\u200B.\n\nDe NSC beoogt een toekomstbestendige arbeidsmarkt, waarbij iedereen bijdraagt naar vermogen en waarbij de sociale en fiscale behandeling van alle werkenden gelijkgetrokken wordt. De nadruk ligt op het op peil houden van kennis en vakmanschap, het faciliteren van overgangen naar nieuw werk, en het ondersteunen van kwetsbare groepen op de arbeidsmarkt\u200B\u200B.\n\nHet midden- en kleinbedrijf wordt gezien als de hoeksteen van de economie, waarbij het beleid gericht is op het verminderen van administratieve lasten en het aanpakken van ongelijke concurrentie door private equity. Daarnaast wordt het belang van een gezond vestigingsklimaat, innovatie, en strategische autonomie voor Nederland benadrukt. Het beleid richt zich op het creëren van een circulaire economie, het stimuleren van duurzame bedrijfspraktijken en het beschermen van Nederlandse bedrijven tegen vijandige overnames\u200B\u200B.",
+
+
     "Groenlinks PVDA": "Streeft naar een duurzame economie en sociale gelijkheid.",
+
     "PVV": "De PVV is voor belastingverlaging en economische groei door deregulering.",
+
     "CDA": "Het CDA wil een balans tussen markt en overheid met sociale voorzieningen.",
+
     "Volt": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "SP": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "FvD": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "Ja21": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "CU": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "BBB": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking."
   },
   "Gezondheidszorg": {
-    "VVD": "De VVD wil meer marktwerking in de gezondheidszorg.",
-    "NSC": "NSC streeft naar universele gezondheidszorg gefinancierd door de staat.",
+    "VVD": "VVD benadrukt weerbare gezondheidszorg. weerspiegelt. De partij streeft ernaar Nederland zelfredzaam te maken in het bieden van eerste hulp tijdens crisissituaties, zonder overmatige afhankelijkheid van andere landen. Dit omvat het verder ontwikkelen van de Nationale Zorgreserve, het waarborgen van een sterke publieke gezondheidszorg, en het aanleggen van een ijzeren voorraad medische hulp- en geneesmiddelen, inclusief vaccins. Daarnaast moeten Nederlandse bedrijven kunnen bijspringen met productiecapaciteit indien nodig, als les uit de coronacrisis\u200B\u200B.\n\nDe VVD wil ook een medisch-ethisch gesprek opstarten over belangrijke maatschappelijke keuzes in de gezondheidszorg. Dit gesprek, dat zich richt op kwesties zoals de bekostiging van dure behandelingen, zou met alle betrokken partijen gevoerd moeten worden, inclusief patiënten, zorgmedewerkers, de farmaceutische industrie en verzekeraars.",
+
+    "NSC": "Toegankelijke gezondheidszorg voor iedereen.\"\nHet NSC benadrukt het belang van een toegankelijke, betaalbare gezondheidszorg voor iedereen. De kern van het programma is het creëren van een zorgstelsel waarin de relatie tussen zorgprofessional en patiënt centraal staat, met minder bureaucratie en betere arbeidsvoorwaarden voor zorgpersoneel. Er is speciale aandacht voor preventie, niet alleen in de gezondheidszorg, maar ook via een gezonde leefomgeving en leefstijl, met extra focus op regio's met lage sociaaleconomische status\u200B\u200B.\n\nHet programma streeft naar het verminderen van marktwerking in de zorg en het behoud van autonomie voor patiënten. Solidariteit in de zorgfinanciering wordt benadrukt, met het streven naar gelijke toegang voor alle lagen van de bevolking. Ook wordt het belang van mantelzorg en de combinatie met betaald werk erkend, en wordt gepleit voor een flexibelere arbeidsrelatie om mantelzorg te ondersteunen\u200B\u200B.",
+
     "Groenlinks PVDA": "Focus op gezondheidszorg via preventie en toegankelijkheid.",
+
     "PVV": "PVV wil terug naar een nationaal zorgstelsel zonder eigen risico.",
+
     "CDA": "CDA wil zorg toegankelijk en betaalbaar houden door publiek-private samenwerking.",
+
     "Volt": "Volt wil gezondheidszorg moderniseren door technologische innovaties.",
+
     "SP": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "FvD": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "Ja21": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "CU": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "BBB": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking."
   },
   "Milieu en klimaat": {
-    "VVD": "VVD ziet economische kansen in de energietransitie maar met marktgedreven aanpak.",
-    "NSC": "NSC wil drastische maatregelen nemen om klimaatverandering tegen te gaan.",
+    "VVD": "VVD richt zich op groen, duurzaam beleid. De partij streeft naar innovatie, efficiëntie en duurzaamheid in de Nederlandse agrofoodsector, met de nadruk op het gebruik van groene gewasbeschermingsmiddelen en kunstmestvervangers om de milieu-impact te verkleinen\u200B\u200B.\n\nEr is erkenning van de druk die momenteel op de Nederlandse leefomgeving ligt door overmatige uitstoot van stikstof en broeikasgassen, wat klimaat en natuur onder druk zet\u200B\u200B. De VVD streeft ernaar economische activiteiten in balans te brengen met de natuur, zonder natuurgebieden af te sluiten, maar door kansen te creëren waar natuur en economie elkaar kunnen versterken. Dit omvat het moderniseren van natuurwetgeving en het aanpassen aan de dynamiek van de natuur\u200B\u200B.\n\nOp korte termijn ligt de focus op stikstofreductie, gebiedsgericht herstel van de natuur en het normaliseren van verhoudingen binnen het land, in overeenstemming met de doelstellingen van de huidige Stikstofwet voor 2035\u200B\u200B. Tot slot benadrukt de VVD dat een schone toekomst niet ten koste hoeft te gaan van economische groei. De partij ziet een rol voor Nederland om aan te tonen dat welvaart en respect voor natuur en klimaat hand in hand kunnen gaan\u200B\u200B.",
+
+    "NSC": "Duurzame toekomst voor milieu en klimaat. \"\nHet NSC streeft naar een evenwichtige aanpak voor milieu- en klimaatkwesties. De focus ligt op de bewoonbaarheid en leefbaarheid van het land, met verantwoordelijkheid voor het terugdringen van CO2-uitstoot en andere schadelijke emissies. Dit omvat het maken van ruimtelijke keuzes, waarbij niet alles overal kan gebeuren\u200B\u200B.\n\nHet programma benadrukt een integrale benadering in regionale gebiedsprocessen, waarbij agrarisch natuurbeheer, ecosysteemdiensten, stikstof, water, natuur, en klimaat samenkomen. Er wordt ook rekening gehouden met de leefbaarheid en het perspectief voor de landbouw, en specifieke problemen in grensgebieden\u200B\u200B.\n\nVerder wordt aandacht besteed aan mondiale klimaatuitdagingen binnen het kader van ontwikkelingssamenwerking, met inzet voor het verminderen van armoede, ongelijkheid en instabiliteit\u200B\u200B. Ook wordt het belang van wetenschappelijk onderzoek in relevante beleidsdomeinen, zoals klimaat- en medische technologie, onderstreept\u200B\u200B. Daarnaast erkent het programma de noodzaak van flexibiliteit in Europese en nationale regelgeving om natuurbehoud en maatschappelijke opgaven in evenwicht te brengen\u200B\u200B.",
+
     "Groenlinks PVDA": "Actief beleid voor klimaatbescherming en duurzaamheid.",
+
     "PVV": "PVV is sceptisch over klimaatverandering en tegen groene belastingen.",
+
     "CDA": "CDA wil duurzaamheid stimuleren maar met oog voor agrarische sector.",
+
     "Volt": "Volt wil een Europees klimaatbeleid met strenge emissienormen.",
+
     "SP": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "FvD": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "Ja21": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "CU": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "BBB": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking."
   },
   "Onderwijs": {
-    "VVD": "De VVD wil meer investeren in technisch onderwijs en hogere eisen voor leraren.",
-    "NSC": "NSC streeft naar kleinschalig onderwijs met veel persoonlijke aandacht.",
+    "VVD": "VVD focust op veelzijdig, inclusief onderwijs. De partij promoot maatwerkdiploma’s en speciale aandacht voor leerlingen met extra behoeften, inclusief hoogbegaafden. Ze beoogt onderwijs toegankelijk te maken voor alle leerlingen, met onder andere digitale scholen voor wie niet naar fysieke scholen kan. De VVD streeft naar inclusiviteit en gelijke kansen in het onderwijs door wetswijzigingen en acceptatieplicht.\n\nEr is aandacht voor de modernisering van het hoger onderwijs en de bescherming van wetenschappelijke kennis. De partij benadrukt het belang van gekwalificeerde en goed ondersteunde leraren. Basisvaardigheden zoals taal en rekenen krijgen prioriteit, en er wordt geïnvesteerd in kleine dorpsscholen en het bestrijden van laaggeletterdheid.\n\nDe VVD ziet zowel praktisch als theoretisch onderwijs als essentieel en streeft naar flexibeler onderwijs, met initiatieven zoals flexstuderen en microcredentials, om leren en werken te integreren.",
+
+    "NSC": "Kwaliteit en aandacht in het onderwijs. Het NSC benadrukt het belang van kwalitatief hoogstaand onderwijs, waarbij de aandacht voor de leerling centraal staat. Dit vereist adequate bekostiging en het verminderen van administratieve lasten voor leraren. De focus ligt op het leveren van kwaliteit in plaats van kwantiteit, met voldoende ruimte voor leraren om professioneel en gepassioneerd te werken\u200B\u200B.\n\nEr wordt aandacht besteed aan het terugdringen van het lerarentekort, waarbij naast goede beloning ook de omstandigheden op school belangrijk zijn. Ondersteuning en zorg op scholen worden benadrukt, evenals de behoefte aan sterke onderwijsgemeenschappen\u200B\u200B.\n\nHet programma ondersteunt een maatwerkleerpad voor vakmensen in het (v)mbo, met aandacht voor de reistijd van studenten en stimulering van regionale spreiding van (v)mbo-onderwijs\u200B\u200B. Voorts wordt de focus gelegd op het faciliteren van een goede zorgstructuur op scholen, het blijven investeren in vakmanschap en kennis, en het inspelen op schooluitval en lerarentekort\u200B\u200B.\n\nTot slot wordt in het hoger onderwijs de nadruk gelegd op toegankelijkheid, met blijdschap over de herinvoering van de basisbeurs en speciale aandacht voor de 'pechgeneratie' die een studieschuld heeft opgebouwd onder het leenstelsel\u200B\u200B.",
+
     "Groenlinks PVDA": "Progressieve belastinghervorming ter bevordering van economische gelijkheid.",
+
     "PVV": "PVV wil minder administratieve lasten voor docenten en strengere toelatingseisen.",
+
     "CDA": "CDA wil brede vorming van het individu met nadruk op normen en waarden.",
+
     "Volt": "Volt wil moderner onderwijs met nadruk op digitale vaardigheden.",
+
     "SP": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "FvD": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "Ja21": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "CU": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "BBB": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking."
   },
   "Belastingen": {
-    "VVD": "De VVD pleit voor een eenvoudiger belastingstelsel en verlaging van de inkomstenbelasting.",
-    "NSC": "NSC wil een progressief belastingstelsel met hogere belastingen voor grote bedrijven.",
+    "VVD": "VVD streeft naar stabiele, gematigde belastingen. De partij is gericht op het minimaliseren van de impact van hogere kosten of belastingen op de gewone automobilist, vooral in de context van de overgang naar elektrisch vervoer. Het doel is om het financieel aantrekkelijk te maken om elektrisch te rijden, zonder aanzienlijke belastingverhogingen\u200B\u200B.\n\nDe VVD wil de hypotheekrenteaftrek handhaven om betaalbare woonlasten voor middengroepen te garanderen en pleit voor het beperken van de stijging van lokale belastingen zoals de Onroerendezaakbelasting (OZB)\u200B\u200B.\n\nEr wordt benadrukt dat verantwoord financieel beleid nodig is om oplopende tekorten bij de overheid aan te pakken, zonder de samenleving op te zadelen met hoge belastingen. De partij kiest voor bezuinigingen of het stimuleren van hogere economische groei boven het verhogen van belastingen om middengroepen te beschermen\u200B\u200B.\n\nTot slot, de VVD gelooft dat Nederland een voorbeeldrol kan spelen door te laten zien dat welvaart en respect voor het milieu en klimaat hand in hand kunnen gaan, zonder dat dit leidt tot significante belastingverhogingen of economische krimp\u200B\u200B.",
+
+    "NSC": "Herziening van belastingen voor eerlijkheid. Het NSC-verkiezingsprogramma 2023 focust op het beheersen van de totale lastendruk, met een nadruk op het draagkrachtprincipe waarbij de sterkste schouders de zwaarste lasten dragen. Erkend wordt dat het huidige stelsel van belastingen, premies, kortingen en toeslagen leidt tot situaties waarin werken voor veel mensen niet lonend is. Er wordt gepleit voor een hervorming en vereenvoudiging van dit complexe systeem om de marginale druk op lagere en middeninkomens te verminderen en werk lonender te maken. Een speciale parlementaire commissie zal deze noodzakelijke belastinghervorming voorbereiden\u200B\u200B.\n\nDaarnaast wordt voorgesteld om de belastingdruk te verschuiven naar bepaalde vormen van consumptie en het 'de vervuiler betaalt'-principe verder toe te passen. Er zijn plannen voor het zwaarder belasten van ongezonde suikerhoudende dranken, het invoeren van een nationale accijns op e-sigaretten, en het verhogen van de btw op logies (met uitzondering van campings). Verder wordt er een vliegbelasting voorgesteld voor kleine vliegtuigen zoals privéjets, en wordt ingezet op internationale afspraken over belastingen in de luchtvaartsector\u200B\u200B.",
+
     "Groenlinks PVDA": "Investering in groene en efficiënte infrastructuur.",
+
     "PVV": "PVV wil belastingverlaging voor de middenklasse en strenge belasting op immigratie.",
+
     "CDA": "CDA wil een evenwichtig belastingstelsel dat zowel ondernemers als werknemers ondersteunt.",
+
     "Volt": "Volt pleit voor een Europees belastingbeleid om belastingontwijking aan te pakken.",
+
     "SP": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "FvD": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "Ja21": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "CU": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "BBB": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking."
   },
   "Defensie en veiligheid": {
-    "VVD": "De VVD wil investeren in defensie en pleit voor sterke internationale samenwerking.",
-    "NSC": "NSC pleit voor een defensie gericht op vredesmissies en humanitaire interventies.",
+    "VVD": "VVD versterkt defensie en veiligheid. De partij legt de focus op voorbereiding op crisissituaties door moderne diensttijd, investeringen in de marechaussee voor beveiliging en grenscontroles, en weerstand bieden aan landen die de liberale wereldorde ondermijnen. Nederland streeft naar minder afhankelijkheid van onbetrouwbare regimes door samenwerking met alternatieve leveranciers en investeringen in eigen defensie en industrie. De VVD zet in op een sterke Europese NAVO-pijler, maar is tegen een Europees leger. De partij belooft 2% van het bbp in defensie te investeren en de inzetbaarheid voor grootschalige oorlogen te verhogen. Digitale veiligheid krijgt speciale aandacht, met maatregelen tegen cyberdreigingen en een focus op het verbeteren en moderniseren van arbeidsvoorwaarden binnen Defensie, inclusief betere ondersteuning voor veteranen\u200B\u200B.",
+
+    "NSC": "Versterking van Defensie voor Veiligheid. Het NSC benadrukt het belang van een sterk defensiebeleid, vooral gezien de huidige conflicten in Europa. Het programma erkent dat vrede en veiligheid niet vanzelfsprekend zijn en wijst op de noodzaak om de verwaarloosde krijgsmacht te versterken. Er wordt voorgesteld om minimaal 2% van het bbp aan defensie te besteden, met investeringen in slagkracht, gereedheid, uitrusting en oefeningen. Deze norm wordt wettelijk vastgelegd, en er is aandacht voor het ontwikkelen van een technologisch geavanceerde, informatiegestuurde krijgsmacht\u200B\u200B.\n\nDe nadruk ligt ook op het aanpakken van personeelstekorten door in te zetten op kleinere bemanningen, aangevuld met onbemande systemen. Er wordt aandacht besteed aan de kwetsbaarheid van de staat voor digitale dreigingen en de noodzaak om digitale weerbaarheid te versterken\u200B\u200B.\n\nVerder wordt voorgesteld om militairen betere arbeidsvoorwaarden en salarissen te bieden, rekening houdend met het risicovolle karakter van hun beroep. Ook wordt een dienstjaar voor jongeren voorgesteld, niet alleen voor defensie, maar ook voor sectoren als zorg, politie en onderwijs\u200B\u200B.",
+
     "Groenlinks PVDA": "Veiligheid door diplomatie en multilaterale samenwerking.",
+
     "PVV": "PVV wil een sterker leger en minder afhankelijkheid van internationale organisaties.",
+
     "CDA": "CDA wil een integrale veiligheidsbenadering met een sterke rol voor lokale gemeenschappen.",
+
     "Volt": "Volt ziet Europese defensiesamenwerking als het pad naar een veiliger continent.",
+
     "SP": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "FvD": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "Ja21": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "CU": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "BBB": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking."
   },
   "Immigratie en integratie": {
-    "VVD": "De VVD wil strengere immigratieregels en meer nadruk op integratie.",
-    "NSC": "NSC pleit voor een humaan maar selectief immigratiebeleid.",
+    "VVD": "VVD streeft naar beheerste immigratie. De partij benadrukt de noodzaak van grip op arbeidsmigratie, waarbij de voorkeur uitgaat naar immigranten die Nederland nodig heeft. Integratie wordt gezien als cruciaal: immigranten moeten echt integreren in de Nederlandse samenleving. De VVD erkent de uitdagingen op het gebied van integratie, zoals achterstanden op scholen en culturele botsingen. Er is een streven om het migratiestelsel te verbeteren en ongeremde immigratie te voorkomen. Voor specifieke groepen zoals kwetsbare vluchtelingen blijft er ruimte voor hervestiging, met een focus op degenen met een hoge kans op integratie en participatie in de Nederlandse samenleving\u200B\u200B.",
+
+    "NSC": "Diversiteit en Eenheid in Immigratiebeleid. Het NSC schetst in haar verkiezingsprogramma een visie op immigratie en integratie die de Nederlandse pluriformiteit en inclusiviteit erkent. Jongeren die achttien worden, worden actief geïnformeerd over de rechten en plichten van burgerschap, wat bijdraagt aan hun integratie en participatie in de samenleving. Dit wordt ondersteund door een onafhankelijke commissie die speciale aandacht geeft aan de Grondwet en de kernwaarden van Nederland\u200B\u200B.\n\nDe partij benadrukt het belang van het kennen en waarderen van de eigen geschiedenis en cultuur, evenals tolerantie en respectvolle omgang met medeburgers. Nederland wordt gezien als een land van diversiteit, waar verschillen in regionale identiteit, tradities en streektalen worden gewaardeerd. De geschiedenis van Nederland als een toevluchtsoord voor mensen die vervolging ontvluchten of op zoek zijn naar bestaanszekerheid, wordt erkend en gewaardeerd\u200B\u200B.\n\nDe NSC benadrukt de noodzaak om het welzijn van kinderen centraal te stellen in het beleid, met effectief toezicht dat voldoet aan duidelijke kwaliteitseisen en de stem van het kind respecteert. Dit beleid is gericht op het bevorderen van integratie en het creëren van een samenleving waar iedereen, ongeacht achtergrond, zich thuis kan voelen\u200B\u200B.",
+
     "Groenlinks PVDA": "Bevordering van inclusieve immigratie en integratie.",
+
     "PVV": "PVV wil een strenger immigratiebeleid en assimilatie boven integratie.",
+
     "CDA": "CDA wil evenwichtige immigratie met focus op gezinshereniging en werkgelegenheid.",
+
     "Volt": "Volt wil een gezamenlijk Europees immigratiebeleid met hervormde asielprocedures.",
+
     "SP": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "FvD": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "Ja21": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "CU": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "BBB": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking."
   },
   "Innovatie en technologie": {
-    "VVD": "De VVD ziet technologische innovatie als drijfveer voor economische groei.",
-    "NSC": "NSC wil technologie inzetten voor sociale en ecologische doelen.",
+    "VVD": "VVD bevordert innovatie en technologie. De partij benadrukt de kracht van samenwerking tussen bedrijven, MKB, start-ups, kennisinstellingen en de overheid, en het creëren van innovatieve producten die bijdragen aan het verminderen van CO₂- en stikstofuitstoot.\n\nEr is een dringende behoefte om de kansen van technologische innovatie te omarmen, vooral in sectoren als gezondheidszorg, mobiliteit en veiligheid. Dit vergt intensievere samenwerking tussen de overheid, onderwijsinstellingen en bedrijven\u200B\u200B.\n\nDe VVD wil het topsectorenbeleid hervormen, gericht op cruciale technieken voor toekomstig verdienvermogen en het verminderen van strategische afhankelijkheden. Er is ook aandacht voor het versterken van regionale innovatie en het oplossen van problemen zoals tekorten aan technisch personeel\u200B\u200B.\n\nTenslotte streeft de partij ernaar om strategische afhankelijkheden van Europa te verminderen op het gebied van energie, technologie en grondstoffen, en werkt aan het versterken van de digitale infrastructuur van Nederland\u200B\u200B.",
+
+    "NSC": "Innovatie en Technologie: Sleutel tot Vooruitgang. In haar verkiezingsprogramma 2023 legt de NSC een sterke nadruk op innovatie en technologie als drijvende krachten voor economische groei en duurzame ontwikkeling. Er wordt veel waarde gehecht aan het creëren van voorwaarden voor innovatie, met bijzondere aandacht voor regionale broedplaatsen die startende en gevestigde ondernemers samenbrengen met onderwijs- en kennisinstellingen. Deze samenwerkingsverbanden zijn gericht op het stimuleren van technologische doorbraken en duurzaamheid\u200B\u200B.\n\nHet programma onderstreept ook het belang van innovatie in de gezondheidszorg, waarbij de focus ligt op het verbeteren van de kwaliteit en het verlagen van de kosten. Er is een pleidooi voor een snellere structurele financiering voor innovaties in deze sector, met de nadruk op goede ICT en technologieën die betrokkenheid van eindgebruikers garanderen\u200B\u200B.\n\nTegelijkertijd erkent de NSC de negatieve gevolgen van digitale technologie, met name op de geestelijke gezondheid en ontwikkeling van mensen. De partij streeft naar het versterken van digitale geletterdheid en het vaststellen van spelregels voor gezond digitaal gebruik\u200B\u200B.\n\nVerder wordt er gekeken naar innovatie in de landbouwsector, waarbij wordt ingezet op een nieuw toekomstperspectief dat gericht is op duurzaamheid en voldoende zekerheid biedt voor boeren en tuinders\u200B\u200B.",
+
     "Groenlinks PVDA": "Streven naar een rechtvaardig en toegankelijk rechtssysteem.",
+
     "PVV": "PVV is terughoudend over het inzetten van technologie in publieke diensten.",
+
     "CDA": "CDA wil innovatie stimuleren maar met ethische overwegingen.",
+
     "Volt": "Volt wil technologische innovatie versnellen door Europese samenwerking.",
+
     "SP": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "FvD": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "Ja21": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "CU": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
-    "BBB": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking."
-  },
-  "Onderwijs": {
-    "VVD": "VVD pleit voor meer autonomie voor scholen en hogere salarissen voor docenten.",
-    "NSC": "NSC wil investeren in gelijke onderwijskansen en aandacht voor persoonlijke ontwikkeling.",
-    "Groenlinks PVDA": "Bevordering van inclusieve immigratie en integratie.",
-    "PVV": "PVV wil meer nadruk op klassieke vakken en minder politieke correctheid in het onderwijs.",
-    "CDA": "CDA wil een brede vorming in het onderwijs en meer investeringen in het technisch onderwijs.",
-    "Volt": "Volt wil een Europese onderwijsagenda met nadruk op digitale vaardigheden.",
-    "SP": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
-    "FvD": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
-    "Ja21": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
-    "CU": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "BBB": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking."
   },
   "Werkgelegenheid": {
-    "VVD": "VVD wil flexibele arbeidsmarktwetgeving en minder regels voor ondernemers.",
-    "NSC": "NSC wil een werkgelegenheidsprogramma gericht op groene banen.",
+    "VVD": "VVD focust op regionale werkgelegenheid. De partij streeft ernaar om de werkgelegenheid te versterken door te investeren in regionale kansen en bijbehorende voorzieningen. Familiebedrijven en het midden- en kleinbedrijf (mkb) worden als cruciaal beschouwd, met behoud en verbetering van opvolgingsregelingen voor familiebedrijven. Er wordt nadruk gelegd op het belang van een krachtig en leefbaar platteland, rekening houdend met de sociaaleconomische effecten van landbouwbeleid. De partij pleit ook voor een betere spreiding van overheidsdiensten over het hele land, zodat werken voor de Rijksoverheid niet beperkt blijft tot steden als Den Haag, maar ook mogelijk is in plaatsen als Goes of Doetinchem.",
+
+    "NSC": "Werkgelegenheid: Balans en Zekerheid. Het NSC neemt in haar beleidsplan een uitgebalanceerde aanpak aan ten aanzien van werkgelegenheid, rekening houdend met Nederland's positie in de Europese top drie van landen met het hoogste minimumloon. Het programma behoudt het minimumjeugdloon maar streeft ernaar dit dichter bij het volwassen minimumloon te brengen. Deze benadering erkent het belang van werkgelegenheid, terwijl ook aandacht wordt besteed aan mensen die niet meer kunnen deelnemen aan het arbeidsproces. De AOW en andere uitkeringen blijven gekoppeld aan het minimumloon, waarbij speciale aandacht uitgaat naar mensen met een arbeidsongeschiktheidsuitkering, die vaak geen aanspraak kunnen maken op arbeidskorting en daardoor jaarlijks op afstand worden gezet\u200B\u200B.",
+
     "Groenlinks PVDA": "Streven naar een rechtvaardig en toegankelijk rechtssysteem.",
+
     "PVV": "PVV wil meer banen voor Nederlanders door restricties op arbeidsmigratie.",
+
     "CDA": "CDA wil een arbeidsmarkt die zowel flexibiliteit als zekerheid biedt.",
+
     "Volt": "Volt pleit voor een Europese aanpak van werkgelegenheid met focus op reskilling.",
+
     "SP": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "FvD": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "Ja21": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "CU": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "BBB": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking."
   },
   "Huisvesting": {
-    "VVD": "VVD wil meer nieuwbouw en minder regulering in de woningmarkt.",
-    "NSC": "NSC wil investeren in sociale woningbouw en duurzame huizen.",
-    "Groenlinks PVDA": "Duurzaam en verantwoord buitenlands beleid.",
+    "VVD": "VVD vernieuwt huisvestingsbeleid. De partij introduceert een systeem van tijdelijke bescherming om ruimte te maken voor personen die legitiem in Nederland mogen blijven. Asielvergunningen worden tijdelijk, met een duur van drie jaar voor vluchtelingen en één jaar voor subsidiair beschermden, waarna een toetsing volgt. Dit beleid is bedoeld om ervoor te zorgen dat er voldoende huisvestingsmogelijkheden zijn voor degenen die daadwerkelijk in Nederland mogen verblijven. Gemeenten krijgen de vrijheid om te bepalen hoe huisvesting voor statushouders wordt vormgegeven, zoals de mogelijkheid tot flexwoningen of eigen huizen.",
+
+    "NSC": "Betaalbare Huisvesting als Prioriteit. Het NSC-programma van 2023 erkent de huisvestingsproblematiek, met name voor studenten, als een kritiek punt. Er wordt steun toegezegd aan regio's die plannen ontwikkelen voor 'betaalbaar wonen op de campus', wat niet alleen de studenten ten goede komt, maar ook bijdraagt aan het verlichten van de woningnood in stedelijke gebieden. Dit initiatief is onderdeel van een bredere strategie om de status van Nederland als vooraanstaand kennisland te handhaven. Het programma benadrukt de noodzaak van substantiële investeringen in fundamenteel wetenschappelijk onderzoek en kennisvalorisatie. Door het versterken van de primaire financieringsstromen voor universiteiten en het ondersteunen van startersbeurzen, streeft de NSC ernaar jonge onderzoekers te faciliteren in het ontwikkelen van hun onderzoekscarrières, terwijl tegelijkertijd de samenwerking met het bedrijfsleven op het gebied van R&D wordt versterkt\u200B\u200B.",
+
+    "Groenlinks PVDA": "wil meer diversiteit in woningaanbod en ondersteuning voor starters.",
+
     "PVV": "PVV wil een stop op sociale huurwoningen voor nieuwkomers.",
+
     "CDA": "CDA wil meer diversiteit in woningaanbod en ondersteuning voor starters.",
+
     "Volt": "Volt ziet Europese samenwerking als oplossing voor betaalbare huisvesting.",
+
     "SP": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "FvD": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "Ja21": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "CU": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "BBB": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking."
   },
   "Energiebeleid": {
-    "VVD": "VVD wil inzetten op kernenergie als aanvulling op hernieuwbare energie.",
-    "NSC": "NSC wil volledige transitie naar duurzame energiebronnen.",
+    "VVD": "VVD verduurzaamt energievoorziening. De partij streeft naar meer energie-onafhankelijkheid voor Nederland, zowel nationaal als Europees, met aandacht voor de uitvoerbaarheid en kosten voor burgers. Er wordt ingezet op de productie van eigen schone energie, waaronder extra windenergie op zee, gekoppeld aan waterstofproductie, nieuwe kerncentrales en versterking van het stroomnet met batterijtechnologie. Geothermie wordt gestimuleerd als duurzame energiebron, en de inzet van bewoners bij duurzame energieprojecten wordt aangemoedigd. De VVD onderzoekt de mogelijkheid van kleine modulaire reactoren (SMR's) en investeert in nieuwe technieken zoals thorium. Er worden voortvarende stappen gezet voor de benodigde duurzame infrastructuur, met projecten als de waterstofbackbone en de Delta Rhine Corridor. De partij zet zich ook in voor de stimulering van zonne-energie bij huishoudens en ondernemers en plant meer windenergie op zee tegen 2040.",
+
+    "NSC": "Energiebeleid: Duurzaamheid en Innovatie. Het NSC-programma 2023 benadert energiebeleid met een sterke focus op duurzaamheid en biodiversiteit, waarbij kernenergie wordt gezien als een essentieel onderdeel van een continue en CO2-vrije energievoorziening. Er zijn plannen om minimaal twee nieuwe kerncentrales te bouwen en de mogelijkheden voor Small Modular Reactors (SMR's) actief te verkennen. Dit wordt gekoppeld aan een heroverweging van de rol van de overheid in zowel de productie als de distributie van energie, inclusief gas- en oliewinning en duurzame energiebronnen zoals zon, wind, waterstof en warmte. Het doel is om door het scheppen van juiste investeringscondities het aanbod van energie door private partijen te stimuleren\u200B\u200B.",
+
     "Groenlinks PVDA": "Transitie naar hernieuwbare energiebronnen met sociaal beleid.",
+
     "PVV": "PVV is sceptisch over klimaatbeleid en wil behoud van fossiele brandstoffen.",
+
     "CDA": "CDA wil een mix van duurzame en traditionele energiebronnen.",
+
     "Volt": "Volt pleit voor een Europese energie-unie voor snellere vergroening.",
+
     "SP": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "FvD": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "Ja21": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "CU": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking.",
+
     "BBB": "Volt pleit voor een digitaal gedreven economie en Europese samenwerking."
   }
 }

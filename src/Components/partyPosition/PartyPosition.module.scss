@@ -52,3 +52,15 @@
   }
 }
 
+.boldText {
+  font-weight: bold; // Makes the first sentence bold
+  color: $primary-color; // Change to your preferred color
+  margin-bottom: 20px;
+}
+
+// Styling for the more text indicator (>>>)
+.moreText {
+  color: $fourth-color; // Change to your preferred highlight color
+  cursor: pointer; // Changes cursor to indicate clickable
+  margin-left: 4px; // Spacing for visual separation from the sentence
+}

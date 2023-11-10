@@ -15,7 +15,7 @@ const Modal = ({ isShowing, hide, children }) => {
     }, [isShowing]);
 
     return isShowing ? (
-        <div className={styles.modalOverlay} onClick={hide}>
+        <div className={styles.modalOverlay}>
             <div className={styles.modalContainer}>
                 <div className={styles.modal}>
                     <StyledButton
