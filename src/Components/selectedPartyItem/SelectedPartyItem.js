@@ -1,5 +1,4 @@
-// SelectedPartyItem.js
-import React from 'react';
+import React, { useState } from 'react';
 import StyledButton from "../button/StyledButton";
 import styles from './SelectedPartyItem.module.scss';
 
@@ -13,6 +12,14 @@ const SelectedPartyItem = ({
                                answeredQuestions,
                                selectedTopic,
                            }) => {
+    const [isExpanded, setIsExpanded] = useState(false); // Staat voor het beheren van tekstuitvouw
+
+    const toggleTextExpansion = () => {
+        setIsExpanded(!isExpanded);
+    };
+
+    const positionText = positions && positions[party]; // Controleer of positions[party] gedefinieerd is
+
     return (
         <div className={styles.selectedPartyItemContainer}>
             <div className={styles.selectedPartyItem}>
@@ -24,9 +31,26 @@ const SelectedPartyItem = ({
                 />
                 <div className={styles.partyInfo}>
                     <h2>{party}</h2>
-                    {positions && <p>{positions[party]}</p>} {/* Zorg dat positions gecontroleerd wordt voordat je toegang probeert te krijgen tot de waarde */}
+                    {positionText && (
+                        <div className={styles.positionText}>
+                            <strong className={styles.firstSentence}>
+                                {positionText.split('.')[0] + '.'}
+                            </strong>
+                            {!isExpanded && (
+                                <span className={styles.moreText} onClick={toggleTextExpansion}> >>></span>
+                            )}
+                            <div className={styles.restOfTextContainer}>
+                                {isExpanded && (
+                                    <span className={styles.restOfText}>
+                                {positionText.substring(positionText.split('.')[0].length + 1)}
+                                        <span className={styles.moreText} onClick={toggleTextExpansion}> {"<<<"} </span>
+                            </span>
+                                )}
+                            </div>
+                        </div>
+                    )}
                 </div>
-                {selectedTopic && ( // Check of selectedTopic bestaat voordat de knoppen worden weergegeven
+                {selectedTopic && (
                     <div className={styles.buttonContainer}>
                         {answeredQuestions[`${selectedTopic}_${party}`] ? (
                             <StyledButton
@@ -43,6 +67,7 @@ const SelectedPartyItem = ({
                         {partyScores[party] !== undefined && <h2>Score: {partyScores[party]}</h2>}
                     </div>
                 )}
+
             </div>
         </div>
     );

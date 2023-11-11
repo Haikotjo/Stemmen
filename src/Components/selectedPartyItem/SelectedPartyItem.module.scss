@@ -1,3 +1,6 @@
+@import '../../styles/mixins';
+@import '../../styles/globals';
+
 .selectedPartyItemContainer {
   display: flex;
   justify-content: center;
@@ -58,4 +61,14 @@
     justify-content: space-evenly; // Verdeel de ruimte gelijkmatig
     margin-top: 8px; // Voeg wat ruimte toe boven de knoppen
   }
+}
+// Styling for the more text indicator (>>>)
+.moreText {
+  color: $fourth-color; // Change to your preferred highlight color
+  cursor: pointer; // Changes cursor to indicate clickable
+  margin-left: 4px; // Spacing for visual separation from the sentence
+}
+
+.restOfTextContainer {
+  margin-top: 20px;
 }

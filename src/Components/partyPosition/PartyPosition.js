@@ -20,7 +20,7 @@ const PartyPosition = ({ party, position, topic }) => {
             <ul className={styles.positionList}>
                 <li>
                     {/* The topic name is bolded for emphasis */}
-                    <strong>{topic}:</strong>
+                    <strong className={styles.topicSmall} >{topic}:</strong>
                     {/* The first sentence of the party's position is displayed in bold */}
                     <span className={styles.boldText}>{firstSentence}
                     {/* Ellipsis (...) for expanding the rest of the text */}
@@ -29,8 +29,7 @@ const PartyPosition = ({ party, position, topic }) => {
                     )}
                         </span>
                     {/* Display the rest of the text when expanded */}
-                    {isExpanded && <span>{restOfTheText} <span className={styles.moreText} onClick={() => setIsExpanded(false)}> minder </span></span>}
-
+                    {isExpanded && <span>{restOfTheText} <span className={styles.moreText} onClick={() => setIsExpanded(false)}> {"<<<"} </span></span>}
                 </li>
             </ul>
         </div>

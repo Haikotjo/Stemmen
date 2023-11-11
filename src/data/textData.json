@@ -1,6 +1,6 @@
 {
   "nl": {
-    "introText": "Welkom bij StemSpectrum, jouw digitale gids in het politieke landschap! Overweldigd door alle partijen en standpunten? Wij maken het je makkelijk. Beantwoord een paar vragen en ontdek welke partijen en kandidaten jouw wereldbeeld delen.",
+    "introText": "Hier is hoe ChatGPT wordt gebruikt om je te helpen bij het ontdekken van politieke standpunten:\n\nDe verkiezingsprogramma's van de partijen zijn geüpload in PDF-formaat.\nVoor elk onderwerp hebben we de volgende vraag gesteld: \"Maak een samenvatting van {partij} programma over {onderwerp} 100 woorden!\" met de eerste {x} woorden als pakkende titel.\nJe kunt de pagina's vergelijken op verschillende manieren om te zien wat voor jou het makkelijkst is.\nGebruik de kieshulp om punten te geven aan waar je het eens, oneens of neutraal over bent, en ontdek welke partij het beste bij je past.\nHoud er rekening mee dat ChatGPT soms creatief kan zijn, dus neem de resultaten niet te serieus.",
     "electionInfo": "Opgelet! De verkiezingsklok tikt. Wees geen laatkomer; bereid je nu voor om een weloverwogen stem uit te brengen. De exacte verkiezingsdatum wordt spoedig onthuld. Blijf op de hoogte via onze app!",
     "extraStory": "In het labyrint van politieke retoriek en campagnebeloften is het makkelijk om de weg kwijt te raken. Maar vrees niet! StemSpectrum is je persoonlijke gids die je helpt om met zelfvertrouwen je stem uit te brengen. Wij zorgen ervoor dat jouw stem telt en echt een verschil maakt.",
     "pageDescriptions": {

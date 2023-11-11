@@ -16,13 +16,14 @@
 
     @include extra-small-screen {
       font-weight: bold;
-      font-size: 1.5rem; // kleinere grootte voor kleine schermen
+      font-size: 1rem; // kleinere grootte voor kleine schermen
     }
 
     @include small-screen {
       font-weight: bold;
-      font-size: 2rem; // kleinere grootte voor kleine schermen
+      font-size: 1.5rem; // kleinere grootte voor kleine schermen
     }
+
   }
 
   // Styling for the list of positions
@@ -33,19 +34,42 @@
     display: grid; // Utilizes grid for a structured layout
     grid-template-columns: 1fr 2fr; // Allocates space for topic and position
     column-gap: 16px; // Space between the columns for visual separation
+    @include extra-small-screen {
+      display: flex;
+    }
 
     li {
       display: contents; // Allows children to be laid out as if they are direct children of the grid
       color: $secondary-color;
 
       strong {
-        font-weight: bold; // Emphasizes the topic
         color: $secondary-color; // Dark color for the topic for contrast
         grid-column: 1; // Aligns topic to the first column
       }
 
       span {
         grid-column: 2; // Aligns position to the second column
+      }
+      @include extra-small-screen {
+        display: flex; // Schakel over naar flexbox
+        flex-direction: column; // Elementen verticaal stapelen
+        align-items: center; // Centreer de elementen horizontaal
+
+        .topicSmall {
+          margin-bottom: 10px; // Ruimte tussen onderwerp en beschrijving
+        }
+
+        span {
+          // Zorgt ervoor dat de tekst en de knoppen correct uitgelijnd zijn
+          .boldText, .moreText {
+            font-weight: normal;
+            display: block; // Elk element op een nieuwe regel
+            width: 100%; // Volledige breedte van de container gebruiken
+          }
+          .PartyPosition .boldText {
+
+          }
+        }
       }
     }
   }

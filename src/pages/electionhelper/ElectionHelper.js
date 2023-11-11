@@ -26,6 +26,7 @@ function ElectionHelper() {
     const undoAnswer = useUndoAnswer();
     const randomHeaderImage =  getRandomImagePage();
 
+
     useEffect(() => {
         if (selectedParties.length > 0 && selectedTopic) {
             const newPositions = {};
