@@ -4,9 +4,33 @@ import styles from './NavBar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import HamburgerMenu from "../hamburgerMenu/HamburgerMenu";
+import {useLanguage} from "../../context/LanguageContext";
 
 function NavBar() {
-    console.log(styles);
+
+    const { language, setLanguage } = useLanguage();
+    const toggleLanguage = () => {
+        setLanguage(lang => (lang === 'nl' ? 'en' : 'nl'));
+    };
+
+    // Object met linkteksten voor beide talen
+    const linkTexts = {
+        nl: {
+            kiesHulp: "Kies Hulp",
+            partijPagina: "Partij Pagina",
+            standpuntenPagina: "Standpunten Pagina",
+            testPagina: "Testpagina"
+        },
+        en: {
+            kiesHulp: "Election Helper",
+            partijPagina: "Party Page",
+            standpuntenPagina: "Positions Page",
+            testPagina: "Test Page"
+        }
+    };
+
+    const currentLinkTexts = linkTexts[language];
+
     return (
         <div className={styles.navbar}>
             <div className={styles.container}>
@@ -20,32 +44,35 @@ function NavBar() {
                         to="/kies-hulp"
                         className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}
                     >
-                        Kies Hulp
+                        {currentLinkTexts.kiesHulp}
                     </NavLink>
 
                     <NavLink
                         to="/partij-pagina"
                         className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}
                     >
-                        Partij Pagina
+                        {currentLinkTexts.partijPagina}
                     </NavLink>
 
                     <NavLink
                         to="/standpunten-pagina"
                         className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}
                     >
-                        Standpunten Pagina
+                        {currentLinkTexts.standpuntenPagina}
                     </NavLink>
                     
                     <NavLink
                         to="/testpagina" // Voeg de link naar de testpagina toe
                         className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}
                     >
-                        Testpagina
+                        {currentLinkTexts.testPagina}
                     </NavLink>
                 </div>
                 <div className={styles.hamburgerMenu}>
                     <HamburgerMenu />  {/* Dit vervangt de normale navlinks op kleine schermen */}
+                </div>
+                <div onClick={toggleLanguage} className={styles.languageToggle}>
+                    {language === 'nl' ? 'en' : 'nl'}
                 </div>
             </div>
         </div>

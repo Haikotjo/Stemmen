@@ -13,5 +13,21 @@
       "positionsPage": "Bekijk gedetailleerde informatie over de standpunten van politieke partijen.",
       "electionHelper": "Vind jouw politieke match en vergelijk je voorkeuren met de partijen."
     }
+  },
+  "en": {
+    "introText": "Here is how ChatGPT is used to help you explore political positions:\n\nThe parties' election programs have been uploaded in PDF format.\nFor each topic, we have asked the following question: \"Make a summary of {party}’s program about {topic} in 100 words!\" with the first {x} words as a catchy title.\nYou can compare the pages in various ways to see what is easiest for you.\nUse the election assistant to rate points on which you agree, disagree, or are neutral, and discover which party is the best fit for you.\nKeep in mind that ChatGPT can sometimes be creative, so do not take the results too seriously.",
+    "electionInfo": "Attention! The election clock is ticking. Don't be a latecomer; prepare now to cast an informed vote. The exact election date will be revealed soon. Stay informed via our app!",
+    "extraStory": "In the maze of political rhetoric and campaign promises, it's easy to lose your way. But fear not! VoteSpectrum is your personal guide that helps you cast your vote with confidence. We ensure that your vote counts and truly makes a difference.",
+    "pageDescriptions": {
+      "positionsPage": "Curious about the positions of different parties on key issues? Visit our Positions Page to get a clear overview.",
+      "partiesPage": "Want to know more about the parties themselves and what they stand for? Visit our Parties Page for an in-depth look at each party.",
+      "electionHelper": "Find your political match with our Election Helper page! Choose the parties and positions that interest you and rate them as positive, negative, or neutral. In the end, you'll see an overview of the parties you most agree with. This helps you make an informed choice at the polls."
+    },
+    "pageDescriptionsDetails": {
+      "partiesPage": "Discover the objectives and positions of each political party.",
+      "positionsPage": "View detailed information about the positions of political parties.",
+      "electionHelper": "Find your political match and compare your preferences with the parties."
+    }
   }
 }
+
