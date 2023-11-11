@@ -29,8 +29,7 @@ const PartyPosition = ({ party, position, topic }) => {
                     )}
                         </span>
                     {/* Display the rest of the text when expanded */}
-                    {isExpanded && <span>{restOfTheText} <span className={styles.moreText} onClick={() => setIsExpanded(false)}> minder </span></span>}
-
+                    {isExpanded && <span>{restOfTheText} <span className={styles.moreText} onClick={() => setIsExpanded(false)}> {"<<<"} </span></span>}
                 </li>
             </ul>
         </div>
