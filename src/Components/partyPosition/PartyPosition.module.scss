@@ -38,7 +38,6 @@
       display: contents; // Allows children to be laid out as if they are direct children of the grid
       color: $secondary-color;
 
-
       strong {
         font-weight: bold; // Emphasizes the topic
         color: $secondary-color; // Dark color for the topic for contrast
@@ -52,3 +51,15 @@
   }
 }
 
+.boldText {
+  font-weight: bold; // Makes the first sentence bold
+  color: $primary-color; // Change to your preferred color
+  margin-bottom: 20px;
+}
+
+// Styling for the more text indicator (>>>)
+.moreText {
+  color: $fourth-color; // Change to your preferred highlight color
+  cursor: pointer; // Changes cursor to indicate clickable
+  margin-left: 4px; // Spacing for visual separation from the sentence
+}
