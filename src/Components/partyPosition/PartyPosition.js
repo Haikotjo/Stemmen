@@ -20,7 +20,7 @@ const PartyPosition = ({ party, position, topic }) => {
             <ul className={styles.positionList}>
                 <li>
                     {/* The topic name is bolded for emphasis */}
-                    <strong>{topic}:</strong>
+                    <strong className={styles.topicSmall} >{topic}:</strong>
                     {/* The first sentence of the party's position is displayed in bold */}
                     <span className={styles.boldText}>{firstSentence}
                     {/* Ellipsis (...) for expanding the rest of the text */}

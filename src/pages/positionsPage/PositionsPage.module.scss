@@ -8,6 +8,9 @@
   justify-content: center; // Horizontaal centreren van inhoud binnen de flex-container
   align-items: center; // Verticaal centreren van inhoud binnen de flex-container
   flex-direction: column; // Stapel kinderen verticaal
+  @include extra-small-screen {
+    margin-inline: 15px ;
+  }
 }
 
 .topicsContainer{
