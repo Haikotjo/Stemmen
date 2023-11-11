@@ -1,12 +1,27 @@
+@import '../../styles/globals';
+@import '../../styles/mixins';
+
 .pageDescriptionBlock {
-  background-color: #f0f0f0;
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 16px;
-  text-align: center;
+  cursor: pointer; // Cursor verandert naar handje
+  transition: all 0.3s ease; // Maakt hover-effecten soepeler
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+  &:hover, &:focus {
+    transform: scale(1.03); // Lichtelijk vergroot het blok bij hover of focus
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); // Voegt schaduw toe voor diepte
+    border: 2px solid $fourth-color;
+  }
+
+  // Aanvullende stijlen voor betere visuele indicatie
+  background-color: #f8f9fa;
+  border: 1px solid $fourth-color;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 5px;
+  text-align: center; // Zorgt ervoor dat de tekst netjes gecentreerd is
 
   a {
-    text-decoration: none;
-    color: black;
+    text-decoration: none; // Verwijdert onderstreping van de link
+    color: $third-color; // Verandert de tekstkleur
   }
 }

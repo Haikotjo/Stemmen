@@ -44,6 +44,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    margin-bottom: 20px;
     @media (max-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
     }
