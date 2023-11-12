@@ -1,16 +1,18 @@
-import React, {useEffect, useRef} from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import styles from './Modal.module.scss';
 import { getRandomImage } from '../../utils/utils';
 import StyledButton from "../button/StyledButton";
 
 const Modal = ({ isShowing, hide, children }) => {
-    const randomImage = isShowing ? getRandomImage() : null;
     const modalRef = useRef(null);
-    const handleClickOutside = (event) => {
+    const randomImage = isShowing ? getRandomImage() : null;
+
+    // Gebruik useCallback om de handleClickOutside functie te memoïseren
+    const handleClickOutside = useCallback((event) => {
         if (modalRef.current && !modalRef.current.contains(event.target)) {
             hide();
         }
-    };
+    }, [hide]); // 'hide' wordt hier als afhankelijkheid toegevoegd
 
     useEffect(() => {
         if (isShowing) {
@@ -21,10 +23,11 @@ const Modal = ({ isShowing, hide, children }) => {
             document.removeEventListener('mousedown', handleClickOutside);
         }
 
+        // Opschonen
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, [isShowing]);
+    }, [isShowing, handleClickOutside]); // Voeg 'handleClickOutside' toe aan de afhankelijkhedenlijst
 
     return isShowing ? (
         <div className={styles.modalOverlay}>
