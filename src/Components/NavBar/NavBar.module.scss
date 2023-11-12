@@ -47,11 +47,13 @@
         padding: 20px 20px;
         border-radius: 5px;
         transition: background-color 0.3s;
+        &:hover {
+          background-color: $fourth-color;
+        }
       }
 
       .active {
-        background-color: $secondary-color;
-        border-bottom: 2px solid white;
+        background-color: $fourth-color;
       }
 
       @include extra-small-screen {
@@ -63,6 +65,19 @@
       }
     }
   }
+  .languageToggle {
+    cursor: pointer;
+    text-decoration: underline;
+    color: white; // Standaard tekstkleur
+    margin-left: 10px; // Ruimte aan de linkerkant
+    padding: 20px 20px; // Consistente padding met andere links
+    border-radius: 5px; // Voor consistentie met andere links
+    transition: background-color 0.3s, color 0.3s; // Soepele overgang voor hover-effect
+
+    &:hover {
+      background-color: $fourth-color; // Achtergrondkleur bij hover
+    }
+  }
 }
 
 .hamburgerMenu{
@@ -71,4 +86,6 @@
     font-size: small;
   }
 }
+
+
 

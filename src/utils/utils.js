@@ -12,8 +12,8 @@ export const selectParty = (selectedParty) => {
 
 // Positions
 
-export const getPositions = (topic, party) => {
-    const positionsForTopic = positionsData[topic];
+export const getPositions = (topic, party, language) => {
+    const positionsForTopic = positionsData[language][topic];
 
     if (!positionsForTopic) {
         console.log('Invalid topic');

@@ -3,10 +3,29 @@ import { NavLink } from 'react-router-dom';
 import styles from './HamburgerMenu.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import {useLanguage} from "../../context/LanguageContext";
 
 const HamburgerMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
     const menuRef = useRef(null);
+    const { language } = useLanguage(); // Gebruik de taalcontext
+
+    // Object met linkteksten voor beide talen
+    const linkTexts = {
+        nl: {
+            kiesHulp: "Kies Hulp",
+            partijPagina: "Partij Pagina",
+            standpuntenPagina: "Standpunten Pagina"
+        },
+        en: {
+            kiesHulp: "Election Helper",
+            partijPagina: "Party Page",
+            standpuntenPagina: "Positions Page"
+        }
+    };
+
+    // Haal de teksten voor de huidige taal op
+    const currentLinkTexts = linkTexts[language];
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -38,21 +57,21 @@ const HamburgerMenu = () => {
                         className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}
                         onClick={() => setIsOpen(false)}
                     >
-                        Kies Hulp
+                        {currentLinkTexts.kiesHulp}
                     </NavLink>
                     <NavLink
                         to="/partij-pagina"
                         className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}
                         onClick={() => setIsOpen(false)}
                     >
-                        Partij Pagina
+                        {currentLinkTexts.partijPagina}
                     </NavLink>
                     <NavLink
                         to="/standpunten-pagina"
                         className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}
                         onClick={() => setIsOpen(false)}
                     >
-                        Standpunten Pagina
+                        {currentLinkTexts.standpuntenPagina}
                     </NavLink>
                 </div>
             )}

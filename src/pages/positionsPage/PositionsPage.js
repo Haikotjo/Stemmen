@@ -6,6 +6,7 @@ import usePositions from "../../hooks/usePositions";
 import PartyPosition from "../../Components/partyPosition/PartyPosition";
 import styles from "./PositionsPage.module.scss";
 import {getRandomImage} from "../../utils/utils";
+import {useLanguage} from "../../context/LanguageContext";
 
 // PositionsPage component definition
 // This component displays the positions of various parties on a selected topic
@@ -16,11 +17,14 @@ function PositionsPage() {
 
     const positionsRef = useRef(null);
 
+    const { language } = useLanguage();
+
     // Custom hook to get the positions of parties on the selected topic
-    const positions = usePositions(selectedTopic);
+    const currentPositionsData = positionsData[language] || positionsData.nl;
 
     // Extracting the list of topics from positionsData
-    const topics = Object.keys(positionsData);
+    const topics = Object.keys(currentPositionsData);
+
 
     // Handler function to set the selected topic
     const handleTopicSelection = (topic) => {
@@ -30,6 +34,8 @@ function PositionsPage() {
             positionsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     };
+
+    const topicPositions = selectedTopic && currentPositionsData[selectedTopic] ? currentPositionsData[selectedTopic] : {};
 
     // Render the component
     return (
@@ -52,8 +58,13 @@ function PositionsPage() {
                 Pass the party name, position, and selected topic as props.
             */}
                 <div ref={positionsRef}>
-                    {Object.keys(positions).map((party) => (
-                        <PartyPosition key={party} party={party} position={positions[party]} topic={selectedTopic} />
+                    {Object.keys(topicPositions).map((party) => (
+                        <PartyPosition
+                            key={party}
+                            party={party}
+                            position={topicPositions[party]}
+                            topic={selectedTopic}
+                        />
                     ))}
                 </div>
             </div>
