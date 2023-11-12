@@ -9,16 +9,25 @@ import {useLanguage} from "../../context/LanguageContext";
 function NavBar() {
 
     const { language, setLanguage } = useLanguage();
+
     const toggleLanguage = () => {
-        setLanguage(lang => (lang === 'nl' ? 'en' : 'nl'));
+        if (language === 'nl') {
+            setLanguage('en');
+        } else if (language === 'en') {
+            setLanguage('nl');
+        }
+    };
+
+    const setToKids = () => {
+        setLanguage('kids');
     };
 
     // Object met linkteksten voor beide talen
     const linkTexts = {
         nl: {
             kiesHulp: "Kies Hulp",
-            partijPagina: "Partij Pagina",
-            standpuntenPagina: "Standpunten Pagina",
+            partijPagina: "De Partijen",
+            standpuntenPagina: "Standpunten",
             testPagina: "Testpagina"
         },
         en: {
@@ -26,7 +35,13 @@ function NavBar() {
             partijPagina: "Party Page",
             standpuntenPagina: "Positions Page",
             testPagina: "Test Page"
-        }
+        },
+        kids: {
+            kiesHulp: "Kies Hulpje",
+            partijPagina: "De partijen",
+            standpuntenPagina: "Standpunten",
+            testPagina: "Testpagina"
+        },
     };
 
     const currentLinkTexts = linkTexts[language];
@@ -73,6 +88,9 @@ function NavBar() {
                 </div>
                 <div onClick={toggleLanguage} className={styles.languageToggle}>
                     {language === 'nl' ? 'en' : 'nl'}
+                </div>
+                <div onClick={setToKids} className={styles.kidsToggle}>
+                    Kids
                 </div>
             </div>
         </div>
