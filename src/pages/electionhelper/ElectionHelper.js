@@ -5,7 +5,7 @@ import PartyList from "../../Components/partyList/PartyList";
 import TopicList from "../../Components/topicList/TopicList";
 import StyledButton from "../../Components/button/StyledButton";
 import styles from "./ElectionHelper.module.scss";
-import {getPartyImage, getPositions, getRandomImagePage} from "../../utils/utils";
+import {getPartyImage, getRandomImagePage} from "../../utils/utils";
 import { ScoreContext } from "../../context/ScoreContext";
 import useHandleAnswer from "../../hooks/useHandleAnswer";
 import useUndoAnswer from "../../hooks/useUndoAnswer";

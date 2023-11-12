@@ -2,7 +2,6 @@
 import React, {useState, useRef} from 'react';
 import positionsData from '../../data/positions.json';
 import TopicList from "../../Components/topicList/TopicList";
-import usePositions from "../../hooks/usePositions";
 import PartyPosition from "../../Components/partyPosition/PartyPosition";
 import styles from "./PositionsPage.module.scss";
 import {getRandomImage} from "../../utils/utils";
