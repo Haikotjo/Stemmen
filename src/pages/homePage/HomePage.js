@@ -27,15 +27,22 @@ const HomePage = () => {
             </div>
 
             <div className={styles.container}>
+
                 <h1>{language === 'nl' ? 'Welkom bij StemSpectrum' : 'Welcome to StemSpectrum'}</h1>
 
-
                 <p>{currentTextData.introText}</p>
+
                 <div className={styles.pageDescriptionsContainer}>
-                    {Object.entries(currentTextData.pageDescriptions).map(([key, value]) => (
-                        <PageDescriptionBlock key={key} route={routesMap[key]} description={value} />
+                    {Object.entries(currentTextData.pages).map(([key, pageData]) => (
+                        <PageDescriptionBlock
+                            key={key}
+                            route={routesMap[key]}
+                            description={pageData.description}
+                            title={pageData.name}
+                        />
                     ))}
                 </div>
+
                 <img src={randomImage} alt="Header" className={styles.backgroundImage} />
                 <h2>{language === 'nl' ? 'Verkiezingsinformatie' : 'Election info'}</h2>
                 <p>{currentTextData.electionInfo}</p>

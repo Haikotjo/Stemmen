@@ -3,31 +3,44 @@
     "introText": "Hier is hoe ChatGPT wordt gebruikt om je te helpen bij het ontdekken van politieke standpunten:\n\nDe verkiezingsprogramma's van de partijen zijn geüpload in PDF-formaat.\nVoor elk onderwerp hebben we de volgende vraag gesteld: \"Maak een samenvatting van {partij} programma over {onderwerp} 100 woorden!\" met de eerste {x} woorden als pakkende titel.\nJe kunt de pagina's vergelijken op verschillende manieren om te zien wat voor jou het makkelijkst is.\nGebruik de kieshulp om punten te geven aan waar je het eens, oneens of neutraal over bent, en ontdek welke partij het beste bij je past.\nHoud er rekening mee dat ChatGPT soms creatief kan zijn, dus neem de resultaten niet te serieus.",
     "electionInfo": "Opgelet! De verkiezingsklok tikt. Wees geen laatkomer; bereid je nu voor om een weloverwogen stem uit te brengen. De exacte verkiezingsdatum wordt spoedig onthuld. Blijf op de hoogte via onze app!",
     "extraStory": "In het labyrint van politieke retoriek en campagnebeloften is het makkelijk om de weg kwijt te raken. Maar vrees niet! StemSpectrum is je persoonlijke gids die je helpt om met zelfvertrouwen je stem uit te brengen. Wij zorgen ervoor dat jouw stem telt en echt een verschil maakt.",
-    "pageDescriptions": {
-      "positionsPage": "Benieuwd naar de standpunten van verschillende partijen over belangrijke onderwerpen? Bezoek onze Standpunten Pagina om een helder overzicht te krijgen.",
-      "partiesPage": "Wil je meer weten over de partijen zelf en wat ze vertegenwoordigen? Ga naar onze Partijen Pagina voor een diepgaande blik op elke partij.",
-      "electionHelper": "Ontdek je politieke match met onze Kies Hulp pagina! Kies de partijen en standpunten die je interessant vindt en geef ze een score van plus, min of neutraal. Aan het einde krijg je een overzicht te zien van de partijen waarmee je het meest overeenkomt. Zo kun je een weloverwogen keuze maken bij de stembus."
-    },
-    "pageDescriptionsDetails": {
-      "partiesPage": "Ontdek de doelstellingen en standpunten van elke politieke partij.",
-      "positionsPage": "Bekijk gedetailleerde informatie over de standpunten van politieke partijen.",
-      "electionHelper": "Vind jouw politieke match en vergelijk je voorkeuren met de partijen."
+    "pages": {
+      "partiesPage": {
+        "name": "De Partijen",
+        "description": "Wil je meer weten over de partijen zelf en wat ze vertegenwoordigen? Ga naar onze Partijen Pagina voor een diepgaande blik op elke partij.",
+        "detail": "Ontdek de doelstellingen en standpunten van elke politieke partij."
+      },
+      "positionsPage": {
+        "name": "Standpunten",
+        "description": "Benieuwd naar de standpunten van verschillende partijen over belangrijke onderwerpen? Bezoek onze Standpunten Pagina om een helder overzicht te krijgen.",
+        "detail": "Bekijk gedetailleerde informatie over de standpunten van politieke partijen."
+      },
+      "electionHelper": {
+        "name": "Kieshulp",
+        "description": "Ontdek je politieke match met onze Kies Hulp pagina! Kies de partijen en standpunten die je interessant vindt en geef ze een score van plus, min of neutraal.",
+        "detail": "Vind jouw politieke match en vergelijk je voorkeuren met de partijen."
+      }
     }
   },
   "en": {
     "introText": "Here is how ChatGPT is used to help you explore political positions:\n\nThe parties' election programs have been uploaded in PDF format.\nFor each topic, we have asked the following question: \"Make a summary of {party}’s program about {topic} in 100 words!\" with the first {x} words as a catchy title.\nYou can compare the pages in various ways to see what is easiest for you.\nUse the election assistant to rate points on which you agree, disagree, or are neutral, and discover which party is the best fit for you.\nKeep in mind that ChatGPT can sometimes be creative, so do not take the results too seriously.",
     "electionInfo": "Attention! The election clock is ticking. Don't be a latecomer; prepare now to cast an informed vote. The exact election date will be revealed soon. Stay informed via our app!",
     "extraStory": "In the maze of political rhetoric and campaign promises, it's easy to lose your way. But fear not! VoteSpectrum is your personal guide that helps you cast your vote with confidence. We ensure that your vote counts and truly makes a difference.",
-    "pageDescriptions": {
-      "positionsPage": "Curious about the positions of different parties on key issues? Visit our Positions Page to get a clear overview.",
-      "partiesPage": "Want to know more about the parties themselves and what they stand for? Visit our Parties Page for an in-depth look at each party.",
-      "electionHelper": "Find your political match with our Election Helper page! Choose the parties and positions that interest you and rate them as positive, negative, or neutral. In the end, you'll see an overview of the parties you most agree with. This helps you make an informed choice at the polls."
-    },
-    "pageDescriptionsDetails": {
-      "partiesPage": "Discover the objectives and positions of each political party.",
-      "positionsPage": "View detailed information about the positions of political parties.",
-      "electionHelper": "Find your political match and compare your preferences with the parties."
+    "pages": {
+      "partiesPage": {
+        "name": "Parties",
+        "description": "Want to know more about the parties themselves and what they stand for? Visit our Parties Page for an in-depth look at each party.",
+        "detail": "Discover the objectives and positions of each political party."
+      },
+      "positionsPage": {
+        "name": "Positions",
+        "description": "Curious about the positions of different parties on key issues? Visit our Positions Page to get a clear overview.",
+        "detail": "View detailed information about the positions of political parties."
+      },
+      "electionHelper": {
+        "name": "Election Helper",
+        "description": "Find your political match with our Election Helper page! Choose the parties and positions that interest you and rate them as positive, negative, or neutral.",
+        "detail": "Find your political match and compare your preferences with the parties."
+      }
     }
   }
 }
-
