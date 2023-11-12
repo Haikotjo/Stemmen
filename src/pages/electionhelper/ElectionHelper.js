@@ -13,10 +13,13 @@ import useToggleParty from "../../hooks/useToggleParty";
 import useHandleTopicSelection from "../../hooks/useHandleTopicSelection";
 import useReset from "../../hooks/useReset";
 import SelectedPartyItem from "../../Components/selectedPartyItem/SelectedPartyItem";
+import {useLanguage} from "../../context/LanguageContext";
 
 function ElectionHelper() {
     const [positions, setPositions] = useState({});
-    const topics = Object.keys(positionsData);
+    const { language } = useLanguage();
+    const currentPositionsData = positionsData[language] || positionsData.nl;
+    const topics = Object.keys(currentPositionsData);
 
     const { selectedParties, togglePartySelection } = useToggleParty();
     const { partyScores, answeredQuestions } = useContext(ScoreContext);
@@ -25,34 +28,63 @@ function ElectionHelper() {
     const handleAnswer = useHandleAnswer();
     const undoAnswer = useUndoAnswer();
     const randomHeaderImage =  getRandomImagePage();
+    const [expandedItems, setExpandedItems] = useState({});
 
+    const translations = {
+        nl: {
+            electionHelper: "KIES HULP",
+            chooseParties: "Kies de partijen die je wilt vergelijken",
+            chooseTopic: "Kies een onderwerp",
+            selectedParties: "Geselecteerde Partijen:",
+            noPositionAvailable: "Kies een onderwerp",
+        },
+        en: {
+            electionHelper:"ELECTION HELPER",
+            chooseParties: "Choose the parties you want to compare",
+            chooseTopic: "Choose a topic",
+            selectedParties: "Selected Parties:",
+            noPositionAvailable: "Choose a subject"
+        }
+    };
+
+    const t = translations[language];
 
     useEffect(() => {
+        // Controleer of zowel geselecteerde partijen als een geselecteerd onderwerp aanwezig zijn
         if (selectedParties.length > 0 && selectedTopic) {
             const newPositions = {};
             selectedParties.forEach((party) => {
-                const position = getPositions(selectedTopic, party); // Implementeer getPositions-functie om de positie op te halen
-                newPositions[party] = position;
+                // Controleer eerst of het geselecteerde onderwerp en de partij bestaan in de huidige taaldata
+                if (currentPositionsData[selectedTopic] && currentPositionsData[selectedTopic][party]) {
+                    newPositions[party] = currentPositionsData[selectedTopic][party];
+                } else {
+                    console.error(`Positie voor partij ${party} en onderwerp ${selectedTopic} niet gevonden in taal ${language}.`);
+                    newPositions[party] = "Geen positie beschikbaar";
+                }
             });
             setPositions(newPositions);
         }
-    }, [selectedParties, selectedTopic]);
+    }, [selectedParties, selectedTopic, language, currentPositionsData]);
+
+    const toggleItemExpansion = (party) => {
+        setExpandedItems(prev => ({ ...prev, [party]: !prev[party] }));
+    };
 
     return (
         <>
             <div className={styles.headerWrapper}>
                 <img src={randomHeaderImage} alt="Header" className={styles.backgroundImage} />
-                <h1 className={styles.headerText}>KIES HULP</h1>
+                <h1 className={styles.headerText}>{t.electionHelper}</h1>
             </div>
             <div className={styles.electionHelperContainer}>
-                <h1>Kies de partijen die je wilt vergelijken</h1>
+                <h1>{t.chooseParties}</h1>
                 <PartyList
                     parties={partiesData.partijen}
                     selectedParties={selectedParties}
                     togglePartySelection={togglePartySelection}
                 />
 
-                <h1>Kies een onderwerp</h1>
+                <h1>{t.chooseTopic}</h1>
                 <TopicList
                     topics={topics}
                     selectedTopic={selectedTopic}
@@ -60,10 +92,10 @@ function ElectionHelper() {
                 />
 
                 <div className={styles.selectedPartiesContainer}>
-                    <h1>Geselecteerde Partijen:</h1>
+                    <h1>{t.selectedParties}</h1>
                     {selectedParties.map((party) => (
                         <SelectedPartyItem
-                            key={party}
+                            key={`${language}_${party}`}
                             party={party}
                             partyScores={partyScores}
                             getPartyImage={getPartyImage}
@@ -72,10 +104,12 @@ function ElectionHelper() {
                             undoAnswer={undoAnswer}
                             answeredQuestions={answeredQuestions}
                             selectedTopic={selectedTopic}
+                            isExpanded={expandedItems[party]}
+                            toggleExpansion={() => toggleItemExpansion(party)}
+                            noPositionAvailable={t.noPositionAvailable}
                         />
                     ))}
                 </div>
-
             </div>
             <StyledButton label="Reset" onClick={handleReset} />
         </>

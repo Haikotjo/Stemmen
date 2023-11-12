@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import StyledButton from "../button/StyledButton";
 import styles from './SelectedPartyItem.module.scss';
 
 const SelectedPartyItem = ({
                                party,
+                               isExpanded,
+                               toggleExpansion,
                                partyScores,
                                getPartyImage,
                                positions,
@@ -11,14 +13,19 @@ const SelectedPartyItem = ({
                                undoAnswer,
                                answeredQuestions,
                                selectedTopic,
+                               noPositionAvailable
                            }) => {
-    const [isExpanded, setIsExpanded] = useState(false); // Staat voor het beheren van tekstuitvouw
 
-    const toggleTextExpansion = () => {
-        setIsExpanded(!isExpanded);
-    };
+    const [positionText, setPositionText] = useState('');
 
-    const positionText = positions && positions[party]; // Controleer of positions[party] gedefinieerd is
+    useEffect(() => {
+        // Update de positietekst wanneer de positions prop verandert
+        if (positions && positions[party]) {
+            setPositionText(positions[party]);
+        } else {
+            setPositionText(noPositionAvailable);
+        }
+    }, [positions, party, noPositionAvailable]);
 
     return (
         <div className={styles.selectedPartyItemContainer}>
@@ -36,14 +43,14 @@ const SelectedPartyItem = ({
                             <strong className={styles.firstSentence}>
                                 {positionText.split('.')[0] + '.'}
                             </strong>
-                            {!isExpanded && (
-                                <span className={styles.moreText} onClick={toggleTextExpansion}> >>></span>
+                            {!isExpanded && selectedTopic && (
+                                <span className={styles.moreText} onClick={toggleExpansion}> >>></span>
                             )}
                             <div className={styles.restOfTextContainer}>
                                 {isExpanded && (
                                     <span className={styles.restOfText}>
                                 {positionText.substring(positionText.split('.')[0].length + 1)}
-                                        <span className={styles.moreText} onClick={toggleTextExpansion}> {"<<<"} </span>
+                                        <span className={styles.moreText} onClick={toggleExpansion}> {"<<<"} </span>
                             </span>
                                 )}
                             </div>
