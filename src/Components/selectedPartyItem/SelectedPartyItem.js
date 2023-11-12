@@ -13,7 +13,10 @@ const SelectedPartyItem = ({
                                undoAnswer,
                                answeredQuestions,
                                selectedTopic,
-                               noPositionAvailable
+                               noPositionAvailable,
+                               agree,
+                               disagree,
+                               neutral
                            }) => {
 
     const [positionText, setPositionText] = useState('');
@@ -66,9 +69,11 @@ const SelectedPartyItem = ({
                             />
                         ) : (
                             <>
-                                <StyledButton label="Eens" onClick={() => handleAnswer(party, selectedTopic, 'Eens')} />
-                                <StyledButton label="Oneens" onClick={() => handleAnswer(party, selectedTopic, 'Oneens')} />
-                                <StyledButton label="Neutraal" onClick={() => handleAnswer(party, selectedTopic, 'Neutraal')} />
+                                <StyledButton label={agree} onClick={() => handleAnswer(party, selectedTopic, agree)} />
+                                <StyledButton label={disagree} onClick={() => handleAnswer(party, selectedTopic, disagree)} />
+                                <StyledButton label={neutral} onClick={() => handleAnswer(party, selectedTopic, neutral)} />
+
+
                             </>
                         )}
                         {partyScores[party] !== undefined && <h2>Score: {partyScores[party]}</h2>}

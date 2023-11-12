@@ -37,18 +37,26 @@ function ElectionHelper() {
             chooseTopic: "Kies een onderwerp",
             selectedParties: "Geselecteerde Partijen:",
             noPositionAvailable: "Kies een onderwerp",
+            agree: "Eens",
+            disagree: "Oneens",
+            neutral: "Neutraal"
         },
         en: {
             electionHelper:"ELECTION HELPER",
             chooseParties: "Choose the parties you want to compare",
             chooseTopic: "Choose a topic",
             selectedParties: "Selected Parties:",
-            noPositionAvailable: "Choose a subject"
+            noPositionAvailable: "Choose a subject",
+            agree: "Agree",
+            disagree: "Disagree",
+            neutral: "Neutral"
         }
     };
 
     const t = translations[language];
-
+    const agree = t.agree;
+    const disagree = t.disagree;
+    const neutral = t.neutral;
     useEffect(() => {
         // Controleer of zowel geselecteerde partijen als een geselecteerd onderwerp aanwezig zijn
         if (selectedParties.length > 0 && selectedTopic) {
@@ -107,6 +115,9 @@ function ElectionHelper() {
                             isExpanded={expandedItems[party]}
                             toggleExpansion={() => toggleItemExpansion(party)}
                             noPositionAvailable={t.noPositionAvailable}
+                            agree={agree}
+                            disagree={disagree}
+                            neutral={neutral}
                         />
                     ))}
                 </div>

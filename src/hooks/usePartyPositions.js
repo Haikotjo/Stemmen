@@ -27,7 +27,7 @@ function usePartyPositions(selectedParty) {
 
             const positionsDataForLanguage = positionsData[language] || positionsData.nl;
 
-            Object.keys(positionsData).forEach((topic) => {
+            Object.keys(positionsDataForLanguage).forEach((topic) => {
                 // Get the position of the selected party for the current topic
                 const position = getPositions(topic, selectedParty, language);
                 // Update the new positions object

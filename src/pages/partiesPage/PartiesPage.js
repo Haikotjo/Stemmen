@@ -7,6 +7,7 @@ import styles from './PartiesPage.module.scss';
 import Modal from "../../Components/modal/Modal";
 import textData from '../../data/textData.json';
 import {getPartyImage, getRandomImagePage} from "../../utils/utils";
+import {useLanguage} from "../../context/LanguageContext";
 
 
 
@@ -16,7 +17,13 @@ function PartiesPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const randomHeaderImage =  getRandomImagePage();
 
+    const { language } = useLanguage();
+    const textContent = textData[language];
+
     const handlePartySelection = (party) => {
+
+        console.log("Geselecteerde partij:", party);
+        console.log("Posities voor de partij:", positions);
         setSelectedParty(party);
         setIsModalOpen(true);
     };
@@ -34,7 +41,7 @@ function PartiesPage() {
             </div>
             <div className={styles.partiesPageContainer}>
                 <div className={styles.pageDescriptionsDetails}>
-                    <h2>{textData.nl.pageDescriptionsDetails.partiesPage}</h2>
+                    <h2>{textContent.pageDescriptionsDetails.partiesPage}</h2>
                 </div>
                 <PartyList
                     parties={partiesData.partijen}
