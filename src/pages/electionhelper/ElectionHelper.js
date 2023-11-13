@@ -30,6 +30,7 @@ function ElectionHelper() {
     const randomHeaderImage =  getRandomImagePage();
     const [expandedItems, setExpandedItems] = useState({});
 
+
     const translations = {
         nl: {
             electionHelper: "KIES HULP",
@@ -50,6 +51,16 @@ function ElectionHelper() {
             agree: "Agree",
             disagree: "Disagree",
             neutral: "Neutral"
+        },
+        kids: {
+            electionHelper: "KIES HULP",
+            chooseParties: "Welke partijen vind je leuk!",
+            chooseTopic: "Kies iets waar jij meer over wil weten",
+            selectedParties: "Deze partijen zeijn gekozen:",
+            noPositionAvailable: "Kies een onderwerp",
+            agree: "Ja goed plan!",
+            disagree: "Nee joh!",
+            neutral: "Ik weet niet"
         }
     };
 

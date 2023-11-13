@@ -9,9 +9,11 @@ const PartyPosition = ({ party, position, topic }) => {
     const [restOfTheText, setRestOfTheText] = useState('');
 
     useEffect(() => {
-        const sentenceEnd = position.includes('.') ? position.indexOf('.') + 1 : position.length;
-        setFirstSentence(position.substring(0, sentenceEnd));
-        setRestOfTheText(position.substring(sentenceEnd));
+        if (position) {
+            const sentenceEnd = position.includes('.') ? position.indexOf('.') + 1 : position.length;
+            setFirstSentence(position.substring(0, sentenceEnd));
+            setRestOfTheText(position.substring(sentenceEnd));
+        }
     }, [position]);
 
     return (

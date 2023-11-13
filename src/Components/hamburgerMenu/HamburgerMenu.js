@@ -13,14 +13,19 @@ const HamburgerMenu = () => {
     // Object met linkteksten voor beide talen
     const linkTexts = {
         nl: {
-            kiesHulp: "Kies Hulp",
-            partijPagina: "Partij Pagina",
-            standpuntenPagina: "Standpunten Pagina"
+            kiesHulp: "Kies Hulpje",
+            partijPagina: "De Partijen",
+            standpuntenPagina: "Standpunten"
         },
         en: {
             kiesHulp: "Election Helper",
             partijPagina: "Party Page",
             standpuntenPagina: "Positions Page"
+        },
+        kids: {
+            kiesHulp: "Kies Hulp",
+            partijPagina: "De Partijen",
+            standpuntenPagina: "Standpunten"
         }
     };
 

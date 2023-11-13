@@ -9,8 +9,6 @@ import textData from '../../data/textData.json';
 import {getPartyImage, getRandomImagePage} from "../../utils/utils";
 import {useLanguage} from "../../context/LanguageContext";
 
-
-
 function PartiesPage() {
     const [selectedParty, setSelectedParty] = useState(null);
     const [positions] = usePartyPositions(selectedParty);
@@ -37,11 +35,11 @@ function PartiesPage() {
             {/*<ParallaxBackground backgroundImage="/images/backgrounds/keuzes.png" />*/}
             <div className={styles.headerWrapper}>
                 <img src={randomHeaderImage} alt="Header" className={styles.backgroundImage} />
-                <h1 className={styles.headerText}>DE PARTIJEN</h1>
+                <h1 className={styles.headerText}>{textContent.pages.partiesPage.name}</h1>
             </div>
             <div className={styles.partiesPageContainer}>
                 <div className={styles.pageDescriptionsDetails}>
-                    <h2>{textContent.pageDescriptionsDetails.partiesPage}</h2>
+                    <h2>{textContent.pages.partiesPage.detail} </h2>
                 </div>
                 <PartyList
                     parties={partiesData.partijen}

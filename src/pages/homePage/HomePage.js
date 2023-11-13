@@ -44,9 +44,17 @@ const HomePage = () => {
                 </div>
 
                 <img src={randomImage} alt="Header" className={styles.backgroundImage} />
-                <h2>{language === 'nl' ? 'Verkiezingsinformatie' : 'Election info'}</h2>
+                <h2>
+                    {language === 'nl' ? 'Verkiezingsinformatie' :
+                        language === 'kids' ? 'Info over de verkiezingen.' :
+                            'Election Info'}
+                </h2>
                 <p>{currentTextData.electionInfo}</p>
-                <h2>{language === 'nl' ? 'Extra Informatie' : 'More info'}</h2>
+                <h2>
+                    {language === 'nl' ? 'Extra Informatie' :
+                        language === 'kids' ? 'Extra Info' :
+                            'More Info'}
+                </h2>
                 <p>{currentTextData.extraStory}</p>
                 <img src="/images/backgrounds/goedOfKwaad.png" alt="Achtergrondafbeelding" className={styles.backgroundImage} />
             </div>

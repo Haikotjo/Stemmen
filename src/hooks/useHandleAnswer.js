@@ -4,7 +4,11 @@ import {ScoreContext} from "../context/ScoreContext";
 
 
 const useHandleAnswer = () => {
+
     const { partyScores, setPartyScores, answeredQuestions, setAnsweredQuestions } = useContext(ScoreContext);
+
+    const positiveAnswers = ['Eens', 'Agree', 'Ja goed plan!'];
+    const negativeAnswers = ['Oneens', 'Disagree', 'Nee', 'Nee joh!'];
 
     const handleAnswer = (party, topic, answer) => {
         const newAnsweredQuestions = { ...answeredQuestions };
@@ -15,9 +19,10 @@ const useHandleAnswer = () => {
             newPartyScores[party] = 0;
         }
 
-        if (answer === 'Eens') {
+        // Controleer of het antwoord positief of negatief is
+        if (positiveAnswers.includes(answer)) {
             newPartyScores[party] += 1;
-        } else if (answer === 'Oneens') {
+        } else if (negativeAnswers.includes(answer)) {
             newPartyScores[party] -= 1;
         }
 
@@ -26,7 +31,6 @@ const useHandleAnswer = () => {
 
         localStorage.setItem('answeredQuestions', JSON.stringify(newAnsweredQuestions));
         localStorage.setItem('partyScores', JSON.stringify(newPartyScores));
-        
     };
 
     return handleAnswer;
