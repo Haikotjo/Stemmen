@@ -30,6 +30,7 @@ function ElectionHelper() {
     const randomHeaderImage =  getRandomImagePage();
     const [expandedItems, setExpandedItems] = useState({});
 
+
     const translations = {
         nl: {
             electionHelper: "KIES HULP",

@@ -1,9 +1,11 @@
-// useUndoAnswer.js
 import { useContext } from 'react';
 import { ScoreContext } from "../context/ScoreContext";
 
 const useUndoAnswer = () => {
     const { partyScores, setPartyScores, answeredQuestions, setAnsweredQuestions } = useContext(ScoreContext);
+
+    const positiveAnswers = ['Eens', 'Agree', 'Ja goed plan!'];
+    const negativeAnswers = ['Oneens', 'Disagree', 'Nee', 'Nee joh!'];
 
     const undoAnswer = (party, topic) => {
         const newAnsweredQuestions = { ...answeredQuestions };
@@ -11,9 +13,12 @@ const useUndoAnswer = () => {
         delete newAnsweredQuestions[`${topic}_${party}`];
 
         const newPartyScores = { ...partyScores };
-        if (previousAnswer === 'Eens') {
+        // Ongedaan maken van een positief antwoord
+        if (positiveAnswers.includes(previousAnswer)) {
             newPartyScores[party] = (newPartyScores[party] || 0) - 1;
-        } else if (previousAnswer === 'Oneens') {
+        }
+        // Ongedaan maken van een negatief antwoord
+        else if (negativeAnswers.includes(previousAnswer)) {
             newPartyScores[party] = (newPartyScores[party] || 0) + 1;
         }
 
@@ -22,7 +27,6 @@ const useUndoAnswer = () => {
 
         localStorage.setItem('answeredQuestions', JSON.stringify(newAnsweredQuestions));
         localStorage.setItem('partyScores', JSON.stringify(newPartyScores));
-
     };
 
     return undoAnswer;
