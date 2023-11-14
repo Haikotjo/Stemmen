@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState} from 'react';
 // Importing utility function to get positions based on topic and selected party
 import { getPositions } from '../utils/utils';
 // Importing positions data from a JSON file

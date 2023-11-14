@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import StyledButton from "../button/StyledButton";
+import React, { useEffect, useState } from 'react';
 import styles from './SelectedPartyItem.module.scss';
+import { BsFillEmojiSmileFill, BsEmojiNeutralFill, BsEmojiFrownFill } from 'react-icons/bs';
+import StyledButton from "../button/StyledButton";
 
 const SelectedPartyItem = ({
                                party,
@@ -18,7 +19,6 @@ const SelectedPartyItem = ({
                                disagree,
                                neutral
                            }) => {
-
     const [positionText, setPositionText] = useState('');
 
     useEffect(() => {
@@ -52,9 +52,9 @@ const SelectedPartyItem = ({
                             <div className={styles.restOfTextContainer}>
                                 {isExpanded && (
                                     <span className={styles.restOfText}>
-                                {positionText.substring(positionText.split('.')[0].length + 1)}
+                    {positionText.substring(positionText.split('.')[0].length + 1)}
                                         <span className={styles.moreText} onClick={toggleExpansion}> {"<<<"} </span>
-                            </span>
+                  </span>
                                 )}
                             </div>
                         </div>
@@ -63,23 +63,33 @@ const SelectedPartyItem = ({
                 {selectedTopic && (
                     <div className={styles.buttonContainer}>
                         {answeredQuestions[`${selectedTopic}_${party}`] ? (
-                            <StyledButton
-                                label="Ongedaan maken"
-                                onClick={() => undoAnswer(party, selectedTopic)}
-                            />
+                            <div className={styles.emojiContainer}>
+                                {/* Emoji's voor het ongedaan maken */}
+                                <StyledButton
+                                    label="Ongedaan maken"
+                                    onClick={() => undoAnswer(party, selectedTopic)}
+                                />
+                            </div>
                         ) : (
-                            <>
-                                <StyledButton label={agree} onClick={() => handleAnswer(party, selectedTopic, agree)} />
-                                <StyledButton label={disagree} onClick={() => handleAnswer(party, selectedTopic, disagree)} />
-                                <StyledButton label={neutral} onClick={() => handleAnswer(party, selectedTopic, neutral)} />
-
-
-                            </>
+                            <div className={styles.emojiContainer}>
+                                {/* Emoji's voor antwoorden */}
+                                <BsFillEmojiSmileFill
+                                    className={`${styles.emoji} ${styles.happyEmoji}`}
+                                    onClick={() => handleAnswer(party, selectedTopic, agree)}
+                                />
+                                <BsEmojiNeutralFill
+                                    className={`${styles.emoji} ${styles.neutralEmoji}`}
+                                    onClick={() => handleAnswer(party, selectedTopic, neutral)}
+                                />
+                                <BsEmojiFrownFill
+                                    className={`${styles.emoji} ${styles.sadEmoji}`}
+                                    onClick={() => handleAnswer(party, selectedTopic, disagree)}
+                                />
+                            </div>
                         )}
                         {partyScores[party] !== undefined && <h2>Score: {partyScores[party]}</h2>}
                     </div>
                 )}
-
             </div>
         </div>
     );

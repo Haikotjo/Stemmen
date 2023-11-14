@@ -28,21 +28,43 @@
   padding-right: 16px; // Afstand tussen partij info en knoppen
 }
 
-.buttonContainer {
+.emojiContainer {
   flex: 0 0 auto; // Knoppen niet laten schalen
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
 
-  & > button {
-    margin-bottom: 4px; // Ruimte tussen de knoppen, aanpassen naar wens
+  @include extra-small-screen {
+      margin-top: 1.5rem;
+    }
+  @include small-screen {
+      margin-top: 2rem;
+    }
+
+  & > .emoji {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+  .happyEmoji {
+    font-size: xx-large;
+    color: #03cea4;
+  }
+  .neutralEmoji {
+    font-size: xx-large;
+    color: $secondary-color;
+  }
+  .sadEmoji {
+    font-size: xx-large;
+    color: $fourth-color;
   }
 }
+
+
 
 @media (max-width: 768px) {
   .selectedPartyItem {
     flex-direction: column; // Stapel de items op kleine schermen
-    align-items: flex-start; // Uitlijnen naar de start
+    align-items: center; // Uitlijnen naar de start
   }
 
   .partyLogo {
@@ -53,13 +75,6 @@
 
   .partyInfo {
     padding-right: 0; // Verwijder padding rechts op mobiel
-  }
-
-  .buttonContainer {
-    width: 100%; // Laat de knoppencontainer de volledige breedte innemen
-    flex-direction: row; // Verander de richting naar rij om knoppen naast elkaar te zetten
-    justify-content: space-evenly; // Verdeel de ruimte gelijkmatig
-    margin-top: 8px; // Voeg wat ruimte toe boven de knoppen
   }
 }
 // Styling for the more text indicator (>>>)

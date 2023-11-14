@@ -15,6 +15,8 @@ import useReset from "../../hooks/useReset";
 import SelectedPartyItem from "../../Components/selectedPartyItem/SelectedPartyItem";
 import {useLanguage} from "../../context/LanguageContext";
 
+
+
 function ElectionHelper() {
     const [positions, setPositions] = useState({});
     const { language } = useLanguage();
@@ -68,6 +70,7 @@ function ElectionHelper() {
     const agree = t.agree;
     const disagree = t.disagree;
     const neutral = t.neutral;
+
     useEffect(() => {
         // Controleer of zowel geselecteerde partijen als een geselecteerd onderwerp aanwezig zijn
         if (selectedParties.length > 0 && selectedTopic) {
