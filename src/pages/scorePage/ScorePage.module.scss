@@ -26,9 +26,34 @@ max-width: 1440px;
   height: auto; /* Zorg ervoor dat de hoogte van de afbeeldingen automatisch wordt aangepast om de verhoudingen te behouden */
 }
 
+.scorePage__partyImage{
+  border-radius: 12px;
+}
+
 .scorePage__partyList {
   display: grid;
   gap: 20px; // Afstand tussen de grid items
+
+  .scorePage__partyItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f9fa;
+    margin: 2rem;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4)
+  }
+
+  .scorePage__partyItem:hover {
+    transform: scale(1.05); /* Vergroting op hover */
+
+  }
+
+  .scorePage__partyInfo{
+    margin-top: 1rem;
+  }
 
   @include extra-large-screen {
     grid-template-columns: repeat(3, 1fr); // 3 items in een rij voor extra large en large schermen

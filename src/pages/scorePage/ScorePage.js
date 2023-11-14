@@ -66,6 +66,16 @@ const ScorePage = () => {
                             <li key={party} className={styles.scorePage__partyItem}>
                                 <img src={getPartyImage(party)} alt={`${party} logo`} className={styles.scorePage__partyImage} />
                                 <h2 className={styles.scorePage__partyInfo}>{party}: {score}</h2>
+                                {/* Voeg hier de details over de overeenkomsten per partij toe */}
+                                <ul className={styles.scorePage__partyDetails}>
+                                    {partiesUserAgreesOrDisagreesWith
+                                        .filter(item => item.party === party)
+                                        .map(({ topic, answer }) => (
+                                            <li key={`${party}_${topic}`} className={styles.scorePage__partyDetail}>
+                                                {`${topic}: ${answer}`}
+                                            </li>
+                                        ))}
+                                </ul>
                             </li>
                         ))}
                     </ul>

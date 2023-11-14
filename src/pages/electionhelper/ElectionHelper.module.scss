@@ -46,6 +46,14 @@
   margin-right: auto;
   padding: 0 20px; // Voeg padding toe voor kleinere schermen
 
+  .topicTitle,
+  .selectedPartiesTitle,
+  .pageTitle {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+  }
+
   @include extra-small-screen {
     padding: 0 10px; // Minder padding voor extra kleine schermen
   }
@@ -74,4 +82,16 @@
     @content;
   }
 }
+
+.buttonsContainer {
+  display: flex; // Plaats de knoppen naast elkaar
+  justify-content: space-between; // Voeg ruimte tussen de knoppen toe
+  // Voeg wat ruimte toe boven de knoppen
+  width: 50%;
+  margin: 2rem auto;
+}
+.selectedPartiesContainer{
+  margin-top: 2rem;
+}
+
 

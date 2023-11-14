@@ -42,7 +42,8 @@ function ElectionHelper() {
             noPositionAvailable: "Kies een onderwerp",
             agree: "Eens",
             disagree: "Oneens",
-            neutral: "Neutraal"
+            neutral: "Neutraal",
+            results: "Uitslag"
         },
         en: {
             electionHelper:"ELECTION HELPER",
@@ -52,7 +53,8 @@ function ElectionHelper() {
             noPositionAvailable: "Choose a subject",
             agree: "Agree",
             disagree: "Disagree",
-            neutral: "Neutral"
+            neutral: "Neutral",
+            results: "results"
         },
         kids: {
             electionHelper: "KIES HULP",
@@ -62,7 +64,8 @@ function ElectionHelper() {
             noPositionAvailable: "Kies een onderwerp",
             agree: "Ja goed plan!",
             disagree: "Nee joh!",
-            neutral: "Ik weet niet"
+            neutral: "Ik weet niet",
+            results: "Check de uislag!"
         }
     };
 
@@ -70,6 +73,7 @@ function ElectionHelper() {
     const agree = t.agree;
     const disagree = t.disagree;
     const neutral = t.neutral;
+    const results = t.results;
 
     useEffect(() => {
         // Controleer of zowel geselecteerde partijen als een geselecteerd onderwerp aanwezig zijn
@@ -99,14 +103,14 @@ function ElectionHelper() {
                 <h1 className={styles.headerText}>{t.electionHelper}</h1>
             </div>
             <div className={styles.electionHelperContainer}>
-                <h1>{t.chooseParties}</h1>
+                <h1 className={styles.pageTitle}>{t.chooseParties}</h1>
                 <PartyList
                     parties={partiesData.partijen}
                     selectedParties={selectedParties}
                     togglePartySelection={togglePartySelection}
                 />
 
-                <h1>{t.chooseTopic}</h1>
+                <h1 className={styles.topicTitle}>{t.chooseTopic}</h1>
                 <TopicList
                     topics={topics}
                     selectedTopic={selectedTopic}
@@ -114,7 +118,7 @@ function ElectionHelper() {
                 />
 
                 <div className={styles.selectedPartiesContainer}>
-                    <h1>{t.selectedParties}</h1>
+                    <h1 className={styles.selectedPartiesTitle}>{t.selectedParties}</h1>
                     {selectedParties.map((party) => (
                         <SelectedPartyItem
                             key={`${language}_${party}`}
@@ -136,7 +140,10 @@ function ElectionHelper() {
                     ))}
                 </div>
             </div>
-            <StyledButton label="Reset" onClick={handleReset} />
+            <div className={styles.buttonsContainer}>
+                <StyledButton label="Reset" onClick={handleReset} />
+                <StyledButton label={results} onClick={() => { window.location.href = '/score-page'; }} />
+            </div>
         </>
     );
 }
