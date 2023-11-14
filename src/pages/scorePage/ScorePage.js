@@ -4,17 +4,23 @@ import { ScoreContext } from '../../context/ScoreContext';
 import styles from './ScorePage.module.scss';
 import { useLanguage } from "../../context/LanguageContext";
 import { getPartyImage } from '../../utils/utils';
-import { Link } from 'react-router-dom'; // Importeer Link van React Router
+import { Link } from 'react-router-dom';
+import StyledButton from "../../Components/button/StyledButton";
+import useReset from "../../hooks/useReset"; // Importeer Link van React Router
 
 const ScorePage = () => {
     const { partyScores } = useContext(ScoreContext);
     const { language } = useLanguage();
-    const savedAnswers = JSON.parse(localStorage.getItem('answeredQuestions'));
+    const handleReset = useReset();
+    const savedData = JSON.parse(localStorage.getItem('answeredQuestions'));
+    const savedLanguage = localStorage.getItem('language');
     const partiesUserAgreesOrDisagreesWith = [];
 
-    for (const [questionPartyKey, answer] of Object.entries(savedAnswers)) {
+    for (const [questionPartyKey, answer] of Object.entries(savedData)) {
         const [topic, party] = questionPartyKey.split('_');
-        if (answer === 'Eens' || answer === 'Oneens') {
+        if ((language === 'nl' || language === 'kids') && (answer === 'Ja goed plan!' || answer === 'Nee joh!' || answer === 'Ik weet niet')) {
+            partiesUserAgreesOrDisagreesWith.push({ topic, party, answer });
+        } else if (language !== 'nl' && language !== 'kids' && (answer === 'Agree' || answer === 'Disagree')) {
             partiesUserAgreesOrDisagreesWith.push({ topic, party, answer });
         }
     }
@@ -22,19 +28,22 @@ const ScorePage = () => {
     const translations = {
         nl: {
             match: "Met deze partijen ben je het, het meest eens.",
-            noScores: "Doe de kies-hulp om te kijken welke partij het best bij je past."
+            noScores: "Doe de kies-hulp om te kijken welke partij het best bij je past.",
+            electionHelp: "Kies Hulp"
         },
         en: {
             match: "These are the parties you most agree with",
-            noScores: "Do the election helper to find out which party suits you best."
+            noScores: "Do the election helper to find out which party suits you best.",
+            electionHelp: "Election Helper"
         },
         kids: {
-            kiesHulp: "Deze partijen vind jij het leukst.",
-            noScores: "Doe de kies-hulp om te ontdekken welke partij cool voor jou is!"
+            match: "Deze partijen vind jij het leukst.",
+            noScores: "Doe de kies-hulp om te ontdekken welke partij cool voor jou is!",
+            electionHelp: "Kies Hulpje"
         },
     };
 
-    const t = translations[language];
+    const t = translations[savedLanguage];
 
     const sortedPartyScores = Object.entries(partyScores).sort(([, scoreA], [, scoreB]) => scoreB - scoreA);
     const partiesWithImages = sortedPartyScores.map(([party, score]) => ({
@@ -51,6 +60,7 @@ const ScorePage = () => {
     const hasScores = Object.keys(partyScores).length > 0;
 
     return (
+        <>
         <div className={styles.scorePage}>
             <div className={styles.imgContainer}>
                 <img src= '/images/party/party-monster-5.png' alt="Party Monster 5" />
@@ -81,11 +91,18 @@ const ScorePage = () => {
                     </ul>
                 </>
             ) : (
-                <p>
-                    {t.match}: <Link to="/kies-hulp" className={styles.linkToPage}>&gt;&gt;&gt;</Link> {/* Gebruik de Link-component */}
-                </p>
+                <p>{t.noScores} <Link to="/kies-hulp" className={styles.linkToPage}>&gt;&gt;&gt;</Link></p>
             )}
         </div>
+            <div className={styles.buttonsContainer}>
+                {hasScores && (
+                    <StyledButton label="Reset" onClick={handleReset} />
+                )}
+                <Link to='/kies-hulp'>
+                    <StyledButton label={t.electionHelp} />
+                </Link>
+            </div>
+        </>
     );
 };
 

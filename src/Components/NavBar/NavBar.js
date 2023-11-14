@@ -17,19 +17,19 @@ function NavBar() {
             kiesHulp: "Kies Hulp",
             partijPagina: "De Partijen",
             standpuntenPagina: "Standpunten",
-            scorePage: "Mijn Match"
+            scorePage: "Mijn Partij Match"
         },
         en: {
             kiesHulp: "Election Helper",
             partijPagina: "Party Page",
             standpuntenPagina: "Positions Page",
-            scorePage: "Best match"
+            scorePage: "Best Match"
         },
         kids: {
             kiesHulp: "Kies Hulpje",
-            partijPagina: "De partijen",
+            partijPagina: "De Partijen",
             standpuntenPagina: "Standpunten",
-            scorePage: "Mijn partij"
+            scorePage: "Beste Partijen"
         },
     };
 

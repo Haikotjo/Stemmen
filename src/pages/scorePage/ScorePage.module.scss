@@ -2,37 +2,33 @@
 @import '../../styles/globals';
 
 .scorePage {
-  // Stijlen voor de hoofdcontainer
   @include max-container-width;
-max-width: 1440px;
-  margin: 0 auto; // Centreer de container
-  .linkToPage{
-    color: $fourth-color;
-    &:hover {
-      color: $third-color;
-    }
-  }
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .imgContainer {
-  display: flex;  /* Gebruik flexbox om de afbeeldingen naast elkaar te plaatsen */
-  justify-content: space-between; /* Verdeel de ruimte tussen de afbeeldingen gelijkmatig */
-  align-items: center; /* Centreer de afbeeldingen verticaal in de container */
-  margin-bottom: 20px; /* Voeg wat ruimte toe onder de afbeeldingen */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  img {
+    max-width: 30%;
+    height: auto;
+  }
 }
 
-.imgContainer img {
-  max-width: 30%; /* Stel de maximale breedte van de afbeeldingen in (30% van de container) */
-  height: auto; /* Zorg ervoor dat de hoogte van de afbeeldingen automatisch wordt aangepast om de verhoudingen te behouden */
-}
-
-.scorePage__partyImage{
+.scorePage__partyImage {
   border-radius: 12px;
 }
 
 .scorePage__partyList {
   display: grid;
-  gap: 20px; // Afstand tussen de grid items
+  gap: 20px;
+  margin-top: 1rem;
+
+  @include responsive-grid-columns;
 
   .scorePage__partyItem {
     display: flex;
@@ -42,36 +38,34 @@ max-width: 1440px;
     margin: 2rem;
     border-radius: 12px;
     transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4)
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    .scorePage__partyInfo {
+      margin-top: 1rem;
+    }
   }
+}
 
-  .scorePage__partyItem:hover {
-    transform: scale(1.05); /* Vergroting op hover */
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 2rem;
 
+  @media (max-width: 600px) {
+    flex-direction: column;
   }
+}
 
-  .scorePage__partyInfo{
-    margin-top: 1rem;
-  }
+.linkToPage {
+  color: $fourth-color;
 
-  @include extra-large-screen {
-    grid-template-columns: repeat(3, 1fr); // 3 items in een rij voor extra large en large schermen
-  }
-
-  @include large-screen {
-    grid-template-columns: repeat(3, 1fr); // 3 items in een rij
-  }
-
-  @include medium-screen {
-    grid-template-columns: repeat(2, 1fr); // 2 items in een rij voor medium schermen
-  }
-
-  @include small-screen {
-    grid-template-columns: 1fr; // 1 item per rij voor small schermen
-  }
-
-  @include extra-small-screen {
-    grid-template-columns: 1fr; // 1 item per rij voor extra small schermen
+  &:hover {
+    color: $third-color;
   }
 }
