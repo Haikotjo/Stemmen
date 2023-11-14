@@ -36,10 +36,10 @@
   color: white;
 
   &:hover {
-    background: $fourth-color;
+    background: $secondary-color;
   }
 
   &.active {
-    background: $secondary-color;
+    background: $fourth-color;
   }
 }

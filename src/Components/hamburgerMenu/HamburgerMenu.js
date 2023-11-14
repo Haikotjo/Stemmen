@@ -13,20 +13,23 @@ const HamburgerMenu = () => {
     // Object met linkteksten voor beide talen
     const linkTexts = {
         nl: {
-            kiesHulp: "Kies Hulpje",
+            kiesHulp: "Kies Hulp",
             partijPagina: "De Partijen",
-            standpuntenPagina: "Standpunten"
+            standpuntenPagina: "Standpunten",
+            scorePage: "Mijn Match"
         },
         en: {
             kiesHulp: "Election Helper",
             partijPagina: "Party Page",
-            standpuntenPagina: "Positions Page"
+            standpuntenPagina: "Positions Page",
+            scorePage: "Best match"
         },
         kids: {
-            kiesHulp: "Kies Hulp",
-            partijPagina: "De Partijen",
-            standpuntenPagina: "Standpunten"
-        }
+            kiesHulp: "Kies Hulpje",
+            partijPagina: "De partijen",
+            standpuntenPagina: "Standpunten",
+            scorePage: "Mijn partij"
+        },
     };
 
     // Haal de teksten voor de huidige taal op
@@ -77,6 +80,12 @@ const HamburgerMenu = () => {
                         onClick={() => setIsOpen(false)}
                     >
                         {currentLinkTexts.standpuntenPagina}
+                    </NavLink>
+                    <NavLink
+                        to="/score-page"
+                        className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}
+                    >
+                        {currentLinkTexts.scorePage}
                     </NavLink>
                 </div>
             )}

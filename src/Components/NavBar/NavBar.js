@@ -4,23 +4,12 @@ import styles from './NavBar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import HamburgerMenu from "../hamburgerMenu/HamburgerMenu";
-import {useLanguage} from "../../context/LanguageContext";
+import { useLanguage } from "../../context/LanguageContext";
+import LanguageMenu from "../languageMenu/LanguageMenu";
 
 function NavBar() {
 
     const { language, setLanguage } = useLanguage();
-
-    const toggleLanguage = () => {
-        if (language === 'nl') {
-            setLanguage('en');
-        } else if (language === 'en') {
-            setLanguage('nl');
-        }
-    };
-
-    const setToKids = () => {
-        setLanguage('kids');
-    };
 
     // Object met linkteksten voor beide talen
     const linkTexts = {
@@ -75,7 +64,7 @@ function NavBar() {
                     >
                         {currentLinkTexts.standpuntenPagina}
                     </NavLink>
-                    
+
                     <NavLink
                         to="/score-page"
                         className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}
@@ -85,14 +74,9 @@ function NavBar() {
 
                 </div>
                 <div className={styles.hamburgerMenu}>
-                    <HamburgerMenu />  {/* Dit vervangt de normale navlinks op kleine schermen */}
+                    <HamburgerMenu />
                 </div>
-                <div onClick={toggleLanguage} className={styles.languageToggle}>
-                    {language === 'nl' ? 'en' : 'nl'}
-                </div>
-                <div onClick={setToKids} className={styles.kidsToggle}>
-                    Kids
-                </div>
+                <LanguageMenu label='Language'/>
             </div>
         </div>
     );

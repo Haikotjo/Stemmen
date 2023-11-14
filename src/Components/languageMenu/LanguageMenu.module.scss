@@ -1,0 +1,56 @@
+@import '../../styles/globals';
+@import '../../styles/mixins';
+
+.languageMenu {
+  margin-right: 3rem;
+  display: block; // Standaard verborgen
+
+  @include extra-small-screen {
+    display: block; // Toon op extra kleine schermen
+  }
+
+  @include small-screen {
+    display: block; // Toon op kleine schermen
+  }
+
+  position: relative;
+}
+
+.icon {
+  margin:0;
+  font-size: 1.2rem;
+  &:hover{
+    color: $fourth-color;
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: $primary-color;
+  width: auto; // Aangepast van 100% naar auto
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.languageToggle {
+  display: block;
+  padding: 30px 40px;
+  text-decoration: none;
+  border-top: 1px solid #ccc;
+  color: white;
+  background-color: $primary-color;
+  margin: 0;
+
+  &:hover {
+    background: $secondary-color;
+  }
+
+  &.active {
+    background: $fourth-color;
+  }
+}
+
+.languageToggleNl{
+  margin-top: 10px;
+}

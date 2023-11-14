@@ -53,9 +53,9 @@ const ScorePage = () => {
     return (
         <div className={styles.scorePage}>
             <div className={styles.imgContainer}>
-                <img src= '/images/party/party-monster-1.png' alt="Party Monster 1" />
-                <img src= '/images/party/party-monster-2.png' alt="Party Monster 2" />
-                <img src= '/images/party/party-monster-3.png' alt="Party Monster 3" />
+                <img src= '/images/party/party-monster-5.png' alt="Party Monster 5" />
+                <img src= '/images/party/party-monster-7.png' alt="Party Monster 7" />
+                <img src= '/images/party/party-monster-6.png' alt="Party Monster 6" />
             </div>
             <h1 className={styles.scorePage__title}>scorepage</h1>
             {hasScores ? (
