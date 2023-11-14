@@ -61,12 +61,12 @@ function ElectionHelper() {
             electionHelper: "KIES HULP",
             chooseParties: "Welke partijen vind je leuk!",
             chooseTopic: "Kies iets waar jij meer over wil weten",
-            selectedParties: "Deze partijen zeijn gekozen:",
+            selectedParties: "Deze partijen heb je gekozen:",
             noPositionAvailable: "Kies een onderwerp",
             agree: "Ja goed plan!",
             disagree: "Nee joh!",
             neutral: "Ik weet niet",
-            results: "Check de uislag!"
+            results: "Check de uitslag!"
         }
     };
 

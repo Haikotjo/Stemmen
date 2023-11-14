@@ -7,6 +7,19 @@ const LanguageMenu = () => {
     const menuRef = useRef(null);
     const { language, setLanguage } = useLanguage();
 
+    const linkTexts = {
+        nl: {
+            language: "Taal"
+        },
+        en: {
+            language: "Language"
+        },
+        kids: {
+            language: "Taal"
+        },
+    };
+
+    const currentLinkTexts = linkTexts[language];
 
     const toggleLanguage = (selectedLanguage) => {
         setLanguage(selectedLanguage);
@@ -33,7 +46,7 @@ const LanguageMenu = () => {
     return (
         <div className={styles.languageMenu} ref={menuRef}>
             <div onClick={toggleMenu}>
-                <h1 className={styles.icon}>Language</h1>
+                <h1 className={styles.icon}>{currentLinkTexts.language}</h1>
             </div>
             {isOpen && (
                 <div className={styles.dropdown}>

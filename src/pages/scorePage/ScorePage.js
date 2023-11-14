@@ -61,42 +61,44 @@ const ScorePage = () => {
 
     return (
         <>
-        <div className={styles.scorePage}>
-            <div className={styles.imgContainer}>
-                <img src= '/images/party/party-monster-5.png' alt="Party Monster 5" />
-                <img src= '/images/party/party-monster-7.png' alt="Party Monster 7" />
-                <img src= '/images/party/party-monster-6.png' alt="Party Monster 6" />
+            <div className={styles.scorePage}>
+                <div className={styles.imgContainer}>
+                    <img src= '/images/party/party-monster-5.png' alt="Party Monster 5" />
+                    <img src= '/images/party/party-monster-7.png' alt="Party Monster 7" />
+                    <img src= '/images/party/party-monster-6.png' alt="Party Monster 6" />
+                </div>
+                <h1 className={styles.scorePage__title}>scorepage</h1>
+                {hasScores ? (
+                    <>
+                        <h2 className={styles.scorePage__subtitle}>{t.match}:</h2>
+                        <ul className={styles.scorePage__partyList}>
+                            {Object.entries(partyScores).map(([party, score]) => (
+                                <li key={party} className={styles.scorePage__partyItem}>
+                                    <img src={getPartyImage(party)} alt={`${party} logo`} className={styles.scorePage__partyImage} />
+                                    <h2 className={styles.scorePage__partyInfo}>{party}: {score}</h2>
+                                    {/* Voeg hier de details over de overeenkomsten per partij toe */}
+                                    <ul className={styles.scorePage__partyDetails}>
+                                        {partiesUserAgreesOrDisagreesWith
+                                            .filter(item => item.party === party)
+                                            .map(({ topic, answer }) => (
+                                                <li key={`${party}_${topic}`} className={styles.scorePage__partyDetail}>
+                                                    {`${topic}: ${answer}`}
+                                                </li>
+                                            ))}
+                                    </ul>
+                                </li>
+                            ))}
+                        </ul>
+                    </>
+                ) : (
+                    <p>{t.noScores} <Link to="/kies-hulp" className={styles.linkToPage}>&gt;&gt;&gt;</Link></p>
+                )}
             </div>
-            <h1 className={styles.scorePage__title}>scorepage</h1>
-            {hasScores ? (
-                <>
-                    <h2 className={styles.scorePage__subtitle}>{t.match}:</h2>
-                    <ul className={styles.scorePage__partyList}>
-                        {Object.entries(partyScores).map(([party, score]) => (
-                            <li key={party} className={styles.scorePage__partyItem}>
-                                <img src={getPartyImage(party)} alt={`${party} logo`} className={styles.scorePage__partyImage} />
-                                <h2 className={styles.scorePage__partyInfo}>{party}: {score}</h2>
-                                {/* Voeg hier de details over de overeenkomsten per partij toe */}
-                                <ul className={styles.scorePage__partyDetails}>
-                                    {partiesUserAgreesOrDisagreesWith
-                                        .filter(item => item.party === party)
-                                        .map(({ topic, answer }) => (
-                                            <li key={`${party}_${topic}`} className={styles.scorePage__partyDetail}>
-                                                {`${topic}: ${answer}`}
-                                            </li>
-                                        ))}
-                                </ul>
-                            </li>
-                        ))}
-                    </ul>
-                </>
-            ) : (
-                <p>{t.noScores} <Link to="/kies-hulp" className={styles.linkToPage}>&gt;&gt;&gt;</Link></p>
-            )}
-        </div>
             <div className={styles.buttonsContainer}>
                 {hasScores && (
-                    <StyledButton label="Reset" onClick={handleReset} />
+                    <Link to='/kies-hulp'>
+                        <StyledButton label="Reset" onClick={handleReset} />
+                    </Link>
                 )}
                 <Link to='/kies-hulp'>
                     <StyledButton label={t.electionHelp} />
