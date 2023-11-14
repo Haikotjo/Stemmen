@@ -4,7 +4,7 @@ import styles from './Hompage.module.scss'
 import PageDescriptionBlock from "../../Components/pageDescriptionBlock/PageDescriptionBlock";
 import {getRandomImage, getRandomImagePage} from "../../utils/utils";
 import {useLanguage} from "../../context/LanguageContext";
-import { MdArrowForwardIos } from "react-icons/md";
+
 const HomePage = () => {
     const { language, setLanguage } = useLanguage(); // Gebruik de taalcontext
     const randomImage =  getRandomImage();

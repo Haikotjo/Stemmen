@@ -9,7 +9,7 @@ import LanguageMenu from "../languageMenu/LanguageMenu";
 
 function NavBar() {
 
-    const { language, setLanguage } = useLanguage();
+    const { language } = useLanguage();
 
     // Object met linkteksten voor beide talen
     const linkTexts = {
