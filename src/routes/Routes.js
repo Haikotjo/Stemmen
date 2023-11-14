@@ -10,6 +10,7 @@ import { ScoreProvider } from '../context/ScoreContext';
 import {LanguageProvider} from "../context/LanguageContext";
 import {ThemeProvider} from "../context/ThemeContext";
 import {ModeProvider} from "../context/ModeContext";
+import ScorePage from "../pages/scorePage/ScorePage";
 
 function AppRoutes() {
     return (
@@ -24,7 +25,8 @@ function AppRoutes() {
                                 <Route path="/kies-hulp" element={<ElectionHelper />} />
                                 <Route path="/partij-pagina" element={<PartiesPage />} />
                                 <Route path="/standpunten-pagina" element={<PositionsPage />} />
-                                <Route path="/testpagina" element={<TestPage />} />
+                                {/*<Route path="/testpagina" element={<TestPage />} />*/}
+                                <Route path="/score-page" element={<ScorePage />} />
                                 {/* Meer routes */}
                             </Routes>
                         </ModeProvider>

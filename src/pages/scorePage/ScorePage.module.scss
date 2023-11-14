@@ -1,0 +1,52 @@
+@import '../../styles/mixins';
+@import '../../styles/globals';
+
+.scorePage {
+  // Stijlen voor de hoofdcontainer
+  @include max-container-width;
+max-width: 1440px;
+  margin: 0 auto; // Centreer de container
+  .linkToPage{
+    color: $fourth-color;
+    &:hover {
+      color: $third-color;
+    }
+  }
+}
+
+.imgContainer {
+  display: flex;  /* Gebruik flexbox om de afbeeldingen naast elkaar te plaatsen */
+  justify-content: space-between; /* Verdeel de ruimte tussen de afbeeldingen gelijkmatig */
+  align-items: center; /* Centreer de afbeeldingen verticaal in de container */
+  margin-bottom: 20px; /* Voeg wat ruimte toe onder de afbeeldingen */
+}
+
+.imgContainer img {
+  max-width: 30%; /* Stel de maximale breedte van de afbeeldingen in (30% van de container) */
+  height: auto; /* Zorg ervoor dat de hoogte van de afbeeldingen automatisch wordt aangepast om de verhoudingen te behouden */
+}
+
+.scorePage__partyList {
+  display: grid;
+  gap: 20px; // Afstand tussen de grid items
+
+  @include extra-large-screen {
+    grid-template-columns: repeat(3, 1fr); // 3 items in een rij voor extra large en large schermen
+  }
+
+  @include large-screen {
+    grid-template-columns: repeat(3, 1fr); // 3 items in een rij
+  }
+
+  @include medium-screen {
+    grid-template-columns: repeat(2, 1fr); // 2 items in een rij voor medium schermen
+  }
+
+  @include small-screen {
+    grid-template-columns: 1fr; // 1 item per rij voor small schermen
+  }
+
+  @include extra-small-screen {
+    grid-template-columns: 1fr; // 1 item per rij voor extra small schermen
+  }
+}

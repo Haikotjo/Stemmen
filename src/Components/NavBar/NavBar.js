@@ -28,19 +28,19 @@ function NavBar() {
             kiesHulp: "Kies Hulp",
             partijPagina: "De Partijen",
             standpuntenPagina: "Standpunten",
-            testPagina: "Testpagina"
+            scorePage: "Mijn Match"
         },
         en: {
             kiesHulp: "Election Helper",
             partijPagina: "Party Page",
             standpuntenPagina: "Positions Page",
-            testPagina: "Test Page"
+            scorePage: "Best match"
         },
         kids: {
             kiesHulp: "Kies Hulpje",
             partijPagina: "De partijen",
             standpuntenPagina: "Standpunten",
-            testPagina: "Testpagina"
+            scorePage: "Mijn partij"
         },
     };
 
@@ -77,11 +77,12 @@ function NavBar() {
                     </NavLink>
                     
                     <NavLink
-                        to="/testpagina" // Voeg de link naar de testpagina toe
+                        to="/score-page"
                         className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}
                     >
-                        {currentLinkTexts.testPagina}
+                        {currentLinkTexts.scorePage}
                     </NavLink>
+
                 </div>
                 <div className={styles.hamburgerMenu}>
                     <HamburgerMenu />  {/* Dit vervangt de normale navlinks op kleine schermen */}
