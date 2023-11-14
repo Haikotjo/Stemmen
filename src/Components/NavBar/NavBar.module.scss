@@ -7,8 +7,10 @@
   left: 0;
   z-index: 100;
   width: 100%;
-  background-color: $primary-color;
+  //background-color: $primary-color;
   color: white;
+  background: linear-gradient(to right, $primary-color, $fourth-color);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.7);
 
   .container {
     @include max-container-width;
@@ -30,12 +32,18 @@
       display: flex;
       align-items: center;
       padding-block: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; // Voeg overgangseffecten toe voor transform en box-shadow
 
       @include extra-small-screen {
         margin-left: 0;
         font-size: small;
       }
+
+      &:hover {
+        transform: scale(1.1); // Vergroot het element met 5% op hover
+      }
     }
+
 
     .links {
       display: flex; // Standaard zichtbaar
@@ -67,31 +75,13 @@
         display: none; // Verberg op kleine schermen
       }
     }
-
-    .languageToggle {
-      cursor: pointer;
-      text-decoration: underline;
-      color: white; // Standaard tekstkleur
-      margin-left: 10px; // Ruimte aan de linkerkant
-      padding: 20px 20px; // Consistente padding met andere links
-      border-radius: 5px; // Voor consistentie met andere links
-      transition: background-color 0.3s, color 0.3s; // Soepele overgang voor hover-effect
-
-      &:hover {
-        background-color: $fourth-color; // Achtergrondkleur bij hover
-      }
-
-      &.active {
-        background-color: transparent;
-    color: $fourth-color;
-      }
-    }
-  }
-
-  .hamburgerMenu {
-    @include extra-small-screen {
-      margin-right: 2rem;
-      font-size: small;
-    }
   }
 }
+
+.hamburgerMenu {
+  @include extra-small-screen {
+    margin-right: 2rem;
+    font-size: small;
+  }
+}
+

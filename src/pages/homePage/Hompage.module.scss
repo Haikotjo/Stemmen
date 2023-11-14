@@ -8,7 +8,10 @@
   height: auto; // Behoud de oorspronkelijke verhoudingen van de afbeelding
   display: block; // Zorgt voor een correcte weergave van de afbeelding
   margin: 0 auto 1rem;
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 3);
 }
+
 // Buitenste container
 .container {
   max-width: 1440px;
@@ -92,6 +95,13 @@
 .version {
   display: flex;
   justify-content: center;
-  color: $third-color;
+  color: $secondary-color;
   margin: auto auto 1rem;
+}
+.kidsLink{
+  color: $fourth-color;
+  cursor: pointer;
+  &:hover{
+    color: $fifth-color;
+  }
 }

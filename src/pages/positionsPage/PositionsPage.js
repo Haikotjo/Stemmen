@@ -39,11 +39,11 @@ function PositionsPage() {
     // Render the component
     return (
         <>
-            <div className={styles.headerWrapper}>
-                <img src={randomImage} alt="Header" className={styles.backgroundImage} />
-                <h1 className={styles.headerText}>STANDPUNTEN</h1>
-            </div>
             <div className={styles.positionPageContainer}>
+                <div className={styles.headerWrapper}>
+                    <img src={randomImage} alt="Header" className={styles.backgroundImage} />
+                    <h1 className={styles.headerText}>STANDPUNTEN</h1>
+                </div>
                 {/* TopicList component to display the list of topics */}
                 <div className={styles.topicsContainer}>
                 <TopicList
@@ -56,7 +56,7 @@ function PositionsPage() {
                 Loop through the positions object and render a PartyPosition component for each party.
                 Pass the party name, position, and selected topic as props.
             */}
-                <div ref={positionsRef}>
+                <div ref={positionsRef} >
                     {Object.keys(topicPositions).map((party) => (
                         <PartyPosition
                             key={party}

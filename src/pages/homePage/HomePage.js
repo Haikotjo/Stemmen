@@ -39,17 +39,15 @@ const HomePage = () => {
 
     return (
         <>
-            <div className={styles.headerWrapper}>
-                <img src={randomHeaderImage} alt="Header" className={styles.backgroundImage} />
-            </div>
-
             <div className={styles.container}>
-
+                <div className={styles.headerWrapper}>
+                    <img src={randomHeaderImage} alt="Header" className={styles.backgroundImage} />
+                </div>
                 <h1 className={styles.homeTitle}>{language === 'nl' ? 'Welkom bij StemSpectrum' : 'Welcome to StemSpectrum'}</h1>
 
                 <p className={styles.introText}>{currentTextData.introText}</p>
 
-                <h3 className={styles.version} >{t.kids }  <span onClick={toggleLanguageToKidsOrDutch}> >>></span></h3>
+                <h3 className={styles.version} >{t.kids }  <span className={styles.kidsLink} onClick={toggleLanguageToKidsOrDutch}> >>></span></h3>
 
 
                 <div className={styles.pageDescriptionsContainer}>

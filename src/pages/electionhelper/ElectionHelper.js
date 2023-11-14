@@ -99,11 +99,11 @@ function ElectionHelper() {
 
     return (
         <>
-            <div className={styles.headerWrapper}>
-                <img src={randomHeaderImage} alt="Header" className={styles.backgroundImage} />
-                <h1 className={styles.headerText}>{t.electionHelper}</h1>
-            </div>
             <div className={styles.electionHelperContainer}>
+                <div className={styles.headerWrapper}>
+                    <img src={randomHeaderImage} alt="Header" className={styles.backgroundImage} />
+                    <h1 className={styles.headerText}>{t.electionHelper}</h1>
+                </div>
                 <h1 className={styles.pageTitle}>{t.chooseParties}</h1>
                 <PartyList
                     parties={partiesData.partijen}

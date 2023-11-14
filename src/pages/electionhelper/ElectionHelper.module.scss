@@ -15,8 +15,10 @@
   height: auto; // Behoud de oorspronkelijke verhoudingen van de afbeelding
   display: block; // Zorgt voor een correcte weergave van de afbeelding
   margin: 0 auto 1rem;
-  display: block; // Dit verwijdert onnodige witruimte onder de afbeelding.
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 3);
 }
+
 
 .headerText {
   position: absolute; // Dit positioneert de tekst over de afbeelding.

@@ -6,6 +6,7 @@ import ElectionHelper from "../pages/electionhelper/ElectionHelper";
 import PartiesPage from "../pages/partiesPage/PartiesPage";
 import PositionsPage from "../pages/positionsPage/PositionsPage";
 import NavBar from "../Components/NavBar/NavBar";
+import Footer from "../Components/Footer/Footer"; // Voeg dit toe
 
 import {LanguageProvider} from "../context/LanguageContext";
 import {ThemeProvider} from "../context/ThemeContext";
@@ -28,6 +29,7 @@ function AppRoutes() {
                                 <Route path="/score-page" element={<ScorePage />} />
                                 {/* Meer routes */}
                             </Routes>
+                            <Footer />
                         </ModeProvider>
                     </ThemeProvider>
                 </ScoreProvider>

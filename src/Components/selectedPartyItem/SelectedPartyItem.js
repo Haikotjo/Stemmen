@@ -87,7 +87,7 @@ const SelectedPartyItem = ({
                                 />
                             </div>
                         )}
-                        {partyScores[party] !== undefined && <h2>Score: {partyScores[party]}</h2>}
+                        {/*{partyScores[party] !== undefined && <h2>Score: {partyScores[party]}</h2>}*/}
                     </div>
                 )}
             </div>

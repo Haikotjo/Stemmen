@@ -40,7 +40,7 @@
 
 @mixin responsive-grid-columns {
   @include extra-small-screen {
-    grid-template-columns: 1fr; // 1 kolom voor extra kleine schermen
+    grid-template-columns: 1fr;
   }
 
   @include small-screen {
