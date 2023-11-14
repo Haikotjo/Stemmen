@@ -1,4 +1,3 @@
-// ScoreContext.js
 import React, { createContext, useState, useEffect } from 'react';
 
 export const ScoreContext = createContext();
@@ -7,21 +6,29 @@ export const ScoreProvider = ({ children }) => {
     const [partyScores, setPartyScores] = useState({});
     const [answeredQuestions, setAnsweredQuestions] = useState({});
 
+    // Ophalen van answeredQuestions van lokale opslag bij initialisatie
     useEffect(() => {
-        // Opslaan naar lokale opslag bij wijziging van answeredQuestions
+        const localAnsweredQuestions = localStorage.getItem('answeredQuestions');
+        if (localAnsweredQuestions) {
+            setAnsweredQuestions(JSON.parse(localAnsweredQuestions));
+        }
+    }, []);
+
+    // Opslaan naar lokale opslag bij wijziging van answeredQuestions
+    useEffect(() => {
         localStorage.setItem('answeredQuestions', JSON.stringify(answeredQuestions));
     }, [answeredQuestions]);
 
+    // Ophalen van partyScores van lokale opslag bij initialisatie
     useEffect(() => {
-        // Ophalen van lokale opslag bij initialisatie
         const localScores = localStorage.getItem('partyScores');
         if (localScores) {
             setPartyScores(JSON.parse(localScores));
         }
     }, []);
 
+    // Opslaan naar lokale opslag bij wijziging van partyScores
     useEffect(() => {
-        // Opslaan naar lokale opslag bij wijziging
         localStorage.setItem('partyScores', JSON.stringify(partyScores));
     }, [partyScores]);
 
