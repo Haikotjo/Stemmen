@@ -24,12 +24,15 @@
   height: auto; // Behoud de oorspronkelijke verhoudingen van de afbeelding
   display: block; // Zorgt voor een correcte weergave van de afbeelding
   margin: 0 auto 1rem;
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 3);
 }
 
 .headerWrapper {
   position: relative; // Dit zorgt ervoor dat alle absolute elementen binnen deze div relatief zijn aan deze div.
   text-align: center; // Als je de tekst in het midden wilt hebben
 }
+
 .headerText {
   position: absolute; // Dit positioneert de tekst over de afbeelding.
   top: 20%; // Centreert de tekst verticaal.

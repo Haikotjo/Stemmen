@@ -9,8 +9,15 @@
   border-radius: 4px;
   font-size: 1rem;
   cursor: pointer;
+  transition: all 0.3s ease; // Voeg een overgang toe voor een vloeiende animatie
+  margin-bottom: 10px;
+  transform: scale(1); // Begin met een normale schaal (1x)
+
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
 
   &:hover {
-    background-color: $third-color;
+    background-color: $fifth-color;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); // Verhoog de schaduw bij hover
+    transform: scale(1.05); // Vergroot het item iets bij hover
   }
 }

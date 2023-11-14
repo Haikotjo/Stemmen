@@ -11,9 +11,6 @@
   // Zorg ervoor dat de container niet breder is dan 1440px
   max-width: 1440px;
   margin: 0 auto; // Centreert de container in de viewport
-
-  // Als de container een beperkte hoogte heeft en u wilt scrollen voor extra knoppen
-  // overflow-y: auto;
 }
 
 // Standaard stijl voor elke button
@@ -24,18 +21,11 @@
   padding: 10px 20px;
   text-transform: uppercase; // Maakt alle letters kapitaal
   font-weight: bold;
-  transition: background-color 0.3s ease; // Animatie voor de achtergrondkleur
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 1);
-
-  &:hover {
-    background-color: lighten($third-color, 10%); // Lichtere kleur bij hover
-  }
 }
 
 .selected {
-  background-color: $third-color; // of een andere kleur naar keuze
-  color: white; // Tekstkleur voor geselecteerde item
+  background-color: $fifth-color; // of een andere kleur naar keuze
   &:hover {
-    background-color: darken($third-color, 10%); // Donkere kleur bij hover voor geselecteerde item
+    background-color: darken($primary-color, 10%); // Donkere kleur bij hover voor geselecteerde item
   }
 }

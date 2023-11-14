@@ -29,7 +29,7 @@ const PartyPosition = ({ party, position, topic }) => {
                     {/* The first sentence of the party's position is displayed in bold */}
                     <span className={styles.boldText}>{firstSentence}
                     {/* Ellipsis (...) for expanding the rest of the text */}
-                    {!isExpanded && (
+                    {!isExpanded && restOfTheText && (
                         <span className={styles.moreText} onClick={() => setIsExpanded(true)}> >>></span>
                     )}
                         </span>

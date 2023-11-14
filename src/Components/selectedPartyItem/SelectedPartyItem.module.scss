@@ -10,23 +10,46 @@
 .selectedPartyItem {
   display: flex; // Gebruik flex in plaats van grid
   align-items: center; // Centreer items verticaal
+  justify-content: space-between;
   width: 100%;
   background: #f9f9f9;
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+.partyName{
+  font-weight: bold;
+}
+
+.positionText{
+    @include extra-small-screen {
+      font-size: 0.9rem;
+    }
+    @include small-screen {
+      font-size: small;
+    }
+  }
 }
 
 .partyLogo {
   flex: 0 0 auto; // Logo niet laten schalen
-  max-width: 100px; // Max breedte voor het logo
-  margin-right: 16px; // Afstand tussen logo en tekst
+  max-width: 200px; // Max breedte voor het logo
+  margin-inline: 2rem; // Afstand tussen logo en tekst
+  border-radius: 8px;
 }
 
 .partyInfo {
-  flex: 1; // Laat de partij info groeien en vullen de beschikbare ruimte
   padding-right: 16px; // Afstand tussen partij info en knoppen
+  @include extra-small-screen {
+    margin-inline: 1rem;
+  }
+  @include small-screen {
+    margin-inline: 1rem;
+  }
 }
+
+
+
 
 .emojiContainer {
   flex: 0 0 auto; // Knoppen niet laten schalen
@@ -68,9 +91,10 @@
   }
 
   .partyLogo {
-    max-width: 80px; // Kleinere max breedte voor het logo op kleine schermen
+    max-width: 150px; // Kleinere max breedte voor het logo op kleine schermen
     margin-right: 0; // Verwijder de marge rechts op mobiel
     margin-bottom: 8px; // Voeg een marge toe aan de onderkant tussen logo en info
+    border-radius: 8px;
   }
 
   .partyInfo {

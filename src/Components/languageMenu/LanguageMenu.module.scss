@@ -1,8 +1,9 @@
 @import '../../styles/globals';
 @import '../../styles/mixins';
 
-.hamburgerMenu {
-  display: none; // Standaard verborgen
+.languageMenu {
+  margin-right: 3rem;
+  display: block; // Standaard verborgen
 
   @include extra-small-screen {
     display: block; // Toon op extra kleine schermen
@@ -16,7 +17,11 @@
 }
 
 .icon {
-  cursor: pointer;
+  margin:0;
+  font-size: 1.2rem;
+  &:hover{
+    color: $primary-color;
+  }
 }
 
 .dropdown {
@@ -28,12 +33,14 @@
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-.link {
+.languageToggle {
   display: block;
   padding: 30px 40px;
   text-decoration: none;
   border-top: 1px solid #ccc;
   color: white;
+  background-color: $primary-color;
+  margin: 0;
 
   &:hover {
     background: $secondary-color;
@@ -42,4 +49,8 @@
   &.active {
     background: $fourth-color;
   }
+}
+
+.languageToggleNl{
+  margin-top: 10px;
 }

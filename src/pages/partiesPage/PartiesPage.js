@@ -31,13 +31,13 @@ function PartiesPage() {
     };
 
     return (
-        <div>
-            {/*<ParallaxBackground backgroundImage="/images/backgrounds/keuzes.png" />*/}
-            <div className={styles.headerWrapper}>
-                <img src={randomHeaderImage} alt="Header" className={styles.backgroundImage} />
-                <h1 className={styles.headerText}>{textContent.pages.partiesPage.name}</h1>
-            </div>
+        <>
+            <div className={styles.partiesOuterPageContainer}>
             <div className={styles.partiesPageContainer}>
+                <div className={styles.headerWrapper}>
+                    <img src={randomHeaderImage} alt="Header" className={styles.backgroundImage} />
+                    <h1 className={styles.headerText}>{textContent.pages.partiesPage.name}</h1>
+                </div>
                 <div className={styles.pageDescriptionsDetails}>
                     <h2>{textContent.pages.partiesPage.detail} </h2>
                 </div>
@@ -68,7 +68,8 @@ function PartiesPage() {
                     )}
                 </Modal>
             </div>
-        </div>
+            </div>
+        </>
     );
 }
 

@@ -40,7 +40,7 @@ const SelectedPartyItem = ({
                     onError={(e) => { e.target.onerror = null; e.target.src = `${process.env.PUBLIC_URL}/images/parties/default.png`; }}
                 />
                 <div className={styles.partyInfo}>
-                    <h2>{party}</h2>
+                    <h2 className={styles.partyName}>{party}</h2>
                     {positionText && (
                         <div className={styles.positionText}>
                             <strong className={styles.firstSentence}>
@@ -87,7 +87,7 @@ const SelectedPartyItem = ({
                                 />
                             </div>
                         )}
-                        {partyScores[party] !== undefined && <h2>Score: {partyScores[party]}</h2>}
+                        {/*{partyScores[party] !== undefined && <h2>Score: {partyScores[party]}</h2>}*/}
                     </div>
                 )}
             </div>

@@ -10,27 +10,25 @@
 }
 
 .partyItem {
-  background: #fff; // Sets the background color to white
-  border: 1px solid #ddd; // Adds a light grey border
-  border-radius: 4px; // Rounds the corners of the border
-  overflow: hidden; // Prevents content from spilling outside the border-radius
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Adds a subtle shadow for depth
-  transition: box-shadow 0.3s ease; // Animates the shadow on hover
-  text-align: center; // Centers the text horizontally within the item
-  width: 100%; // Ensures the item fills the width of its grid column
-  max-width: 100%; // Ensures the item does not exceed the width of its grid column
-  display: flex; // Enables flexbox layout mode
-  flex-direction: column; // Stacks children elements vertically
-  align-items: center; // Centers children elements horizontally
+  background: #fff;
+  border: 1px solid $fourth-color;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease, transform 0.3s ease; // Voeg een overgangseffect voor de box-shadow en transform toe
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Darkens the shadow on hover for a raised effect
-  }
-
-  &.selected {
-    border-color: #007bff; // Highlights the border of the selected item with a blue color
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05); // Vergroot het element met 5% op hover
   }
 }
+
 
 .partyImage {
   width: 100%; // Ensures the image takes the full width of its container
@@ -40,7 +38,7 @@
 }
 
 .selectedButton {
-  background-color: $third-color; // Sets the background color of the selected button to red
+  background-color: $primary-color; // Sets the background color of the selected button to red
   width: 100%; // Ensures the button fills the width of its container
   padding: 10px 0; // Adds padding to the top and bottom of the button
   margin-top: auto; // Pushes the button to the bottom of the container

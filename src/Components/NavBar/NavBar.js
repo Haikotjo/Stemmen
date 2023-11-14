@@ -4,23 +4,12 @@ import styles from './NavBar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import HamburgerMenu from "../hamburgerMenu/HamburgerMenu";
-import {useLanguage} from "../../context/LanguageContext";
+import { useLanguage } from "../../context/LanguageContext";
+import LanguageMenu from "../languageMenu/LanguageMenu";
 
 function NavBar() {
 
-    const { language, setLanguage } = useLanguage();
-
-    const toggleLanguage = () => {
-        if (language === 'nl') {
-            setLanguage('en');
-        } else if (language === 'en') {
-            setLanguage('nl');
-        }
-    };
-
-    const setToKids = () => {
-        setLanguage('kids');
-    };
+    const { language } = useLanguage();
 
     // Object met linkteksten voor beide talen
     const linkTexts = {
@@ -28,19 +17,19 @@ function NavBar() {
             kiesHulp: "Kies Hulp",
             partijPagina: "De Partijen",
             standpuntenPagina: "Standpunten",
-            testPagina: "Testpagina"
+            scorePage: "Mijn Partij Match"
         },
         en: {
             kiesHulp: "Election Helper",
             partijPagina: "Party Page",
             standpuntenPagina: "Positions Page",
-            testPagina: "Test Page"
+            scorePage: "Best Match"
         },
         kids: {
             kiesHulp: "Kies Hulpje",
-            partijPagina: "De partijen",
+            partijPagina: "De Partijen",
             standpuntenPagina: "Standpunten",
-            testPagina: "Testpagina"
+            scorePage: "Beste Partijen"
         },
     };
 
@@ -75,23 +64,19 @@ function NavBar() {
                     >
                         {currentLinkTexts.standpuntenPagina}
                     </NavLink>
-                    
+
                     <NavLink
-                        to="/testpagina" // Voeg de link naar de testpagina toe
+                        to="/score-page"
                         className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}
                     >
-                        {currentLinkTexts.testPagina}
+                        {currentLinkTexts.scorePage}
                     </NavLink>
+
                 </div>
                 <div className={styles.hamburgerMenu}>
-                    <HamburgerMenu />  {/* Dit vervangt de normale navlinks op kleine schermen */}
+                    <HamburgerMenu />
                 </div>
-                <div onClick={toggleLanguage} className={styles.languageToggle}>
-                    {language === 'nl' ? 'en' : 'nl'}
-                </div>
-                <div onClick={setToKids} className={styles.kidsToggle}>
-                    Kids
-                </div>
+                <LanguageMenu label='Language'/>
             </div>
         </div>
     );

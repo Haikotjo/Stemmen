@@ -1,0 +1,71 @@
+@import '../../styles/mixins';
+@import '../../styles/globals';
+
+.scorePage {
+  @include max-container-width;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  img {
+    max-width: 30%;
+    height: auto;
+  }
+}
+
+.scorePage__partyImage {
+  border-radius: 12px;
+}
+
+.scorePage__partyList {
+  display: grid;
+  gap: 20px;
+  margin-top: 1rem;
+
+  @include responsive-grid-columns;
+
+  .scorePage__partyItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f9fa;
+    margin: 2rem;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    .scorePage__partyInfo {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 2rem;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+.linkToPage {
+  color: $fourth-color;
+
+  &:hover {
+    color: $third-color;
+  }
+}

@@ -37,3 +37,25 @@
 @mixin max-container-width {
   max-width: 1440px;
 }
+
+@mixin responsive-grid-columns {
+  @include extra-small-screen {
+    grid-template-columns: 1fr;
+  }
+
+  @include small-screen {
+    grid-template-columns: repeat(2, 1fr); // 2 kolommen voor kleine schermen
+  }
+
+  @include medium-screen {
+    grid-template-columns: repeat(2, 1fr); // 2 kolommen voor medium schermen
+  }
+
+  @include large-screen {
+    grid-template-columns: repeat(3, 1fr); // 3 kolommen voor grote schermen
+  }
+
+  @include extra-large-screen {
+    grid-template-columns: repeat(3, 1fr); // 3 kolommen voor extra grote schermen
+  }
+}

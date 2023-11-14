@@ -6,9 +6,7 @@ import {getRandomImage, getRandomImagePage} from "../../utils/utils";
 import {useLanguage} from "../../context/LanguageContext";
 
 const HomePage = () => {
-    const { language } = useLanguage(); // Gebruik de taalcontext
-
-
+    const { language, setLanguage } = useLanguage(); // Gebruik de taalcontext
     const randomImage =  getRandomImage();
     const randomHeaderImage =  getRandomImagePage();
 
@@ -18,19 +16,39 @@ const HomePage = () => {
         "electionHelper": "/kies-hulp"
     };
 
+    const translations = {
+        nl: {
+            kids: "Zijn de jongeren ook geïnteresseerd in politiek? Probeer dan onze speciale 'Kids' versie met teksten die speciaal zijn afgestemd op jongeren",
+        },
+        en: {
+            kids: "These are the parties you most agree with",
+        },
+        kids: {
+            kids: "Wil je dit een keer aan de oudjes laten zien? Probeer dan onze versie voor ouderen.",
+        },
+    };
+
+    const t = translations[language];
+
     const currentTextData = textData[language];
+
+    const toggleLanguageToKidsOrDutch = () => {
+        const newLanguage = language === 'kids' ? 'nl' : 'kids';
+        setLanguage(newLanguage);
+    };
 
     return (
         <>
-            <div className={styles.headerWrapper}>
-                <img src={randomHeaderImage} alt="Header" className={styles.backgroundImage} />
-            </div>
-
             <div className={styles.container}>
+                <div className={styles.headerWrapper}>
+                    <img src={randomHeaderImage} alt="Header" className={styles.backgroundImage} />
+                </div>
+                <h1 className={styles.homeTitle}>{language === 'nl' ? 'Welkom bij StemSpectrum' : 'Welcome to StemSpectrum'}</h1>
 
-                <h1>{language === 'nl' ? 'Welkom bij StemSpectrum' : 'Welcome to StemSpectrum'}</h1>
+                <p className={styles.introText}>{currentTextData.introText}</p>
 
-                <p>{currentTextData.introText}</p>
+                <h3 className={styles.version} >{t.kids }  <span className={styles.kidsLink} onClick={toggleLanguageToKidsOrDutch}> >>></span></h3>
+
 
                 <div className={styles.pageDescriptionsContainer}>
                     {Object.entries(currentTextData.pages).map(([key, pageData]) => (

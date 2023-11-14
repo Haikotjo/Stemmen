@@ -3,15 +3,24 @@
 
 // Container for the position of a party
 .partyPositionContainer {
-  background-color: #f8f9fa; // Light background color for better readability
-  border-radius: 8px; // Rounded corners for aesthetic appeal
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); // Subtle shadow for depth
-  margin-bottom: 16px; // Space between each party position container
-  padding: 16px; // Internal spacing
-  max-width: 100%; // Ensures the container does not exceed the parent's width
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin-bottom: 16px;
+  padding: 16px;
+  max-width: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; // Voeg overgangseffecten toe
+  border: 1px solid $fourth-color;
+
+  &:hover {
+    transform: scale(1.05); // Vergroot de container met 5% op hover
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); // Geef een grotere drop shadow op hover
+  }
+}
+
 
   .partyName{
-    color: $secondary-color;
+    color: $fifth-color;
     text-align: center;
 
     @include extra-small-screen {
@@ -66,14 +75,10 @@
             display: block; // Elk element op een nieuwe regel
             width: 100%; // Volledige breedte van de container gebruiken
           }
-          .PartyPosition .boldText {
-
-          }
         }
       }
     }
   }
-}
 
 .boldText {
   font-weight: bold; // Makes the first sentence bold

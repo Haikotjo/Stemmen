@@ -8,7 +8,10 @@
   height: auto; // Behoud de oorspronkelijke verhoudingen van de afbeelding
   display: block; // Zorgt voor een correcte weergave van de afbeelding
   margin: 0 auto 1rem;
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 3);
 }
+
 // Buitenste container
 .container {
   max-width: 1440px;
@@ -17,8 +20,6 @@
   background-color: #F6F7F8;
   border-radius: 12px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-
-
 
   h1 {
     font-size: 2.4rem;
@@ -58,6 +59,7 @@
   position: relative; // Dit zorgt ervoor dat alle absolute elementen binnen deze div relatief zijn aan deze div.
   text-align: center; // Als je de tekst in het midden wilt hebben
 }
+
 .headerText {
   position: absolute; // Dit positioneert de tekst over de afbeelding.
   top: 20%; // Centreert de tekst verticaal.
@@ -77,5 +79,29 @@
 
   @include medium-screen {
     font-size: 4rem; // middelgrote grootte voor middelgrote schermen
+  }
+}
+
+.homeTitle{
+  display: flex;
+  justify-content: center;
+}
+
+.introText{
+  display: flex;
+  justify-content: center;
+}
+
+.version {
+  display: flex;
+  justify-content: center;
+  color: $secondary-color;
+  margin: auto auto 1rem;
+}
+.kidsLink{
+  color: $fourth-color;
+  cursor: pointer;
+  &:hover{
+    color: $fifth-color;
   }
 }

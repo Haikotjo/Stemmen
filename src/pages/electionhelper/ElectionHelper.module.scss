@@ -15,8 +15,10 @@
   height: auto; // Behoud de oorspronkelijke verhoudingen van de afbeelding
   display: block; // Zorgt voor een correcte weergave van de afbeelding
   margin: 0 auto 1rem;
-  display: block; // Dit verwijdert onnodige witruimte onder de afbeelding.
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 3);
 }
+
 
 .headerText {
   position: absolute; // Dit positioneert de tekst over de afbeelding.
@@ -46,6 +48,14 @@
   margin-right: auto;
   padding: 0 20px; // Voeg padding toe voor kleinere schermen
 
+  .topicTitle,
+  .selectedPartiesTitle,
+  .pageTitle {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+  }
+
   @include extra-small-screen {
     padding: 0 10px; // Minder padding voor extra kleine schermen
   }
@@ -74,4 +84,17 @@
     @content;
   }
 }
+
+.buttonsContainer {
+  display: flex; // Plaats de knoppen naast elkaar
+  justify-content: space-between; // Voeg ruimte tussen de knoppen toe
+  // Voeg wat ruimte toe boven de knoppen
+  width: 50%;
+  margin: 2rem auto;
+}
+
+.selectedPartiesContainer{
+  margin-top: 2rem;
+}
+
 
