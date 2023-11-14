@@ -14,6 +14,7 @@ import useHandleTopicSelection from "../../hooks/useHandleTopicSelection";
 import useReset from "../../hooks/useReset";
 import SelectedPartyItem from "../../Components/selectedPartyItem/SelectedPartyItem";
 import {useLanguage} from "../../context/LanguageContext";
+import {Link} from "react-router-dom";
 
 
 
@@ -142,7 +143,9 @@ function ElectionHelper() {
             </div>
             <div className={styles.buttonsContainer}>
                 <StyledButton label="Reset" onClick={handleReset} />
-                <StyledButton label={results} onClick={() => { window.location.href = '/score-page'; }} />
+                <Link to='/score-page'>
+                <StyledButton label={results} />
+                </Link>
             </div>
         </>
     );
