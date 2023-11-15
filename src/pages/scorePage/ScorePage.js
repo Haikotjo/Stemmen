@@ -7,7 +7,6 @@ import { getPartyImage } from '../../utils/utils';
 import { Link } from 'react-router-dom';
 import StyledButton from "../../Components/button/StyledButton";
 import useReset from "../../hooks/useReset";
-import ResultCard from "../../Components/resultCard/ResultCard"; // Importeer Link van React Router
 
 const ScorePage = () => {
     const { partyScores } = useContext(ScoreContext);
@@ -19,12 +18,15 @@ const ScorePage = () => {
 
     for (const [questionPartyKey, answer] of Object.entries(savedData)) {
         const [topic, party] = questionPartyKey.split('_');
-        if ((language === 'nl' || language === 'kids') && (answer === 'Ja goed plan!' || answer === 'Nee joh!' || answer === 'Ik weet niet')) {
+        if (language === 'nl' && (answer === 'Eens' || answer === 'Oneens' || answer === 'Neutraal')) {
             partiesUserAgreesOrDisagreesWith.push({ topic, party, answer });
-        } else if (language !== 'nl' && language !== 'kids' && (answer === 'Agree' || answer === 'Disagree')) {
+        } else if (language === 'kids' && (answer === 'Ja goed plan!' || answer === 'Nee joh!' || answer === 'Ik weet niet')) {
+            partiesUserAgreesOrDisagreesWith.push({ topic, party, answer });
+        } else if (language === 'en' && (answer === 'Agree' || answer === 'Disagree' || answer === 'Neutral')) {
             partiesUserAgreesOrDisagreesWith.push({ topic, party, answer });
         }
     }
+
 
     const translations = {
         nl: {
@@ -68,12 +70,11 @@ const ScorePage = () => {
                     <img src= '/images/party/party-monster-7.png' alt="Party Monster 7" />
                     <img src= '/images/party/party-monster-6.png' alt="Party Monster 6" />
                 </div>
-                <h1 className={styles.scorePage__title}>scorepage</h1>
                 {hasScores ? (
                     <>
-                        <h2 className={styles.scorePage__subtitle}>{t.match}:</h2>
+                        <h1 className={styles.scorePage__subtitle}>{t.match}</h1>
                         <ul className={styles.scorePage__partyList}>
-                            {Object.entries(partyScores).map(([party, score]) => (
+                            {sortedPartyScores.map(([party, score]) => (
                                 <li key={party} className={styles.scorePage__partyItem}>
                                     <img src={getPartyImage(party)} alt={`${party} logo`} className={styles.scorePage__partyImage} />
                                     <h2 className={styles.scorePage__partyInfo}>{party}: {score}</h2>
@@ -82,7 +83,16 @@ const ScorePage = () => {
                                         {partiesUserAgreesOrDisagreesWith
                                             .filter(item => item.party === party)
                                             .map(({ topic, answer }) => (
-                                                <li key={`${party}_${topic}`} className={styles.scorePage__partyDetail}>
+                                                <li
+                                                    key={`${party}_${topic}`}
+                                                    className={`${styles.scorePageTopicAnswer} ${
+                                                        answer === 'Eens' || answer === 'Ja goed plan!' || answer === 'Agree'
+                                                            ? styles.agreeClass
+                                                            : answer === 'Oneens' || answer === 'Nee joh!' || answer === 'Disagree'
+                                                                ? styles.disagreeClass
+                                                                : styles.neutralClass
+                                                    }`}
+                                                >
                                                     {`${topic}: ${answer}`}
                                                 </li>
                                             ))}
@@ -95,13 +105,6 @@ const ScorePage = () => {
                     <p>{t.noScores} <Link to="/kies-hulp" className={styles.linkToPage}>&gt;&gt;&gt;</Link></p>
                 )}
             </div>
-            {/*<ResultCard*/}
-            {/*    score={5}*/}
-            {/*    reaction={5}*/}
-            {/*    memory={5}*/}
-            {/*    verbal={5}*/}
-            {/*    visual={5}*/}
-            {/*/>*/}
             <div className={styles.buttonsContainer}>
                 {hasScores && (
                     <Link to='/kies-hulp'>
