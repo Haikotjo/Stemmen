@@ -6,7 +6,8 @@ import { useLanguage } from "../../context/LanguageContext";
 import { getPartyImage } from '../../utils/utils';
 import { Link } from 'react-router-dom';
 import StyledButton from "../../Components/button/StyledButton";
-import useReset from "../../hooks/useReset"; // Importeer Link van React Router
+import useReset from "../../hooks/useReset";
+import ResultCard from "../../Components/resultCard/ResultCard"; // Importeer Link van React Router
 
 const ScorePage = () => {
     const { partyScores } = useContext(ScoreContext);
@@ -94,6 +95,13 @@ const ScorePage = () => {
                     <p>{t.noScores} <Link to="/kies-hulp" className={styles.linkToPage}>&gt;&gt;&gt;</Link></p>
                 )}
             </div>
+            {/*<ResultCard*/}
+            {/*    score={5}*/}
+            {/*    reaction={5}*/}
+            {/*    memory={5}*/}
+            {/*    verbal={5}*/}
+            {/*    visual={5}*/}
+            {/*/>*/}
             <div className={styles.buttonsContainer}>
                 {hasScores && (
                     <Link to='/kies-hulp'>
