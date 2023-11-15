@@ -24,9 +24,6 @@ This project utilizes the following technologies and libraries:
 - React Router DOM (6.17.0)
 - React Scripts (5.0.1)
 - Font Awesome (6.4.2)
-- Testing Library (Jest DOM 5.17.0, React 13.4.0, User Event 13.5.0)
-- Parallax Controller (1.7.0)
-- Web Vitals (2.1.4)
 
 ### DevDependencies
 
