@@ -7,7 +7,6 @@ import { getPartyImage } from '../../utils/utils';
 import { Link } from 'react-router-dom';
 import StyledButton from "../../Components/button/StyledButton";
 import useReset from "../../hooks/useReset";
-import ResultCard from "../../Components/resultCard/ResultCard"; // Importeer Link van React Router
 
 const ScorePage = () => {
     const { partyScores } = useContext(ScoreContext);
@@ -16,9 +15,6 @@ const ScorePage = () => {
     const savedData = JSON.parse(localStorage.getItem('answeredQuestions'));
     const savedLanguage = localStorage.getItem('language');
     const partiesUserAgreesOrDisagreesWith = [];
-
-    console.log('Saved Data Structure:', savedData);
-
 
     for (const [questionPartyKey, answer] of Object.entries(savedData)) {
         const [topic, party] = questionPartyKey.split('_');
@@ -29,7 +25,6 @@ const ScorePage = () => {
         } else if (language === 'en' && (answer === 'Agree' || answer === 'Disagree' || answer === 'Neutral')) {
             partiesUserAgreesOrDisagreesWith.push({ topic, party, answer });
         }
-        console.log('Parties User Agrees Or Disagrees With:', partiesUserAgreesOrDisagreesWith);
     }
 
 
@@ -75,12 +70,11 @@ const ScorePage = () => {
                     <img src= '/images/party/party-monster-7.png' alt="Party Monster 7" />
                     <img src= '/images/party/party-monster-6.png' alt="Party Monster 6" />
                 </div>
-                <h1 className={styles.scorePage__title}>scorepage</h1>
                 {hasScores ? (
                     <>
-                        <h2 className={styles.scorePage__subtitle}>{t.match}:</h2>
+                        <h1 className={styles.scorePage__subtitle}>{t.match}</h1>
                         <ul className={styles.scorePage__partyList}>
-                            {Object.entries(partyScores).map(([party, score]) => (
+                            {sortedPartyScores.map(([party, score]) => (
                                 <li key={party} className={styles.scorePage__partyItem}>
                                     <img src={getPartyImage(party)} alt={`${party} logo`} className={styles.scorePage__partyImage} />
                                     <h2 className={styles.scorePage__partyInfo}>{party}: {score}</h2>
@@ -111,13 +105,6 @@ const ScorePage = () => {
                     <p>{t.noScores} <Link to="/kies-hulp" className={styles.linkToPage}>&gt;&gt;&gt;</Link></p>
                 )}
             </div>
-            {/*<ResultCard*/}
-            {/*    score={5}*/}
-            {/*    reaction={5}*/}
-            {/*    memory={5}*/}
-            {/*    verbal={5}*/}
-            {/*    visual={5}*/}
-            {/*/>*/}
             <div className={styles.buttonsContainer}>
                 {hasScores && (
                     <Link to='/kies-hulp'>
