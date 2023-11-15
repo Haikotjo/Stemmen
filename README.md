@@ -1,23 +1,22 @@
-# Mijn Stemwijzer
+# My Voting Guide
 
-## Inhoudsopgave
+## Table of Contents
 
-- [Over het Project](#over-het-project)
-- [Technologieën](#technologieën)
-- [Installatie](#installatie)
-- [Bijdragen](#bijdragen)
-- [Licentie](#licentie)
+- [About the Project](#about-the-project)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [Contributing](#contributing)
 - [Contact](#contact)
 
-## Over het Project
+## About the Project
 
-Dit project is ontstaan uit mijn wens om mijn vaardigheden te onderhouden en verder te ontwikkelen. Met de naderende verkiezingen als inspiratie, begon ik met het bouwen van een soort stemwijzer. Oorspronkelijk was het idee om slechts een paar partijen en hun standpunten te belichten. Echter, het project is uitgegroeid tot een vrij bruikbare stemwijzer. Het biedt geen uitgebreide functies, maar stelt gebruikers in staat eenvoudig te ontdekken met welke stellingen zij het eens zijn, gebaseerd op partijen die ze zelf selecteren. Een interessant aspect van dit project was het experimenteren met ChatGPT voor het samenvatten van verkiezingsprogramma's, waarbij ik de PDF's van de programma's van alle partijen die in de app zijn opgenomen, heb geüpload.
+This project was born out of my desire to maintain and further develop my skills. With the upcoming elections as inspiration, I began building a type of voting guide. Initially, the idea was to highlight just a few parties and their viewpoints. However, the project has grown into a quite usable voting guide. It does not offer extensive features but allows users to easily discover which statements they agree with, based on parties they select themselves. An interesting aspect of this project was experimenting with ChatGPT for summarizing election programs, where I uploaded the PDFs of the programs of all parties included in the app.
 
 ![Home groot.png](public%2Fimages%2Fscreens%2FHome%20groot.png)
 
-## Technologieën
+## Technologies
 
-Dit project maakt gebruik van de volgende technologieën en bibliotheken:
+This project utilizes the following technologies and libraries:
 
 - React (18.2.0)
 - React DOM (18.2.0)
@@ -37,37 +36,35 @@ Dit project maakt gebruik van de volgende technologieën en bibliotheken:
 - Sass Loader (13.3.2)
 - Style Loader (3.3.3)
 
-## Installatie
+## Installation
 
-Volg deze stappen om het project lokaal op te zetten:
+Follow these steps to set up the project locally:
 
 ```bash
-# Clone de repository
+# Clone the repository
 git clone https://github.com/Haikotjo/Stemmen/tree/main
 
-# Ga naar de projectmap
-cd mijn-stemwijzer
+# Go to the project directory
+cd my-voting-guide
 
-# Installeer de afhankelijkheden
+# Install dependencies
 npm install
 
-# Start de ontwikkelserver
+# Start the development server
 npm start
 
 ```
 
-## Bijdragen
+## Contributing
+Your contributions are warmly welcomed! If you have ideas to improve this application or to add new features, feel free to make a pull request or open an issue. Collaborating on this project can be a fun and educational experience for all of us.
 
-Jouw bijdragen zijn van harte welkom! Als je ideeën hebt om deze applicatie te verbeteren of nieuwe functies wilt toevoegen, voel je dan vrij om een pull request te maken of een issue te openen. Samenwerken aan dit project kan een leuke en leerzame ervaring zijn voor ons allemaal.
+To contribute:
 
-Om bij te dragen:
-
-1. Fork de repository.
-2. Maak een nieuwe branch (`git checkout -b feature/AmazingFeature`).
-3. Commit je wijzigingen (`git commit -m 'Add some AmazingFeature'`).
-4. Push naar de branch (`git push origin feature/AmazingFeature`).
-5. Open een pull request.
+Fork the repository.
+Create a new branch (git checkout -b feature/AmazingFeature).
+Commit your changes (git commit -m 'Add some AmazingFeature').
+Push to the branch (git push origin feature/AmazingFeature).
+Open a pull request.
 
 ## Contact
-
-Voor vragen of opmerkingen over dit project, neem contact op via [LinkedIn](https://www.linkedin.com/in/haiko-wierda-89aa7412a/) of stuur een e-mail naar haikowierdaklusjes@gmail.com.
+For questions or comments about this project, please contact me via LinkedIn or send an email to haikowierdaklusjes@gmail.com.
