@@ -28,7 +28,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: $primary-color;
+  background: transparent;
   width: auto; // Aangepast van 100% naar auto
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
@@ -39,7 +39,7 @@
   text-decoration: none;
   border-top: 1px solid #ccc;
   color: white;
-  background-color: $primary-color;
+  background: linear-gradient(to right, $primary-color, $fourth-color, );
   margin: 0;
 
   &:hover {
@@ -47,7 +47,7 @@
   }
 
   &.active {
-    background: $fourth-color;
+    background: $primary-color;
   }
 }
 

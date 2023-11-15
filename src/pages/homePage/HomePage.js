@@ -18,10 +18,10 @@ const HomePage = () => {
 
     const translations = {
         nl: {
-            kids: "Zijn de jongeren ook geïnteresseerd in politiek? Probeer dan onze speciale 'Kids' versie met teksten die speciaal zijn afgestemd op jongeren",
+            kids: "Zijn de kids geïnteresseerd in politiek? Probeer dan onze speciale 'Kids' versie met teksten die speciaal zijn afgestemd op jongeren",
         },
         en: {
-            kids: "These are the parties you most agree with",
+            kids: "Are the kids interested in politics? Try our special 'Kids' version with texts specifically tailored for young people. Please note, this version is available only in Dutch.",
         },
         kids: {
             kids: "Wil je dit een keer aan de oudjes laten zien? Probeer dan onze versie voor ouderen.",
