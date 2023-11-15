@@ -46,9 +46,26 @@
 
     .scorePage__partyInfo {
       margin-top: 1rem;
+
+
     }
   }
 }
+
+.scorePageTopicAnswer {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.agreeClass{
+color: $third-color;
+}
+.disagreeClass{
+color: $fourth-color;
+}
+.neutralClass{
+  color: $sixth-color;
+}
+
 
 .buttonsContainer {
   display: flex;

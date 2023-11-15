@@ -17,14 +17,21 @@ const ScorePage = () => {
     const savedLanguage = localStorage.getItem('language');
     const partiesUserAgreesOrDisagreesWith = [];
 
+    console.log('Saved Data Structure:', savedData);
+
+
     for (const [questionPartyKey, answer] of Object.entries(savedData)) {
         const [topic, party] = questionPartyKey.split('_');
-        if ((language === 'nl' || language === 'kids') && (answer === 'Ja goed plan!' || answer === 'Nee joh!' || answer === 'Ik weet niet')) {
+        if (language === 'nl' && (answer === 'Eens' || answer === 'Oneens' || answer === 'Neutraal')) {
             partiesUserAgreesOrDisagreesWith.push({ topic, party, answer });
-        } else if (language !== 'nl' && language !== 'kids' && (answer === 'Agree' || answer === 'Disagree')) {
+        } else if (language === 'kids' && (answer === 'Ja goed plan!' || answer === 'Nee joh!' || answer === 'Ik weet niet')) {
+            partiesUserAgreesOrDisagreesWith.push({ topic, party, answer });
+        } else if (language === 'en' && (answer === 'Agree' || answer === 'Disagree' || answer === 'Neutral')) {
             partiesUserAgreesOrDisagreesWith.push({ topic, party, answer });
         }
+        console.log('Parties User Agrees Or Disagrees With:', partiesUserAgreesOrDisagreesWith);
     }
+
 
     const translations = {
         nl: {
@@ -82,7 +89,16 @@ const ScorePage = () => {
                                         {partiesUserAgreesOrDisagreesWith
                                             .filter(item => item.party === party)
                                             .map(({ topic, answer }) => (
-                                                <li key={`${party}_${topic}`} className={styles.scorePage__partyDetail}>
+                                                <li
+                                                    key={`${party}_${topic}`}
+                                                    className={`${styles.scorePageTopicAnswer} ${
+                                                        answer === 'Eens' || answer === 'Ja goed plan!' || answer === 'Agree'
+                                                            ? styles.agreeClass
+                                                            : answer === 'Oneens' || answer === 'Nee joh!' || answer === 'Disagree'
+                                                                ? styles.disagreeClass
+                                                                : styles.neutralClass
+                                                    }`}
+                                                >
                                                     {`${topic}: ${answer}`}
                                                 </li>
                                             ))}
