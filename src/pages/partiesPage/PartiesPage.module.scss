@@ -1,9 +1,7 @@
 @import '../../styles/mixins';
 @import '../../styles/globals';
 
-.partiesPageOuterContainer{
 
-}
 
 .partiesPageContainer {
   display: grid;
@@ -27,6 +25,13 @@
 .pageDescriptionsDetails {
   text-align: center;
 }
+
+.partyImage {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
 
 .headerText {
   position: absolute; // Dit positioneert de tekst over de afbeelding.

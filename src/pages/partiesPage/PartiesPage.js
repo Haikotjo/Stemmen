@@ -19,9 +19,6 @@ function PartiesPage() {
     const textContent = textData[language];
 
     const handlePartySelection = (party) => {
-
-        console.log("Geselecteerde partij:", party);
-        console.log("Posities voor de partij:", positions);
         setSelectedParty(party);
         setIsModalOpen(true);
     };
@@ -50,7 +47,6 @@ function PartiesPage() {
                 <Modal isShowing={isModalOpen} hide={closeModal}>
                     {selectedParty && (
                         <div className={styles.selectedPartyInfo}>
-                            <h1>{selectedParty}</h1>
                             <img
                                 src={getPartyImage(selectedParty)}
                                 alt={`${selectedParty} logo`}

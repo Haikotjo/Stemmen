@@ -20,7 +20,6 @@ const ScrollComponent = ({ scrollRef }) => {
         const checkScrollPosition = () => {
             if (scrollRef && scrollRef.current) {
                 const position = scrollRef.current.getBoundingClientRect().top + window.scrollY;
-                // console.log('Scroll Y:', window.scrollY, 'Position:', position);
                 if (window.scrollY > position) {
                     setIsVisible(true);
                 } else {

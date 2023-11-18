@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useCallback } from 'react';
 import styles from './Modal.module.scss';
-import { getRandomImage } from '../../utils/utils';
+// import { getRandomImage } from '../../utils/utils';
 import StyledButton from "../button/StyledButton";
 
 const Modal = ({ isShowing, hide, children }) => {
     const modalRef = useRef(null);
-    const randomImage = isShowing ? getRandomImage() : null;
+    // const randomImage = isShowing ? getRandomImage() : null;
 
     // Gebruik useCallback om de handleClickOutside functie te memoïseren
     const handleClickOutside = useCallback((event) => {
@@ -38,9 +38,9 @@ const Modal = ({ isShowing, hide, children }) => {
                         onClick={hide}
                         className={`${styles['styled-button']} ${styles.close}`}
                     />
-                    {randomImage && (
-                        <img src={randomImage} alt="Header" className={styles.headerImage} />
-                    )}
+                    {/*{randomImage && (*/}
+                    {/*    <img src={randomImage} alt="Header" className={styles.headerImage} />*/}
+                    {/*)}*/}
                     <div className={styles.modalContent}>
                         {children}
                     </div>

@@ -4,9 +4,8 @@ import positionsData from '../data/positions.json';
 // Parties
 export const selectParty = (selectedParty) => {
     if (partiesData.partijen.includes(selectedParty)) {
-        console.log(`You have selected ${selectedParty}`);
     } else {
-        console.log('Invalid selection');
+
     }
 };
 
@@ -16,14 +15,14 @@ export const getPositions = (topic, party, language) => {
     const positionsForTopic = positionsData[language][topic];
 
     if (!positionsForTopic) {
-        console.log('Invalid topic');
+
         return;
     }
 
     const position = positionsForTopic[party];
 
     if (!position) {
-        console.log('Invalid party for this topic');
+
         return;
     }
 
@@ -32,9 +31,9 @@ export const getPositions = (topic, party, language) => {
 
 export const selectTopic = (selectedTopic) => {
     if (Object.keys(positionsData).includes(selectedTopic)) {
-        console.log(`You have selected ${selectedTopic}`);
+
     } else {
-        console.log('Invalid topic');
+
     }
 };
 
