@@ -41,6 +41,12 @@ function PositionsPage() {
                 <PageHeader imageSrc={randomImage} title="STANDPUNTEN" />
                 {/* TopicList component to display the list of topics */}
                 <div className={styles.topicsContainer}>
+                    {/*
+                    TopicList component is used here to display the list of topics.
+                    It receives the topics array, the currently selected topic, and
+                    a function to handle topic selection. When a topic is selected,
+                    handleTopicSelection updates the state to reflect the new selection.
+                */}
                     <TopicList
                         topics={topics}
                         selectedTopic={selectedTopic}
@@ -61,6 +67,7 @@ function PositionsPage() {
                         />
                     ))}
                 </div>
+                {/*Scroll tot top*/}
                 <ScrollComponent scrollRef={positionsRef} />
             </div>
         </>
