@@ -7,6 +7,7 @@ import styles from "./PositionsPage.module.scss";
 import {getRandomImage} from "../../utils/utils";
 import {useLanguage} from "../../context/LanguageContext";
 import ScrollComponent from "../../Components/scrollComponent/ScrollComponent";
+import PageHeader from "../../Components/pageHeader/PageHeader";
 
 // PositionsPage component definition
 // This component displays the positions of various parties on a selected topic
@@ -36,11 +37,8 @@ function PositionsPage() {
     // Render the component
     return (
         <>
-            <div className={styles.positionPageContainer}>
-                <div className={styles.headerWrapper}>
-                    <img src={randomImage} alt="Header" className={styles.backgroundImage} />
-                    <h1 ref={positionsRef}  className={styles.headerText}>STANDPUNTEN</h1>
-                </div>
+            <div ref={positionsRef} className={styles.positionPageContainer}>
+                <PageHeader imageSrc={randomImage} title="STANDPUNTEN" />
                 {/* TopicList component to display the list of topics */}
                 <div className={styles.topicsContainer}>
                     <TopicList

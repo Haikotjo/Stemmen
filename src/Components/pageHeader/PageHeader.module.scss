@@ -1,0 +1,40 @@
+@import '../../styles/mixins';
+@import '../../styles/globals';
+
+.headerWrapper {
+  position: relative; // Zorgt ervoor dat alle absolute elementen binnen deze div relatief zijn aan deze div
+  text-align: center; // Centreert tekst indien nodig
+
+  .headerText {
+    position: absolute; // Positioneert de tekst over de afbeelding
+    top: 20%; // Centreert de tekst verticaal
+    left: 50%; // Centreert de tekst horizontaal
+    transform: translate(-50%, -50%); // Nauwkeurige centrering ongeacht de tekstgrootte
+    color: white; // Voor een lichte tekstkleur
+    font-size: 5rem; // Standaard lettergrootte voor kop tekst
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 1); // Tekstschaduw voor leesbaarheid
+
+    @include extra-small-screen {
+      font-size: 2rem; // Kleinere grootte voor extra kleine schermen
+    }
+
+    @include small-screen {
+      font-size: 3rem; // Kleinere grootte voor kleine schermen
+    }
+
+    @include medium-screen {
+      font-size: 4rem; // Middelgrote grootte voor middelgrote schermen
+    }
+  }
+
+  .backgroundImage {
+    max-width: 100%; // Maximale breedte is 100% van de viewportbreedte
+    max-height: 100vh; // Maximale hoogte is 100% van de viewporthoogte
+    width: auto; // Behoudt de oorspronkelijke verhoudingen van de afbeelding
+    height: auto; // Behoudt de oorspronkelijke verhoudingen van de afbeelding
+    display: block; // Zorgt voor een correcte weergave van de afbeelding
+    margin: 0 auto 1rem; // Centreert de afbeelding met een marge aan de onderkant
+    border-radius: 12px; // Afgeronde hoeken voor de afbeelding
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3); // Schaduw voor een diepte-effect
+  }
+}
