@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, {useState, useEffect, useContext, useRef} from 'react';
 import partiesData from '../../data/parties.json';
 import positionsData from '../../data/positions.json';
 import PartyList from "../../Components/partyList/PartyList";
@@ -15,6 +15,7 @@ import useReset from "../../hooks/useReset";
 import SelectedPartyItem from "../../Components/selectedPartyItem/SelectedPartyItem";
 import {useLanguage} from "../../context/LanguageContext";
 import {Link} from "react-router-dom";
+import ScrollComponent from "../../Components/scrollComponent/ScrollComponent";
 
 
 
@@ -32,6 +33,8 @@ function ElectionHelper() {
     const undoAnswer = useUndoAnswer();
     const randomHeaderImage =  getRandomImagePage();
     const [expandedItems, setExpandedItems] = useState({});
+
+    const topicListRef = useRef(null);
 
 
     const translations = {
@@ -110,13 +113,17 @@ function ElectionHelper() {
                     selectedParties={selectedParties}
                     togglePartySelection={togglePartySelection}
                 />
-
+                <div ref={topicListRef}>
                 <h1 className={styles.topicTitle}>{t.chooseTopic}</h1>
-                <TopicList
-                    topics={topics}
-                    selectedTopic={selectedTopic}
-                    handleTopicSelection={handleTopicSelection}
-                />
+
+                    <TopicList
+                        topics={topics}
+                        selectedTopic={selectedTopic}
+                        handleTopicSelection={handleTopicSelection}
+                    />
+                </div>
+
+                <ScrollComponent scrollRef={topicListRef} />
 
                 <div className={styles.selectedPartiesContainer}>
                     <h1 className={styles.selectedPartiesTitle}>{t.selectedParties}</h1>
@@ -141,6 +148,13 @@ function ElectionHelper() {
                     ))}
                 </div>
             </div>
+{/*<h1 className={styles.changeTopic}>Change topic</h1>*/}
+{/*            <TopicList*/}
+{/*                topics={topics}*/}
+{/*                selectedTopic={selectedTopic}*/}
+{/*                handleTopicSelection={handleTopicSelection}*/}
+{/*            />*/}
+
             <div className={styles.buttonsContainer}>
                 <StyledButton label="Reset" onClick={handleReset} />
                 <Link to='/score-page'>
