@@ -6,6 +6,7 @@ import PartyPosition from "../../Components/partyPosition/PartyPosition";
 import styles from "./PositionsPage.module.scss";
 import {getRandomImage} from "../../utils/utils";
 import {useLanguage} from "../../context/LanguageContext";
+import ScrollComponent from "../../Components/scrollComponent/ScrollComponent";
 
 // PositionsPage component definition
 // This component displays the positions of various parties on a selected topic
@@ -28,10 +29,6 @@ function PositionsPage() {
     // Handler function to set the selected topic
     const handleTopicSelection = (topic) => {
         setSelectedTopic(topic);
-        // Check if positionsRef.current is not null and then scroll into view
-        if(positionsRef.current) {
-            positionsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
     };
 
     const topicPositions = selectedTopic && currentPositionsData[selectedTopic] ? currentPositionsData[selectedTopic] : {};
@@ -42,21 +39,21 @@ function PositionsPage() {
             <div className={styles.positionPageContainer}>
                 <div className={styles.headerWrapper}>
                     <img src={randomImage} alt="Header" className={styles.backgroundImage} />
-                    <h1 className={styles.headerText}>STANDPUNTEN</h1>
+                    <h1 ref={positionsRef}  className={styles.headerText}>STANDPUNTEN</h1>
                 </div>
                 {/* TopicList component to display the list of topics */}
                 <div className={styles.topicsContainer}>
-                <TopicList
-                    topics={topics}
-                    selectedTopic={selectedTopic}
-                    handleTopicSelection={handleTopicSelection}
-                />
+                    <TopicList
+                        topics={topics}
+                        selectedTopic={selectedTopic}
+                        handleTopicSelection={handleTopicSelection}
+                    />
                 </div>
                 {/*
                 Loop through the positions object and render a PartyPosition component for each party.
                 Pass the party name, position, and selected topic as props.
             */}
-                <div ref={positionsRef} >
+                <div >
                     {Object.keys(topicPositions).map((party) => (
                         <PartyPosition
                             key={party}
@@ -66,6 +63,7 @@ function PositionsPage() {
                         />
                     ))}
                 </div>
+                <ScrollComponent scrollRef={positionsRef} />
             </div>
         </>
     );
