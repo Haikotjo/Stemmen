@@ -9,29 +9,32 @@ import {useLanguage} from "../../context/LanguageContext";
 import ScrollComponent from "../../Components/scrollComponent/ScrollComponent";
 import PageHeader from "../../Components/pageHeader/PageHeader";
 
-// PositionsPage component definition
-// This component displays the positions of various parties on a selected topic
+ // PositionsPage component definition
+// This component displays the positions of various parties on a selected topic.
+// It utilizes a language context for localization and dynamically loads party positions based on the selected topic.
 function PositionsPage() {
     const randomImage =  getRandomImage();
     // State to keep track of the selected topic
     const [selectedTopic, setSelectedTopic] = useState(null);
 
+    // useRef hook to create a ref for scrolling functionality
     const positionsRef = useRef(null);
 
+    // Accessing language context for localized data
     const { language } = useLanguage();
 
-    // Custom hook to get the positions of parties on the selected topic
+    // Extracting positions data based on the current language context
     const currentPositionsData = positionsData[language] || positionsData.nl;
 
     // Extracting the list of topics from positionsData
     const topics = Object.keys(currentPositionsData);
 
-
-    // Handler function to set the selected topic
+    // Handler function to set the selected topic and trigger UI updates
     const handleTopicSelection = (topic) => {
         setSelectedTopic(topic);
     };
 
+    // Extracting the positions of each party for the selected topic
     const topicPositions = selectedTopic && currentPositionsData[selectedTopic] ? currentPositionsData[selectedTopic] : {};
 
     // Render the component
@@ -67,7 +70,7 @@ function PositionsPage() {
                         />
                     ))}
                 </div>
-                {/*Scroll tot top*/}
+                {/* ScrollComponent provides a way to scroll back to the top of the page */}
                 <ScrollComponent scrollRef={positionsRef} />
             </div>
         </>

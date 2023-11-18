@@ -1,94 +1,96 @@
 @import '../../styles/mixins';
 @import '../../styles/globals';
 
-// Container for the position of a party
+// Styling for the container of a party's position
 .partyPositionContainer {
+  margin-inline: 3rem;
   background-color: #f8f9fa;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   margin-bottom: 16px;
   padding: 16px;
   max-width: 100%;
-  transition: transform 0.2s ease, box-shadow 0.2s ease; // Voeg overgangseffecten toe
+  transition: transform 0.2s ease, box-shadow 0.2s ease; // Adds transition effects for transform and shadow
   border: 1px solid $fourth-color;
 
   &:hover {
-    transform: scale(1.05); // Vergroot de container met 5% op hover
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); // Geef een grotere drop shadow op hover
+    transform: scale(1.05); // Scales up the container by 5% on hover
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); // Provides a larger shadow on hover
   }
-}
 
-
-  .partyName{
+  // Styling for the party name
+  .partyName {
     color: $fifth-color;
     text-align: center;
-
+    font-weight: bold;
     @include extra-small-screen {
-      font-weight: bold;
-      font-size: 1rem; // kleinere grootte voor kleine schermen
+      font-size: 1rem; // Smaller font size for extra small screens
     }
-
     @include small-screen {
-      font-weight: bold;
-      font-size: 1.5rem; // kleinere grootte voor kleine schermen
+      font-size: 1.5rem; // Slightly larger font size for small screens
     }
-
   }
 
   // Styling for the list of positions
   .positionList {
     list-style-type: none; // Removes default list styling
-    padding: 0; // Resets padding to maintain container size
-    margin: 0; // Resets margin to maintain layout consistency
-    display: grid; // Utilizes grid for a structured layout
-    grid-template-columns: 1fr 2fr; // Allocates space for topic and position
-    column-gap: 16px; // Space between the columns for visual separation
+    padding: 0; // Resets padding
+    margin: 0; // Resets margin
+    display: grid; // Uses grid layout for structured layout
+    grid-template-columns: 1fr 2fr; // Divides space for topic and position
+    column-gap: 16px; // Adds space between columns
+
     @include extra-small-screen {
-      display: flex;
+      display: flex; // Switches to flex layout on extra small screens
+      flex-direction: column; // Stacks elements vertically
+      align-items: center; // Centers elements horizontally
     }
 
     li {
-      display: contents; // Allows children to be laid out as if they are direct children of the grid
+      display: contents; // Allows children to lay out as if they are direct children of the grid
       color: $secondary-color;
 
+      // Styling for the topic
       strong {
-        color: $secondary-color; // Dark color for the topic for contrast
+        color: $secondary-color; // Color for the topic
         grid-column: 1; // Aligns topic to the first column
       }
 
+      // Styling for the position text
       span {
         grid-column: 2; // Aligns position to the second column
-      }
-      @include extra-small-screen {
-        display: flex; // Schakel over naar flexbox
-        flex-direction: column; // Elementen verticaal stapelen
-        align-items: center; // Centreer de elementen horizontaal
 
-        .topicSmall {
-          margin-bottom: 10px; // Ruimte tussen onderwerp en beschrijving
-        }
+        @include extra-small-screen {
+          display: flex; // Switch to flex layout
+          flex-direction: column; // Stack elements vertically
+          align-items: center; // Center elements horizontally
 
-        span {
-          // Zorgt ervoor dat de tekst en de knoppen correct uitgelijnd zijn
           .boldText, .moreText {
             font-weight: normal;
-            display: block; // Elk element op een nieuwe regel
-            width: 100%; // Volledige breedte van de container gebruiken
+            display: block; // Each element on a new line
+            width: 100%; // Uses full width of the container
           }
         }
       }
     }
   }
 
-.boldText {
-  font-weight: bold; // Makes the first sentence bold
-  color: $primary-color; // Change to your preferred color
-  margin-bottom: 20px;
-}
+  // Adjustments for the topic and position text
+  .topicSmall {
+    margin-bottom: 10px; // Adds space between topic and description
+  }
 
-// Styling for the more text indicator (>>>)
-.moreText {
-  color: $fourth-color; // Change to your preferred highlight color
-  cursor: pointer; // Changes cursor to indicate clickable
-  margin-left: 4px; // Spacing for visual separation from the sentence
+  // Styling for the bold text (first sentence)
+  .boldText {
+    font-weight: bold; // Makes the first sentence bold
+    color: $primary-color; // Use your preferred color
+    margin-bottom: 20px;
+  }
+
+  // Styling for the 'more text' indicator (>>>)
+  .moreText {
+    color: $fourth-color; // Use your preferred highlight color
+    cursor: pointer; // Changes cursor to indicate clickable area
+    margin-left: 4px; // Adds space for visual separation
+  }
 }
