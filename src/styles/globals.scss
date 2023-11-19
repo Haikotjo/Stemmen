@@ -1,6 +1,6 @@
+@import 'mixins'; // Import mixins for reusable style definitions
 
-@import 'mixins';
-
+// Define color variables for consistent theming
 $primary-color: #011627;
 $secondary-color: #083948;
 $third-color: #03CEA4;
@@ -8,56 +8,64 @@ $fourth-color: #FB3640;
 $fifth-color: #750D37;
 $sixth-color: #27aecc;
 
-// Importeer de lettertypen
+// Import Google fonts Montserrat and Roboto for typography
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,800;1,300&family=Roboto:ital,wght@0,300;0,400;0,900;1,100;1,300;1,400&display=swap');
 
-// Definieer typografie variabelen
+// Define primary and secondary font variables
 $font-primary: 'Roboto', sans-serif;
 $font-secondary: 'Montserrat', sans-serif;
 
-// Mixins voor typografische stijlen
+// Mixin for setting primary font with optional weight and style
 @mixin font-primary($weight: 400, $style: normal) {
   font-family: $font-primary;
   font-weight: $weight;
   font-style: $style;
 }
 
+// Mixin for setting secondary font with optional weight and style
 @mixin font-secondary($weight: 400, $style: normal) {
   font-family: $font-secondary;
   font-weight: $weight;
   font-style: $style;
 }
 
-// Globale stijlen
+// Global styles for the body element
 body {
-  @include font-primary(200);
-  margin-top: 72px;
+  @include font-primary(200); // Apply primary font with a weight of 200
+  margin-top: 72px; // Top margin for the body
+
+  // Responsive styling for extra-small screens
   @include extra-small-screen {
-    margin-top: 66px; // Voor extra kleine schermen
+    margin-top: 66px; // Adjust top margin for extra-small screens
   }
+
+  // Responsive styling for small screens
   @include small-screen {
-    margin-top: 72px; // Voor kleine schermen
+    margin-top: 72px; // Adjust top margin for small screens
   }
 }
 
+// Styling for h1 headings
 h1 {
-  @include font-secondary(800);
+  @include font-secondary(800); // Apply secondary font with a weight of 800
 }
 
+// Styling for h2 headings
 h2 {
-  @include font-secondary(400);
+  @include font-secondary(400); // Apply secondary font with a weight of 400
 }
 
-// Voorbeeld van italic stijl
+// Styling for emphasized text
 em {
-  @include font-primary(400, italic);
+  @include font-primary(400, italic); // Apply primary font with italic style
 }
 
-// Specifieke klassen voor hergebruik
+// Reusable class for bold primary text
 .primary-bold {
-  @include font-primary(900);
+  @include font-primary(900); // Apply primary font with a weight of 900
 }
 
+// Reusable class for italic secondary text
 .secondary-italic {
-  @include font-secondary(300, italic);
+  @include font-secondary(300, italic); // Apply secondary font with italic style
 }

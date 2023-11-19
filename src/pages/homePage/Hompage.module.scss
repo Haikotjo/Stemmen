@@ -1,107 +1,119 @@
-@import '../../styles/globals';
-@import '../../styles/mixins';
+@import '../../styles/globals'; // Import global styles
+@import '../../styles/mixins'; // Import mixins
 
+// Styling for background images
 .backgroundImage {
-  max-width: 100%; // Maximale breedte is 100% van de viewportbreedte
-  max-height: 100vh; // Maximale hoogte is 100% van de viewporthoogte
-  width: auto; // Behoud de oorspronkelijke verhoudingen van de afbeelding
-  height: auto; // Behoud de oorspronkelijke verhoudingen van de afbeelding
-  display: block; // Zorgt voor een correcte weergave van de afbeelding
-  margin: 0 auto 1rem;
-  border-radius: 12px;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 3);
+  max-width: 100%; // Ensures the image width doesn't exceed the viewport width
+  max-height: 100vh; // Sets the maximum height to 100% of the viewport height
+  width: auto; // Maintains the original aspect ratio of the image
+  height: auto; // Maintains the original aspect ratio of the image
+  display: block; // Ensures proper display of the image
+  margin: 0 auto 1rem; // Centers the image with a bottom margin
+  border-radius: 12px; // Rounded corners
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 3); // Adds shadow for depth
 }
 
-// Buitenste container
+// Outer container styling
 .container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 50px;
-  background-color: #F6F7F8;
-  border-radius: 12px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  max-width: 1440px; // Sets the maximum width
+  margin: 0 auto; // Centers the container
+  padding: 50px; // Padding around the container
+  background-color: #F6F7F8; // Background color
+  border-radius: 12px; // Rounded corners
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); // Shadow for depth
 
+  // Styling for h1 elements within the container
   h1 {
     font-size: 2.4rem;
     font-weight: 700;
-    margin-bottom: 30px
+    margin-bottom: 30px; // Bottom margin
   }
 
+  // Styling for h2 elements within the container
   h2 {
     font-size: 1.8rem;
     font-weight: 600;
-    margin-bottom: 25px;
+    margin-bottom: 25px; // Bottom margin
   }
 
+  // Styling for paragraphs within the container
   p {
     font-size: 1.1rem;
     line-height: 1.6;
     color: #34495E;
-    margin-bottom: 20px;
+    margin-bottom: 20px; // Bottom margin
   }
 
-  // Grid voor blokjes
+  // Grid layout for page description blocks
   .pageDescriptionsContainer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-bottom: 20px;
+    grid-template-columns: repeat(3, 1fr); // Three columns
+    gap: 24px; // Space between grid items
+    margin-bottom: 20px; // Bottom margin
+
+    // Responsive adjustments for grid layout
     @media (max-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr); // Two columns for smaller screens
     }
     @media (max-width: 480px) {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr; // Single column for extra small screens
     }
   }
 }
 
+// Wrapper for the header
 .headerWrapper {
-  position: relative; // Dit zorgt ervoor dat alle absolute elementen binnen deze div relatief zijn aan deze div.
-  text-align: center; // Als je de tekst in het midden wilt hebben
+  position: relative; // Establishes a positioning context for absolute children
+  text-align: center; // Centers text horizontally
+
+  // Styling for the header text
+  .headerText {
+    position: absolute; // Positions text over the image
+    top: 20%; // Vertical centering
+    left: 50%; // Horizontal centering
+    transform: translate(-50%, -50%); // Precise centering regardless of text size
+    color: white; // Text color
+    font-size: 5rem; // Large font size
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 1); // Text shadow for readability
+
+    // Responsive font size adjustments
+    @include extra-small-screen {
+      font-size: 2rem; // Smaller font size for extra small screens
+    }
+    @include small-screen {
+      font-size: 3rem; // Smaller font size for small screens
+    }
+    @include medium-screen {
+      font-size: 4rem; // Medium font size for medium screens
+    }
+  }
 }
 
-.headerText {
-  position: absolute; // Dit positioneert de tekst over de afbeelding.
-  top: 20%; // Centreert de tekst verticaal.
-  left: 50%; // Centreert de tekst horizontaal.
-  transform: translate(-50%, -50%); // Nauwkeurige centrering ongeacht de tekstgrootte.
-  color: white; // Als je een lichte tekstkleur wilt.
-  font-size: 5rem;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 1);
-  //background-color: white;
-  @include extra-small-screen {
-    font-size: 2rem; // kleinere grootte voor kleine schermen
-  }
-
-  @include small-screen {
-    font-size: 3rem; // kleinere grootte voor kleine schermen
-  }
-
-  @include medium-screen {
-    font-size: 4rem; // middelgrote grootte voor middelgrote schermen
-  }
-}
-
-.homeTitle{
+// Styling for the home title
+.homeTitle {
   display: flex;
-  justify-content: center;
+  justify-content: center; // Centers the title horizontally
 }
 
-.introText{
+// Styling for introductory text
+.introText {
   display: flex;
-  justify-content: center;
+  justify-content: center; // Centers the text horizontally
 }
 
+// Styling for version information
 .version {
   display: flex;
-  justify-content: center;
-  color: $secondary-color;
-  margin: auto auto 1rem;
-}
-.kidsLink{
-  color: $fourth-color;
-  cursor: pointer;
-  &:hover{
-    color: $fifth-color;
+  justify-content: center; // Centers the version info horizontally
+  color: $secondary-color; // Uses the secondary color
+  margin: auto auto 1rem; // Centered with a bottom margin
+
+  // Styling for the kids link
+  .kidsLink {
+    color: $fourth-color; // Initial color
+    cursor: pointer; // Changes cursor to indicate interactivity
+    &:hover {
+      color: $fifth-color; // Changes color on hover
+    }
   }
 }
