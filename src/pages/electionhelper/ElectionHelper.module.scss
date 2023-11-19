@@ -1,34 +1,40 @@
-@import '../../styles/mixins';
-@import '../../styles/globals';
+@import '../../styles/mixins'; // Import mixins for reuse across stylesheets
+@import '../../styles/globals'; // Import global styles
 
 .electionHelperContainer {
-  max-width: 1440px; // Max width for larger screens
+  max-width: 1440px; // Set a maximum width for larger screens
   margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px; // Padding for content inside the container
+  margin-right: auto; // Center the container horizontally
+  padding: 0 20px; // Horizontal padding for the content
 
+  // Styling for various titles within the container
   .topicTitle, .selectedPartiesTitle, .pageTitle {
-    display: flex;
-    justify-content: center;
-    margin: 2rem auto; // Styling for various titles
+    display: flex; // Use flexbox for layout
+    justify-content: center; // Center the content horizontally
+    margin: 2rem auto; // Vertical margin with auto horizontal margins for centering
   }
 
+  // Media query for extra-small screens using a mixin
   @include extra-small-screen {
-    padding: 0 10px; // Reduced padding for extra-small screens
+    padding: 0 10px; // Reduced horizontal padding for extra-small screens
   }
 
+  // Media query for screens smaller than 768px
   @media (max-width: 768px) {
     max-width: 100%; // Full width for smaller screens
   }
 
+  // Container for buttons
   .buttonsContainer {
-    display: flex;
-    justify-content: space-between; // Evenly space out buttons
-    width: 50%;
+    display: flex; // Use flexbox for layout
+    justify-content: space-between; // Space out buttons evenly
+    width: 50%; // Set the width to half of the parent container
     margin: 2rem auto; // Center the container and add vertical margin
   }
 
+  // Container for selected parties
   .selectedPartiesContainer {
-    margin-top: 2rem; // Add margin at the top for the selected parties container
+    margin-top: 2rem; // Add margin at the top
   }
 }
+
