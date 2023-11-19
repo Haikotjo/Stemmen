@@ -8,11 +8,13 @@ import {getRandomImage} from "../../utils/utils";
 import {useLanguage} from "../../context/LanguageContext";
 import ScrollComponent from "../../Components/scrollComponent/ScrollComponent";
 import PageHeader from "../../Components/pageHeader/PageHeader";
+import textData from "../../data/textData.json";
 
  // PositionsPage component definition
 // This component displays the positions of various parties on a selected topic.
 // It utilizes a language context for localization and dynamically loads party positions based on the selected topic.
 function PositionsPage() {
+
     const randomImage =  getRandomImage();
     // State to keep track of the selected topic
     const [selectedTopic, setSelectedTopic] = useState(null);
@@ -22,6 +24,7 @@ function PositionsPage() {
 
     // Accessing language context for localized data
     const { language } = useLanguage();
+    const textContent = textData[language];
 
     // Extracting positions data based on the current language context
     const currentPositionsData = positionsData[language] || positionsData.nl;
@@ -41,7 +44,7 @@ function PositionsPage() {
     return (
         <>
             <div ref={positionsRef} className={styles.positionPageContainer}>
-                <PageHeader imageSrc={randomImage} title="STANDPUNTEN" />
+                <PageHeader imageSrc={randomImage} title={textContent.pages.positionsPage.name} />
                 {/* TopicList component to display the list of topics */}
                 <div className={styles.topicsContainer}>
                     {/*

@@ -16,6 +16,8 @@ import SelectedPartyItem from "../../Components/selectedPartyItem/SelectedPartyI
 import {useLanguage} from "../../context/LanguageContext";
 import {Link} from "react-router-dom";
 import ScrollComponent from "../../Components/scrollComponent/ScrollComponent";
+import PageHeader from "../../Components/pageHeader/PageHeader";
+import textData from "../../data/textData.json";
 
 
 
@@ -33,6 +35,7 @@ function ElectionHelper() {
     const undoAnswer = useUndoAnswer();
     const randomHeaderImage =  getRandomImagePage();
     const [expandedItems, setExpandedItems] = useState({});
+    const textContent = textData[language];
 
     const topicListRef = useRef(null);
 
@@ -103,10 +106,7 @@ function ElectionHelper() {
     return (
         <>
             <div className={styles.electionHelperContainer}>
-                <div className={styles.headerWrapper}>
-                    <img src={randomHeaderImage} alt="Header" className={styles.backgroundImage} />
-                    <h1 className={styles.headerText}>{t.electionHelper}</h1>
-                </div>
+                <PageHeader imageSrc={randomHeaderImage} title={textContent.pages.electionHelper.name}  />
                 <h1 className={styles.pageTitle}>{t.chooseParties}</h1>
                 <PartyList
                     parties={partiesData.partijen}

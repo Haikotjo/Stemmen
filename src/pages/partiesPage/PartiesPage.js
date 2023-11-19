@@ -41,7 +41,7 @@ function PartiesPage() {
             <div className={styles.partiesOuterPageContainer}>
                 <div className={styles.partiesPageContainer}>
                     {/* PageHeader component to display the page header with a random image */}
-                    <PageHeader imageSrc={randomHeaderImage} title="STANDPUNTEN" />
+                    <PageHeader imageSrc={randomHeaderImage} title={textContent.pages.partiesPage.name}  />
 
                     {/* Display page description */}
                     <div className={styles.pageDescriptionsDetails}>
