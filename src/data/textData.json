@@ -3,6 +3,15 @@
     "introText": "Hier is hoe ChatGPT wordt gebruikt om je te helpen bij het ontdekken van politieke standpunten:\n\nDe verkiezingsprogramma's van de partijen zijn geüpload in PDF-formaat.\nVoor elk onderwerp hebben we de volgende vraag gesteld: \"Maak een samenvatting van {partij} programma over {onderwerp} 100 woorden!\" met de eerste {x} woorden als pakkende titel.\nJe kunt de pagina's vergelijken op verschillende manieren om te zien wat voor jou het makkelijkst is.\nGebruik de kieshulp om punten te geven aan waar je het eens, oneens of neutraal over bent, en ontdek welke partij het beste bij je past.\nHoud er rekening mee dat ChatGPT soms creatief kan zijn, dus neem de resultaten niet te serieus.",
     "electionInfo": "Opgelet! De verkiezingsklok tikt. Wees geen laatkomer; bereid je nu voor om een weloverwogen stem uit te brengen. De exacte verkiezingsdatum is woensdag 22 november. Blijf op de hoogte via onze app!",
     "extraStory": "In het labyrint van politieke retoriek en campagnebeloften is het makkelijk om de weg kwijt te raken. Maar vrees niet! StemSpectrum is je persoonlijke gids die je helpt om met zelfvertrouwen je stem uit te brengen. Wij zorgen ervoor dat jouw stem telt en echt een verschil maakt.",
+    "chooseParties": "Kies de partijen die je wilt vergelijken",
+    "chooseTopic": "Kies een onderwerp",
+    "selectedParties": "Geselecteerde Partijen:",
+    "noPositionAvailable": "Kies een onderwerp",
+    "agree": "Eens",
+    "disagree": "Oneens",
+    "neutral": "Neutraal",
+    "results": "Uitslag",
+
     "pages": {
       "partiesPage": {
         "name": "De Partijen",
@@ -30,6 +39,15 @@
     "introText": "Here is how ChatGPT is used to help you explore political positions:\n\nThe parties' election programs have been uploaded in PDF format.\nFor each topic, we have asked the following question: \"Make a summary of {party}’s program about {topic} in 100 words!\" with the first {x} words as a catchy title.\nYou can compare the pages in various ways to see what is easiest for you.\nUse the election assistant to rate points on which you agree, disagree, or are neutral, and discover which party is the best fit for you.\nKeep in mind that ChatGPT can sometimes be creative, so do not take the results too seriously.",
     "electionInfo": "Attention! The election clock is ticking. Don't be a latecomer; prepare now to cast an informed vote. The exact election date is wednesday 22 november. Stay informed via our app!",
     "extraStory": "In the maze of political rhetoric and campaign promises, it's easy to lose your way. But fear not! VoteSpectrum is your personal guide that helps you cast your vote with confidence. We ensure that your vote counts and truly makes a difference.",
+    "chooseParties": "Choose the parties you want to compare",
+    "chooseTopic": "Choose a topic",
+    "selectedParties": "Selected Parties:",
+    "noPositionAvailable": "Choose a subject",
+    "agree": "Agree",
+    "disagree": "Disagree",
+    "neutral": "Neutral",
+    "results": "results",
+
     "pages": {
       "partiesPage": {
         "name": "Parties",
@@ -52,6 +70,15 @@
     "introText": "Hoi! Wil je meer leren over politiek? Met StemSpectrum maken we het superleuk en makkelijk! We hebben alle info over politieke partijen en hun ideeën in onze app gezet. Je kunt vragen: 'Vertel me in 100 woorden over [partij] en [onderwerp]'. En je krijgt een cool, kort antwoord! Vergeet niet, politiek is soms ingewikkeld, dus onze antwoorden zijn gewoon om je te helpen leren en niet voor echte beslissingen.",
     "electionInfo": "Let op! De verkiezingen komen eraan. Wil je slim stemmen? Blijf op de hoogte met onze app. De exacte datum van de verkiezingen is 22 november!",
     "extraStory": "Politiek is als een groot avontuur. Soms een beetje verwarrend, maar maak je geen zorgen! Met StemSpectrum ontdek je spelenderwijs hoe je een slimme stem kunt uitbrengen. Wij helpen je om jouw stem te laten horen!",
+    "chooseParties": "Welke partijen vind je leuk!",
+    "chooseTopic": "Kies iets waar jij meer over wil weten",
+    "selectedParties": "Deze partijen heb je gekozen:",
+    "noPositionAvailable": "Kies een onderwerp",
+    "agree": "Ja goed plan!",
+    "disagree": "Nee joh!",
+    "neutral": "Ik weet niet",
+    "results": "Check de uitslag!",
+
     "pages": {
       "partiesPage": {
         "name": "De Partijen",

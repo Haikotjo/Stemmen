@@ -116,14 +116,15 @@ const ScorePage = () => {
                     <p>{t.noScores} <Link to="/kies-hulp" className={styles.linkToPage}>&gt;&gt;&gt;</Link></p>
                 )}
                 <div className={styles.buttonsContainer}>
+                    <Link to='/kies-hulp'>
+                        <StyledButton label={t.electionHelp} />
+                    </Link>
                     {hasScores && (
                         <Link to='/kies-hulp'>
                             <StyledButton label="Reset" onClick={handleReset} />
                         </Link>
                     )}
-                    <Link to='/kies-hulp'>
-                        <StyledButton label={t.electionHelp} />
-                    </Link>
+
                 </div>
             </div>
         </>

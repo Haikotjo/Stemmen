@@ -1,87 +1,55 @@
+// Import necessary libraries and components
 import React, {useState, useEffect, useContext, useRef} from 'react';
-import partiesData from '../../data/parties.json';
-import positionsData from '../../data/positions.json';
+import {Link} from "react-router-dom";
+import {useLanguage} from "../../context/LanguageContext";
+import { ScoreContext } from "../../context/ScoreContext";
+import PageHeader from "../../Components/pageHeader/PageHeader";
 import PartyList from "../../Components/partyList/PartyList";
 import TopicList from "../../Components/topicList/TopicList";
+import SelectedPartyItem from "../../Components/selectedPartyItem/SelectedPartyItem";
+import ScrollComponent from "../../Components/scrollComponent/ScrollComponent";
 import StyledButton from "../../Components/button/StyledButton";
-import styles from "./ElectionHelper.module.scss";
-import {getPartyImage, getRandomImagePage} from "../../utils/utils";
-import { ScoreContext } from "../../context/ScoreContext";
 import useHandleAnswer from "../../hooks/useHandleAnswer";
 import useUndoAnswer from "../../hooks/useUndoAnswer";
 import useToggleParty from "../../hooks/useToggleParty";
 import useHandleTopicSelection from "../../hooks/useHandleTopicSelection";
 import useReset from "../../hooks/useReset";
-import SelectedPartyItem from "../../Components/selectedPartyItem/SelectedPartyItem";
-import {useLanguage} from "../../context/LanguageContext";
-import {Link} from "react-router-dom";
-import ScrollComponent from "../../Components/scrollComponent/ScrollComponent";
-import PageHeader from "../../Components/pageHeader/PageHeader";
 import textData from "../../data/textData.json";
+import positionsData from '../../data/positions.json';
+import partiesData from '../../data/parties.json';
+import {getPartyImage, getRandomImagePage} from "../../utils/utils";
+import styles from "./ElectionHelper.module.scss";
 
-
-
+// ElectionHelper component definition
 function ElectionHelper() {
+    // State hooks for positions and expanded items
     const [positions, setPositions] = useState({});
-    const { language } = useLanguage();
-    const currentPositionsData = positionsData[language] || positionsData.nl;
-    const topics = Object.keys(currentPositionsData);
+    const [expandedItems, setExpandedItems] = useState({});
 
-    const { selectedParties, togglePartySelection } = useToggleParty();
+    // Context hooks to access global language and score data
+    const { language } = useLanguage();
     const { partyScores, answeredQuestions } = useContext(ScoreContext);
+
+    // Effect hook to update positions based on selected parties and topics
+    const { selectedParties, togglePartySelection } = useToggleParty();
     const { selectedTopic, handleTopicSelection } = useHandleTopicSelection();
-    const handleReset = useReset();
     const handleAnswer = useHandleAnswer();
     const undoAnswer = useUndoAnswer();
-    const randomHeaderImage =  getRandomImagePage();
-    const [expandedItems, setExpandedItems] = useState({});
-    const textContent = textData[language];
+    const handleReset = useReset();
 
+    // Ref hook for the topic list
     const topicListRef = useRef(null);
 
+    // Variables for current language data and content
+    const currentPositionsData = positionsData[language] || positionsData.nl;
+    const topics = Object.keys(currentPositionsData);
+    const textContent = textData[language];
+    const randomHeaderImage =  getRandomImagePage();
+    const agree = textContent.agree;
+    const disagree = textContent.disagree;
+    const neutral = textContent.neutral;
 
-    const translations = {
-        nl: {
-            electionHelper: "KIES HULP",
-            chooseParties: "Kies de partijen die je wilt vergelijken",
-            chooseTopic: "Kies een onderwerp",
-            selectedParties: "Geselecteerde Partijen:",
-            noPositionAvailable: "Kies een onderwerp",
-            agree: "Eens",
-            disagree: "Oneens",
-            neutral: "Neutraal",
-            results: "Uitslag"
-        },
-        en: {
-            electionHelper:"ELECTION HELPER",
-            chooseParties: "Choose the parties you want to compare",
-            chooseTopic: "Choose a topic",
-            selectedParties: "Selected Parties:",
-            noPositionAvailable: "Choose a subject",
-            agree: "Agree",
-            disagree: "Disagree",
-            neutral: "Neutral",
-            results: "results"
-        },
-        kids: {
-            electionHelper: "KIES HULP",
-            chooseParties: "Welke partijen vind je leuk!",
-            chooseTopic: "Kies iets waar jij meer over wil weten",
-            selectedParties: "Deze partijen heb je gekozen:",
-            noPositionAvailable: "Kies een onderwerp",
-            agree: "Ja goed plan!",
-            disagree: "Nee joh!",
-            neutral: "Ik weet niet",
-            results: "Check de uitslag!"
-        }
-    };
-
-    const t = translations[language];
-    const agree = t.agree;
-    const disagree = t.disagree;
-    const neutral = t.neutral;
-    const results = t.results;
-
+    // Effect hook to update positions based on selected parties and topics
     useEffect(() => {
         // Controleer of zowel geselecteerde partijen als een geselecteerd onderwerp aanwezig zijn
         if (selectedParties.length > 0 && selectedTopic) {
@@ -91,7 +59,6 @@ function ElectionHelper() {
                 if (currentPositionsData[selectedTopic] && currentPositionsData[selectedTopic][party]) {
                     newPositions[party] = currentPositionsData[selectedTopic][party];
                 } else {
-                    console.error(`Positie voor partij ${party} en onderwerp ${selectedTopic} niet gevonden in taal ${language}.`);
                     newPositions[party] = "Geen positie beschikbaar";
                 }
             });
@@ -99,34 +66,38 @@ function ElectionHelper() {
         }
     }, [selectedParties, selectedTopic, language, currentPositionsData]);
 
+    // Function to toggle expansion of party items
     const toggleItemExpansion = (party) => {
         setExpandedItems(prev => ({ ...prev, [party]: !prev[party] }));
     };
 
+    // Component rendering
     return (
         <>
             <div className={styles.electionHelperContainer}>
+                {/* Page header with random image and title */}
                 <PageHeader imageSrc={randomHeaderImage} title={textContent.pages.electionHelper.name}  />
-                <h1 className={styles.pageTitle}>{t.chooseParties}</h1>
+                {/* Section for selecting parties */}
+                <h1 className={styles.pageTitle}>{textContent.chooseParties}</h1>
                 <PartyList
                     parties={partiesData.partijen}
                     selectedParties={selectedParties}
                     togglePartySelection={togglePartySelection}
                 />
                 <div ref={topicListRef}>
-                <h1 className={styles.topicTitle}>{t.chooseTopic}</h1>
-
+                    {/* Section for selecting topics */}
+                <h1 className={styles.topicTitle}>{textContent.chooseTopic}</h1>
                     <TopicList
                         topics={topics}
                         selectedTopic={selectedTopic}
                         handleTopicSelection={handleTopicSelection}
                     />
                 </div>
-
+                {/* Scroll component for easy navigation */}
                 <ScrollComponent scrollRef={topicListRef} />
-
+                {/* Display selected parties and their positions */}
                 <div className={styles.selectedPartiesContainer}>
-                    <h1 className={styles.selectedPartiesTitle}>{t.selectedParties}</h1>
+                    <h1 className={styles.selectedPartiesTitle}>{textContent.selectedParties}</h1>
                     {selectedParties.map((party) => (
                         <SelectedPartyItem
                             key={`${language}_${party}`}
@@ -140,26 +111,20 @@ function ElectionHelper() {
                             selectedTopic={selectedTopic}
                             isExpanded={expandedItems[party]}
                             toggleExpansion={() => toggleItemExpansion(party)}
-                            noPositionAvailable={t.noPositionAvailable}
+                            noPositionAvailable={textContent.noPositionAvailable}
                             agree={agree}
                             disagree={disagree}
                             neutral={neutral}
                         />
                     ))}
                 </div>
-            </div>
-{/*<h1 className={styles.changeTopic}>Change topic</h1>*/}
-{/*            <TopicList*/}
-{/*                topics={topics}*/}
-{/*                selectedTopic={selectedTopic}*/}
-{/*                handleTopicSelection={handleTopicSelection}*/}
-{/*            />*/}
-
-            <div className={styles.buttonsContainer}>
-                <StyledButton label="Reset" onClick={handleReset} />
-                <Link to='/score-page'>
-                <StyledButton label={results} />
-                </Link>
+                {/* Container for action buttons */}
+                <div className={styles.buttonsContainer}>
+                    <StyledButton label="Reset" onClick={handleReset} />
+                    <Link to='/score-page'>
+                        <StyledButton label={textContent.results} />
+                    </Link>
+                </div>
             </div>
         </>
     );

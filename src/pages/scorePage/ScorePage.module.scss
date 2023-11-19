@@ -72,13 +72,13 @@
   // Container for buttons at the bottom of the page
   .buttonsContainer {
     display: flex;
-    justify-content: center; // Center buttons horizontally
-    align-items: center; // Center buttons vertically
-    gap: 20px; // Space between buttons
-    margin-top: 2rem; // Space above the button container
+    justify-content: space-between; // Evenly space out buttons
+    width: 50%;
+    margin: 2rem auto; // Center the container and add vertical margin
 
     @media (max-width: 600px) {
       flex-direction: column; // Stack buttons vertically on smaller screens
+      align-items: center;
     }
   }
 
