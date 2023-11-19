@@ -2,90 +2,92 @@
 @import '../../styles/globals';
 
 .scorePage {
-  @include max-container-width;
-  max-width: 1440px;
-  margin: 0 auto;
-  .scorePage__subtitle{
+  @include max-container-width; // Mixin for setting maximum container width
+  max-width: 1440px; // Maximum width of the score page
+  margin: 0 auto; // Centering the content
+
+  // Styling for the subtitle
+  .scorePage__subtitle {
     margin-top: 2rem;
     margin-bottom: 1rem;
-    text-align: center;
+    text-align: center; // Center-align the subtitle
   }
-}
 
-.imgContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-
-  img {
-    max-width: 30%;
-    height: auto;
-  }
-}
-
-.scorePage__partyImage {
-  border-radius: 12px;
-}
-
-.scorePage__partyList {
-  display: grid;
-  gap: 20px;
-  //margin-top: 1rem;
-
-  @include responsive-grid-columns;
-
-  .scorePage__partyItem {
+  // Container for the images at the top of the page
+  .imgContainer {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f8f9fa;
-    margin: 2rem;
-    border-radius: 12px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+    justify-content: space-between; // Space out images evenly
+    align-items: center; // Vertically align images
+    margin-bottom: 20px;
+
+    img {
+      max-width: 30%; // Limit image width to 30% of its container
+      height: auto; // Maintain aspect ratio of the images
+    }
+  }
+
+  // Styling for the image of each party
+  .scorePage__partyImage {
+    border-radius: 12px; // Rounded corners for images
+  }
+
+  // Container for the list of parties
+  .scorePage__partyList {
+    display: grid;
+    gap: 20px; // Space between grid items
+    @include responsive-grid-columns; // Responsive grid columns mixin
+
+    // Individual item in the party list
+    .scorePage__partyItem {
+      display: flex;
+      flex-direction: column;
+      align-items: center; // Center content within each item
+      background-color: #f8f9fa; // Light background for each item
+      margin: 2rem; // Margin around each item
+      border-radius: 12px; // Rounded corners
+      transition: transform 0.3s, box-shadow 0.3s; // Smooth transition for hover effects
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4); // Shadow for depth
+
+      &:hover {
+        transform: scale(1.05); // Slightly scale up on hover
+      }
+
+      .scorePage__partyInfo {
+        margin-top: 1rem; // Space above party info
+      }
+    }
+  }
+
+  // Styling for answers related to each party
+  .scorePageTopicAnswer {
+    font-weight: bold; // Bold text for emphasis
+    margin-bottom: 1rem; // Space below each answer
+  }
+
+  // Color classes for different types of answers
+  .agreeClass { color: $third-color; }
+  .disagreeClass { color: $fourth-color; }
+  .neutralClass { color: $sixth-color; }
+
+  // Container for buttons at the bottom of the page
+  .buttonsContainer {
+    display: flex;
+    justify-content: center; // Center buttons horizontally
+    align-items: center; // Center buttons vertically
+    gap: 20px; // Space between buttons
+    margin-top: 2rem; // Space above the button container
+
+    @media (max-width: 600px) {
+      flex-direction: column; // Stack buttons vertically on smaller screens
+    }
+  }
+
+  // Styling for links
+  .linkToPage {
+    color: $fourth-color; // Base color for links
 
     &:hover {
-      transform: scale(1.05);
+      color: $third-color; // Color change on hover for visual feedback
     }
-
-    .scorePage__partyInfo {
-      margin-top: 1rem;
-    }
-  }
-}
-
-.scorePageTopicAnswer {
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-.agreeClass{
-color: $third-color;
-}
-.disagreeClass{
-color: $fourth-color;
-}
-.neutralClass{
-  color: $sixth-color;
-}
-
-
-.buttonsContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin-top: 2rem;
-
-  @media (max-width: 600px) {
-    flex-direction: column;
-  }
-}
-
-.linkToPage {
-  color: $fourth-color;
-
-  &:hover {
-    color: $third-color;
   }
 }

@@ -18,6 +18,11 @@
         "name": "Kieshulp",
         "description": "Ontdek je politieke match met onze Kies Hulp pagina! Kies de partijen en standpunten die je interessant vindt en geef ze een score van plus, min of neutraal.",
         "detail": "Vind jouw politieke match en vergelijk je voorkeuren met de partijen."
+      },
+      "scorePage": {
+        "match": "Met deze partijen ben je het, het meest eens.",
+        "noScores": "Doe de kies-hulp om te kijken welke partij het best bij je past.",
+        "electionHelp": "Kies Hulp"
       }
     }
   },
@@ -62,6 +67,11 @@
         "name": "Kieshulp",
         "description": "Vind jouw politieke match met onze Kies Hulp pagina! Kies partijen en onderwerpen die je leuk vindt en geef ze een score.",
         "detail": "Zoek uit welke partij het beste bij jou past en vergelijk je ideeën met die van hen."
+      },
+      "scorePage": {
+        "match": "Deze partijen vind jij het leukst.",
+        "noScores": "Doe de kies-hulp om te ontdekken welke partij cool voor jou is!",
+        "electionHelp": "Kies Hulpje"
       }
     }
   }
