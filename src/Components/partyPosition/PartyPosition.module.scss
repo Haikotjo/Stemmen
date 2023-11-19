@@ -3,94 +3,93 @@
 
 // Styling for the container of a party's position
 .partyPositionContainer {
-  margin-inline: 3rem;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  margin-bottom: 16px;
-  padding: 16px;
-  max-width: 100%;
-  transition: transform 0.2s ease, box-shadow 0.2s ease; // Adds transition effects for transform and shadow
-  border: 1px solid $fourth-color;
+  background-color: #f8f9fa; // Light grey background for the container
+  border-radius: 8px; // Rounded corners for aesthetic appeal
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); // Shadow for depth
+  margin-bottom: 16px; // Space below each container
+  padding: 16px; // Internal spacing
+  max-width: 100%; // Ensures the container doesn't exceed its parent's width
+  transition: transform 0.2s ease, box-shadow 0.2s ease; // Smooth transition for hover effects
+  border: 1px solid $fourth-color; // Border to define the container edges
 
   &:hover {
-    transform: scale(1.05); // Scales up the container by 5% on hover
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); // Provides a larger shadow on hover
+    transform: scale(1.05); // Slightly enlarges the container on hover for a subtle interaction effect
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); // Darker shadow on hover for more depth
   }
 
-  // Styling for the party name
+  // Styling for the party name heading
   .partyName {
-    color: $fifth-color;
-    text-align: center;
-    font-weight: bold;
+    color: $fifth-color; // Color for the party name, adjust as needed
+    text-align: center; // Center alignment for the party name
+    font-weight: bold; // Bold text for emphasis
     @include extra-small-screen {
-      font-size: 1rem; // Smaller font size for extra small screens
+      font-size: 1rem; // Smaller font size on extra-small screens
     }
     @include small-screen {
-      font-size: 1.5rem; // Slightly larger font size for small screens
+      font-size: 1.5rem; // Medium font size on small screens
     }
   }
 
-  // Styling for the list of positions
+  // Styling for the list that shows party positions
   .positionList {
-    list-style-type: none; // Removes default list styling
-    padding: 0; // Resets padding
-    margin: 0; // Resets margin
-    display: grid; // Uses grid layout for structured layout
-    grid-template-columns: 1fr 2fr; // Divides space for topic and position
-    column-gap: 16px; // Adds space between columns
+    list-style-type: none; // Removes default bullet points from list
+    padding: 0; // Resets padding to maintain container size
+    margin: 0; // Resets margin for consistent layout
+    display: grid; // Grid layout for positioning elements
+    grid-template-columns: 1fr 2fr; // Two columns: one for the topic, another for the position
+    column-gap: 16px; // Space between the two columns
 
     @include extra-small-screen {
-      display: flex; // Switches to flex layout on extra small screens
-      flex-direction: column; // Stacks elements vertically
-      align-items: center; // Centers elements horizontally
+      display: flex; // Flex layout for smaller screens
+      flex-direction: column; // Stack items vertically on smaller screens
+      align-items: center; // Center alignment for items
     }
 
     li {
-      display: contents; // Allows children to lay out as if they are direct children of the grid
-      color: $secondary-color;
+      display: contents; // Allows list items to be part of the grid layout
 
-      // Styling for the topic
+      // Styling for the topic text
       strong {
-        color: $secondary-color; // Color for the topic
-        grid-column: 1; // Aligns topic to the first column
+        color: $secondary-color; // Color for the topic, adjust as needed
+        grid-column: 1; // Places the topic in the first column
       }
 
       // Styling for the position text
       span {
-        grid-column: 2; // Aligns position to the second column
+        grid-column: 2; // Places the position text in the second column
 
         @include extra-small-screen {
-          display: flex; // Switch to flex layout
-          flex-direction: column; // Stack elements vertically
-          align-items: center; // Center elements horizontally
+          display: flex; // Flex layout for smaller screens
+          flex-direction: column; // Stack text vertically
+          align-items: center; // Center align the text
 
+          // Adjustments for the bold and more text
           .boldText, .moreText {
             font-weight: normal;
-            display: block; // Each element on a new line
-            width: 100%; // Uses full width of the container
+            display: block; // Display text in block format
+            width: 100%; // Full width for alignment
           }
         }
       }
     }
   }
 
-  // Adjustments for the topic and position text
+  // Additional adjustments for the topic and position text
   .topicSmall {
-    margin-bottom: 10px; // Adds space between topic and description
+    margin-bottom: 10px; // Space between topic and its description
   }
 
-  // Styling for the bold text (first sentence)
+  // Styling for the bold text (first sentence of the position)
   .boldText {
-    font-weight: bold; // Makes the first sentence bold
-    color: $primary-color; // Use your preferred color
-    margin-bottom: 20px;
+    font-weight: bold; // Bold for emphasis
+    color: $primary-color; // Primary color for the text, adjust as needed
+    margin-bottom: 20px; // Space after the bold text
   }
 
   // Styling for the 'more text' indicator (>>>)
   .moreText {
-    color: $fourth-color; // Use your preferred highlight color
-    cursor: pointer; // Changes cursor to indicate clickable area
-    margin-left: 4px; // Adds space for visual separation
+    color: $fourth-color; // Highlight color for the indicator, adjust as needed
+    cursor: pointer; // Changes cursor to indicate it's clickable
+    margin-left: 4px; // Space for visual separation from the text
   }
 }
