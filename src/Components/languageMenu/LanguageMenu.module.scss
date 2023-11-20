@@ -1,56 +1,62 @@
-@import '../../styles/globals';
-@import '../../styles/mixins';
+@import '../../styles/globals'; // Import global style variables and settings
+@import '../../styles/mixins'; // Import mixins for reusable style definitions
 
+// Styling for the language menu container
 .languageMenu {
-  margin-right: 3rem;
-  display: block; // Standaard verborgen
+  margin-right: 3rem; // Right margin for alignment
+  display: block; // Initially set to display
 
+  // Responsive display settings
   @include extra-small-screen {
-    display: block; // Toon op extra kleine schermen
+    display: block; // Ensure the menu is displayed on extra small screens
   }
 
   @include small-screen {
-    display: block; // Toon op kleine schermen
+    display: block; // Ensure the menu is displayed on small screens
   }
 
-  position: relative;
+  position: relative; // Positioning context for absolute child elements
 }
 
+// Styling for the language menu icon
 .icon {
-  margin:0;
-  font-size: 1.2rem;
-  &:hover{
-    color: $primary-color;
+  margin: 0;
+  font-size: 1.2rem; // Set the font size for the icon
+  &:hover {
+    color: $primary-color; // Change color on hover to primary color
   }
 }
 
+// Styling for the dropdown part of the menu
 .dropdown {
-  position: absolute;
-  top: 100%;
+  position: absolute; // Position absolutely to align with the language menu
+  top: 100%; // Position below the menu icon
   left: 0;
-  background: transparent;
-  width: auto; // Aangepast van 100% naar auto
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  background: transparent; // Transparent background
+  width: auto; // Automatically adjust width based on content
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); // Box shadow for depth
 }
 
+// Styling for each language toggle option
 .languageToggle {
   display: block;
-  padding: 30px 40px;
-  text-decoration: none;
-  border-top: 1px solid #ccc;
-  color: white;
-  background: linear-gradient(to right, $primary-color, $fourth-color, );
+  padding: 30px 40px; // Padding for spacing
+  text-decoration: none; // Remove underline from links
+  border-top: 1px solid #ccc; // Top border for separation
+  color: white; // Text color
+  background: linear-gradient(to right, $primary-color, $fourth-color); // Gradient background
   margin: 0;
 
   &:hover {
-    background: $secondary-color;
+    background: $secondary-color; // Change background on hover
   }
 
   &.active {
-    background: $primary-color;
+    background: $primary-color; // Background for active state
   }
 }
 
-.languageToggleNl{
-  margin-top: 10px;
+// Additional styling for the Dutch language toggle
+.languageToggleNl {
+  margin-top: 10px; // Top margin for spacing
 }

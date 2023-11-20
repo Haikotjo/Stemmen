@@ -1,45 +1,52 @@
-@import '../../styles/globals';
-@import '../../styles/mixins';
+@import '../../styles/globals'; // Import global style variables and settings
+@import '../../styles/mixins'; // Import mixins for reusable style definitions
 
+// Styling for the hamburger menu
 .hamburgerMenu {
-  display: none; // Standaard verborgen
+  display: none; // Initially hidden
 
-  @include extra-small-screen {
-    display: block; // Toon op extra kleine schermen
-  }
-
-  @include small-screen {
-    display: block; // Toon op kleine schermen
-  }
-
-  position: relative;
+  // Display the hamburger menu on extra small and small screens
+@include extra-small-screen {
+  display: block; // Show on extra small and small screens
+}
+@include small-screen {
+  display: block; // Show on extra small and small screens
 }
 
-.icon {
-  cursor: pointer;
+  position: relative; // Establishes a positioning context for dropdown
 }
 
-.dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: linear-gradient(to right, $primary-color, $fourth-color, );
-  width: auto; // Aangepast van 100% naar auto
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.link {
-  display: block;
-  padding: 30px 40px;
-  text-decoration: none;
-  border-top: 1px solid #ccc;
-  color: white;
-
-  &:hover {
-    background: $secondary-color;
+// Within the hamburger menu...
+.hamburgerMenu {
+  // Styling for the menu icon
+  .icon {
+    cursor: pointer; // Change cursor to pointer to indicate it's clickable
   }
 
-  &.active {
-    background: $primary-color;
+  // Styling for the dropdown menu
+  .dropdown {
+    position: absolute; // Position it absolutely to align with the menu icon
+    top: 100%; // Position below the menu icon
+    left: 0;
+    background: linear-gradient(to right, $primary-color, $fourth-color); // Gradient background
+    width: auto; // Adjust width based on content
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); // Box shadow for depth
+
+    // Styling for each link in the dropdown menu
+    .link {
+      display: block;
+      padding: 30px 40px; // Padding for spacing
+      text-decoration: none; // Remove underline from links
+      border-top: 1px solid #ccc; // Top border for separation
+      color: white; // Text color
+
+      // Hover and active state styles
+      &:hover {
+        background: $secondary-color; // Change background on hover
+      }
+      &.active {
+        background: $primary-color; // Background for active state
+      }
+    }
   }
 }

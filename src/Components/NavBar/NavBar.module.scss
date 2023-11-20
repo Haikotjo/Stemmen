@@ -1,87 +1,95 @@
-@import '../../styles/globals';
-@import '../../styles/mixins';
+@import '../../styles/globals'; // Import global style variables and settings
+@import '../../styles/mixins'; // Import mixins for reusable style definitions
 
+// Styling for the navigation bar
 .navbar {
-  position: fixed;
+  position: fixed; // Fix position to the top of the viewport
   top: 0;
   left: 0;
-  z-index: 100;
-  width: 100%;
-  //background-color: $primary-color;
+  z-index: 100; // Ensure the navbar is above other content
+  width: 100%; // Full width of the viewport
   color: white;
-  background: linear-gradient(to right, $primary-color, $fourth-color);
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(to right, $primary-color, $fourth-color); // Gradient background
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.7); // Shadow for depth
 
+  // Styling for the container within the navbar
   .container {
-    @include max-container-width;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  @include max-container-width; // Set maximum container width using a mixin
+    margin: auto; // Center the container
+    display: flex; // Use flexbox for layout
+    justify-content: space-between; // Space out elements
+    align-items: center; // Vertically align elements
 
-    @include extra-small-screen {
-      justify-content: space-around;
-    }
+    // Responsive adjustments for the container
+  @include extra-small-screen {
+    justify-content: space-around; // Adjust spacing on smaller screens
+  }
 
-    @include small-screen {
-      justify-content: space-around;
-    }
+    // Responsive adjustments for the container
+  @include small-screen {
+    justify-content: space-around; // Adjust spacing on smaller screens
+  }
 
+    // Styling for the icon within the container
     .icon {
       margin-left: 3rem;
       display: flex;
       align-items: center;
       padding-block: 20px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease; // Voeg overgangseffecten toe voor transform en box-shadow
+      transition: transform 0.3s ease, box-shadow 0.3s ease; // Smooth transition for hover effects
 
+      // Responsive adjustments for the icon
       @include extra-small-screen {
         margin-left: 0;
-        font-size: small;
+        font-size: small; // Smaller font size on extra small screens
       }
 
       &:hover {
-        transform: scale(1.1); // Vergroot het element met 5% op hover
+        transform: scale(1.1); // Slightly increase size on hover
       }
     }
 
-
+    // Styling for the links section within the container
     .links {
-      display: flex; // Standaard zichtbaar
+      display: flex;
       align-items: center;
       gap: 20px;
       margin-right: 3rem;
 
+      // Styling for each link
       .link {
         color: white;
         text-decoration: none;
         padding: 28px 20px;
         border-radius: 5px;
-        transition: background-color 0.3s;
+        transition: background-color 0.3s; // Transition for hover effect
 
         &:hover {
-          background-color: $fourth-color;
+          background-color: $fourth-color; // Change background on hover
         }
       }
 
+      // Styling for the active link
       .active {
-        background-color: $fourth-color;
+        background-color: $fourth-color; // Background for active link
       }
 
-      @include extra-small-screen {
-        display: none; // Verberg op extra kleine schermen
-      }
-
-      @include small-screen {
-        display: none; // Verberg op kleine schermen
-      }
+      // Hide links on extra small and small screens
+    @include extra-small-screen {
+      display: none;
+    }
+      // Hide links on extra small and small screens
+    @include small-screen {
+      display: none;
+    }
     }
   }
 }
 
+// Additional styling for the hamburger menu icon
 .hamburgerMenu {
   @include extra-small-screen {
     margin-right: 2rem;
-    font-size: small;
+    font-size: small; // Smaller font size for the hamburger menu on extra small screens
   }
 }
-

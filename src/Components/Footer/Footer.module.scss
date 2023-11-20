@@ -1,34 +1,38 @@
-@import '../../styles/globals';
-@import '../../styles/mixins';
+@import '../../styles/globals'; // Import global styles
+@import '../../styles/mixins'; // Import mixins for reuse across stylesheets
 
+// Styling for the footer element
 .footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
-  margin-top: 20px;
-  background: linear-gradient(to right, $secondary-color, $primary-color );
+  display: flex; // Use flexbox for layout
+  flex-direction: column; // Stack children vertically
+  align-items: center; // Center children horizontally
+  justify-content: center; // Center children vertically
+  padding: 5px; // Add padding around the footer
+  margin-top: 20px; // Margin at the top of the footer
+  background: linear-gradient(to right, $secondary-color, $primary-color); // Gradient background from secondary to primary color
+
+  // Styling for the text inside the footer
   .footerText {
-    color: white;
-    margin-top: 7px;
+    color: white; // Set the text color to white for contrast
+    margin-top: 7px; // Top margin for spacing
   }
 }
 
+// Styling for the icons container
 .icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; // Use flexbox for layout
+  justify-content: center; // Center icons horizontally
+  align-items: center; // Align icons vertically
 
-
-
+  // Styling for each link (anchor tag) within the icons container
   a {
-    margin: 10px;
-    font-size: 30px;
-    color: white; // Pas de kleur aan naar voorkeur
+    margin: 10px; // Margin around each icon for spacing
+    font-size: 30px; // Set font size for the icons
+    color: white; // Set icon color to white
 
+    // Styling for the hover state of the icons
     &:hover {
-      color: grey; // Pas de hoverkleur aan naar voorkeur
+      color: grey; // Change icon color to grey on hover
     }
   }
 }

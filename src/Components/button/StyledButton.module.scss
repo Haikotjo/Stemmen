@@ -1,23 +1,23 @@
-@import '../../styles/mixins';
-@import '../../styles/globals';
+@import '../../styles/mixins'; // Import mixins for reusable style definitions
+@import '../../styles/globals'; // Import global style variables and settings
 
 .styled-button {
-  background-color: $fourth-color;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease; // Voeg een overgang toe voor een vloeiende animatie
-  margin-bottom: 10px;
-  transform: scale(1); // Begin met een normale schaal (1x)
+  background-color: $fourth-color; // Set the background color using a predefined color variable
+  color: white; // Set the text color to white
+  padding: 10px 20px; // Apply padding to the button for spacing
+  border: none; // Remove any default border
+  border-radius: 4px; // Round the corners of the button
+  font-size: 1rem; // Set the font size
+  cursor: pointer; // Change the cursor to a pointer to indicate it's clickable
+  transition: all 0.3s ease; // Apply a transition effect for smooth animation on state changes
+  margin-bottom: 10px; // Add a bottom margin
+  transform: scale(1); // Set the default scale of the button
 
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7); // Add a shadow for depth
 
   &:hover {
-    background-color: $fifth-color;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); // Verhoog de schaduw bij hover
-    transform: scale(1.05); // Vergroot het item iets bij hover
+    background-color: $fifth-color; // Change the background color on hover
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); // Increase the shadow size on hover
+    transform: scale(1.05); // Slightly increase the size of the button on hover
   }
 }
