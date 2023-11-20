@@ -13,11 +13,6 @@ function NavBar() {
     const { language } = useLanguage(); // Retrieve current language from context
     const currentTextData = textData[language]; // Get text data for current language
 
-    // Object containing link texts for different languages
-    const linkTexts = {
-        // ... language text definitions
-    };
-
     return (
         // Navbar container
         <div className={styles.navbar}>
