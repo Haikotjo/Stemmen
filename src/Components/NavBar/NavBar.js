@@ -17,7 +17,6 @@ function NavBar() {
     const linkTexts = {
         // ... language text definitions
     };
-    const currentLinkTexts = linkTexts[language]; // Retrieve texts for the current language
 
     return (
         // Navbar container
