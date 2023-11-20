@@ -1,56 +1,25 @@
 @import '../../styles/mixins';
 @import '../../styles/globals';
 
-
-
+// Container for the parties page, using a grid layout for structure
 .partiesPageContainer {
   display: grid;
-  gap: 20px;
-  padding-bottom: 20px;
-  max-width: 1440px;
-  margin: 0 auto;
-}
+  gap: 20px; // Space between grid items
+  padding-bottom: 20px; // Padding at the bottom of the container
+  max-width: 1440px; // Max width to control the layout size
+  margin: 0 auto; // Centering the container within the viewport
 
-.backgroundImage {
-  max-width: 100%; // Maximale breedte is 100% van de viewportbreedte
-  max-height: 100vh; // Maximale hoogte is 100% van de viewporthoogte
-  width: auto; // Behoud de oorspronkelijke verhoudingen van de afbeelding
-  height: auto; // Behoud de oorspronkelijke verhoudingen van de afbeelding
-  display: block; // Zorgt voor een correcte weergave van de afbeelding
-  margin: 0 auto 1rem;
-  border-radius: 12px;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 3);
-}
-
-.pageDescriptionsDetails {
-  text-align: center;
-}
-
-.partyImage {
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
-  margin-bottom: 1rem;
-}
-
-
-.headerText {
-  position: absolute; // Dit positioneert de tekst over de afbeelding.
-  top: 20%; // Centreert de tekst verticaal.
-  left: 50%; // Centreert de tekst horizontaal.
-  transform: translate(-50%, -50%); // Nauwkeurige centrering ongeacht de tekstgrootte.
-  color: white; // Als je een lichte tekstkleur wilt.
-  font-size: 5rem;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 1);
-  //background-color: white;
-  @include extra-small-screen {
-    font-size: 2rem; // kleinere grootte voor kleine schermen
+  // Styling for the description section of the page
+  .pageDescriptionsDetails {
+    text-align: center; // Center align the text
   }
 
-  @include small-screen {
-    font-size: 3rem; // kleinere grootte voor kleine schermen
-  }
-
-  @include medium-screen {
-    font-size: 4rem; // middelgrote grootte voor middelgrote schermen
+  // Styling for the image of a selected party
+  .partyImage {
+    border-radius: 10px; // Rounded corners for the image
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5); // Shadow for depth
+    margin-bottom: 1rem; // Margin at the bottom for spacing
   }
 }
+
+// Removed the .headerText styling as it should be part of the PageHeader component's SCSS

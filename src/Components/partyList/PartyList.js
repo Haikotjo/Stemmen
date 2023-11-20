@@ -1,13 +1,13 @@
 // Importing required modules and components
-import React from 'react';
+import React, {useState} from 'react';
 import StyledButton from '../button/StyledButton';
 import styles from './PartyList.module.scss';
-import ParallaxBackground from "../parallaxBackground/ParallaxBackground";
 import {getPartyImage} from "../../utils/utils";
 
 // PartyList component definition
 // It takes three props: parties, selectedParties, and togglePartySelection
 const PartyList = ({ parties, selectedParties, togglePartySelection }) => {
+    const [isLoading, setIsLoading] = useState(true);
     // Helper function to determine if a party is selected
     const isSelected = (party) => selectedParties.includes(party);
 
@@ -27,7 +27,9 @@ const PartyList = ({ parties, selectedParties, togglePartySelection }) => {
                             alt={`${party} logo`}
                             className={styles.partyImage}
                             onError={(e) => { e.target.onerror = null; e.target.src = `${process.env.PUBLIC_URL}/images/puppets/default.png`; }}
+                            onLoad={() => setIsLoading(false)}
                         />
+                        {isLoading && <p className={styles.loading}>Loading...</p>}
                         {/* Render the button with conditional styling and label */}
                         <StyledButton
                             label={partyIsSelected ? `${party} ` : party}
@@ -37,9 +39,6 @@ const PartyList = ({ parties, selectedParties, togglePartySelection }) => {
                     </div>
                 );
             })}
-            {(parties.length % 3 === 0) && (
-                <ParallaxBackground backgroundImage="/images/backgrounds/allemaal.png" />
-            )}
         </div>
     );
 };

@@ -1,31 +1,30 @@
 @import '../../styles/mixins';
 @import '../../styles/globals';
 
-// Container voor de topiclijst, zorgt dat deze gecentreerd en niet breder dan 1140px is
+// Container for the topic list, ensuring it's centered and not wider than 1440px
 .topicListContainer {
   display: flex;
-  flex-direction: row; // Horizontale uitlijning
-  flex-wrap: wrap; // Zorgt ervoor dat de knoppen naar de volgende regel gaan als er geen ruimte is
-  gap: 10px; // Geeft ruimte tussen de knoppen
+  flex-direction: row; // Horizontal alignment of topics
+  flex-wrap: wrap; // Allows buttons to wrap to the next line if there is no space
+  gap: 10px; // Spacing between buttons
+  max-width: 1440px; // Ensures container width does not exceed 1440px
+  margin: 0 auto; // Centers the container in the viewport
 
-  // Zorg ervoor dat de container niet breder is dan 1440px
-  max-width: 1440px;
-  margin: 0 auto; // Centreert de container in de viewport
-}
+  // Standard style for each button within the topic list
+  .styledButton {
+    flex: 1; // Buttons grow to fill available space
+    min-width: min-content; // Minimum width is set to the width of the longest text in the buttons
+    cursor: pointer;
+    padding: 10px 20px;
+    text-transform: uppercase; // Capitalizes all letters
+    font-weight: bold;
 
-// Standaard stijl voor elke button
-.topicListContainer .styledButton {
-  flex: 1; // Knoppen groeien om de beschikbare ruimte op te vullen
-  min-width: min-content; // De minimum breedte is de breedte van de langste tekst in de knoppen
-  cursor: pointer;
-  padding: 10px 20px;
-  text-transform: uppercase; // Maakt alle letters kapitaal
-  font-weight: bold;
-}
-
-.selected {
-  background-color: $fifth-color; // of een andere kleur naar keuze
-  &:hover {
-    background-color: darken($primary-color, 10%); // Donkere kleur bij hover voor geselecteerde item
+    // Specific style for selected topic button
+    &.selected {
+      background-color: $fifth-color; // Replace with your preferred color
+      &:hover {
+        background-color: darken($primary-color, 10%); // Darker color on hover for selected item
+      }
+    }
   }
 }

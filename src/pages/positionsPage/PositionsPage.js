@@ -7,42 +7,52 @@ import styles from "./PositionsPage.module.scss";
 import {getRandomImage} from "../../utils/utils";
 import {useLanguage} from "../../context/LanguageContext";
 import ScrollComponent from "../../Components/scrollComponent/ScrollComponent";
+import PageHeader from "../../Components/pageHeader/PageHeader";
+import textData from "../../data/textData.json";
 
-// PositionsPage component definition
-// This component displays the positions of various parties on a selected topic
+ // PositionsPage component definition
+// This component displays the positions of various parties on a selected topic.
+// It utilizes a language context for localization and dynamically loads party positions based on the selected topic.
 function PositionsPage() {
+
     const randomImage =  getRandomImage();
     // State to keep track of the selected topic
     const [selectedTopic, setSelectedTopic] = useState(null);
 
+    // useRef hook to create a ref for scrolling functionality
     const positionsRef = useRef(null);
 
+    // Accessing language context for localized data
     const { language } = useLanguage();
+    const textContent = textData[language];
 
-    // Custom hook to get the positions of parties on the selected topic
+    // Extracting positions data based on the current language context
     const currentPositionsData = positionsData[language] || positionsData.nl;
 
     // Extracting the list of topics from positionsData
     const topics = Object.keys(currentPositionsData);
 
-
-    // Handler function to set the selected topic
+    // Handler function to set the selected topic and trigger UI updates
     const handleTopicSelection = (topic) => {
         setSelectedTopic(topic);
     };
 
+    // Extracting the positions of each party for the selected topic
     const topicPositions = selectedTopic && currentPositionsData[selectedTopic] ? currentPositionsData[selectedTopic] : {};
 
     // Render the component
     return (
         <>
-            <div className={styles.positionPageContainer}>
-                <div className={styles.headerWrapper}>
-                    <img src={randomImage} alt="Header" className={styles.backgroundImage} />
-                    <h1 ref={positionsRef}  className={styles.headerText}>STANDPUNTEN</h1>
-                </div>
+            <div ref={positionsRef} className={styles.positionPageContainer}>
+                <PageHeader imageSrc={randomImage} title={textContent.pages.positionsPage.name} />
                 {/* TopicList component to display the list of topics */}
                 <div className={styles.topicsContainer}>
+                    {/*
+                    TopicList component is used here to display the list of topics.
+                    It receives the topics array, the currently selected topic, and
+                    a function to handle topic selection. When a topic is selected,
+                    handleTopicSelection updates the state to reflect the new selection.
+                */}
                     <TopicList
                         topics={topics}
                         selectedTopic={selectedTopic}
@@ -63,6 +73,7 @@ function PositionsPage() {
                         />
                     ))}
                 </div>
+                {/* ScrollComponent provides a way to scroll back to the top of the page */}
                 <ScrollComponent scrollRef={positionsRef} />
             </div>
         </>

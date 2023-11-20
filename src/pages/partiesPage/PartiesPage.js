@@ -6,23 +6,32 @@ import partiesData from '../../data/parties.json';
 import styles from './PartiesPage.module.scss';
 import Modal from "../../Components/modal/Modal";
 import textData from '../../data/textData.json';
-import {getPartyImage, getRandomImagePage} from "../../utils/utils";
-import {useLanguage} from "../../context/LanguageContext";
+import { getPartyImage, getRandomImagePage } from "../../utils/utils";
+import { useLanguage } from "../../context/LanguageContext";
+import PageHeader from "../../Components/pageHeader/PageHeader";
 
+// PartiesPage component definition
+// This component displays a list of parties and their respective positions on various topics
 function PartiesPage() {
+    // State for handling selected party and modal visibility
     const [selectedParty, setSelectedParty] = useState(null);
-    const [positions] = usePartyPositions(selectedParty);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const randomHeaderImage =  getRandomImagePage();
+    const randomHeaderImage = getRandomImagePage();
 
+    // Access language context for localization
     const { language } = useLanguage();
     const textContent = textData[language];
 
+    // Retrieve party positions using a custom hook
+    const [positions] = usePartyPositions(selectedParty);
+
+    // Handler for selecting a party and opening the modal
     const handlePartySelection = (party) => {
         setSelectedParty(party);
         setIsModalOpen(true);
     };
 
+    // Function to close the modal
     const closeModal = () => {
         setIsModalOpen(false);
     };
@@ -30,40 +39,43 @@ function PartiesPage() {
     return (
         <>
             <div className={styles.partiesOuterPageContainer}>
-            <div className={styles.partiesPageContainer}>
-                <div className={styles.headerWrapper}>
-                    <img src={randomHeaderImage} alt="Header" className={styles.backgroundImage} />
-                    <h1 className={styles.headerText}>{textContent.pages.partiesPage.name}</h1>
-                </div>
-                <div className={styles.pageDescriptionsDetails}>
-                    <h2>{textContent.pages.partiesPage.detail} </h2>
-                </div>
-                <PartyList
-                    parties={partiesData.partijen}
-                    selectedParties={[selectedParty]}
-                    togglePartySelection={handlePartySelection}
-                />
+                <div className={styles.partiesPageContainer}>
+                    {/* PageHeader component to display the page header with a random image */}
+                    <PageHeader imageSrc={randomHeaderImage} title={textContent.pages.partiesPage.name}  />
 
-                <Modal isShowing={isModalOpen} hide={closeModal}>
-                    {selectedParty && (
-                        <div className={styles.selectedPartyInfo}>
-                            <img
-                                src={getPartyImage(selectedParty)}
-                                alt={`${selectedParty} logo`}
-                                className={styles.partyImage}
-                                onError={(e) => { e.target.onerror = null; e.target.src = `${process.env.PUBLIC_URL}/images/puppets/default.png`; }}
-                            />
-                            {Object.keys(positions).map((topic) => (
-                                <PartyPosition
-                                    key={topic}
-                                    topic={topic}
-                                    position={positions[topic]}
+                    {/* Display page description */}
+                    <div className={styles.pageDescriptionsDetails}>
+                        <h2>{textContent.pages.partiesPage.detail}</h2>
+                    </div>
+
+                    {/* PartyList component to list all parties */}
+                    <PartyList
+                        parties={partiesData.partijen}
+                        selectedParties={[selectedParty]}
+                        togglePartySelection={handlePartySelection}
+                    />
+
+                    {/* Modal component to display selected party's information */}
+                    <Modal isShowing={isModalOpen} hide={closeModal}>
+                        {selectedParty && (
+                            <div className={styles.selectedPartyInfo}>
+                                <img
+                                    src={getPartyImage(selectedParty)}
+                                    alt={`${selectedParty} logo`}
+                                    className={styles.partyImage}
+                                    onError={(e) => { e.target.onerror = null; e.target.src = `${process.env.PUBLIC_URL}/images/puppets/default.png`; }}
                                 />
-                            ))}
-                        </div>
-                    )}
-                </Modal>
-            </div>
+                                {Object.keys(positions).map((topic) => (
+                                    <PartyPosition
+                                        key={topic}
+                                        topic={topic}
+                                        position={positions[topic]}
+                                    />
+                                ))}
+                            </div>
+                        )}
+                    </Modal>
+                </div>
             </div>
         </>
     );

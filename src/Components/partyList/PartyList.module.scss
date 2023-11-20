@@ -1,47 +1,48 @@
 @import '../../styles/mixins';
 @import '../../styles/globals';
 
-// PartyList.module.scss
+// Styles for the PartyList container
 .partyListContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); // Creates a responsive grid layout with a minimum column width of 250px
-  gap: 20px; // Adds space between grid items
-  margin-inline: 20px;
-  //margin-inline: 50px;
-}
+  display: grid; // Use a grid layout for items
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); // Responsive grid with columns of at least 250px
+  gap: 20px; // Space between grid items
+  margin-inline: 20px; // Horizontal margin
 
-.partyItem {
-  background: #fff;
-  border: 1px solid $fourth-color;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: box-shadow 0.3s ease, transform 0.3s ease; // Voeg een overgangseffect voor de box-shadow en transform toe
-  text-align: center;
-  width: 100%;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  // Styles for individual party items within the PartyList
+  .partyItem {
+    background: #fff; // White background for each item
+    border: 1px solid $fourth-color; // Border with the color defined in variables
+    border-radius: 4px; // Rounded corners
+    overflow: hidden; // Hide any overflowing content
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); // Box shadow for depth
+    transition: box-shadow 0.3s ease, transform 0.3s ease; // Smooth transitions for shadow and transform
+    text-align: center; // Center-align text
+    width: 100%; // Full width
+    max-width: 100%; // Max width to avoid overflow
+    display: flex; // Use flex layout
+    flex-direction: column; // Stack children vertically
+    align-items: center; // Center children horizontally
 
-  &:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-    transform: scale(1.05); // Vergroot het element met 5% op hover
+    &:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); // Larger shadow on hover
+      transform: scale(1.05); // Scale up slightly on hover
+    }
+
+    // Styles for the party image inside each party item
+    .partyImage {
+      width: 100%; // Full width of its container
+      height: 350px; // Fixed height for uniformity
+      object-fit: cover; // Cover the area without stretching
+      margin-bottom: 10px; // Space below the image
+      border-radius: 8px; // Rounded corners for the image
+    }
+
+    // Styles for the button used to select the party
+    .selectedButton {
+      background-color: $primary-color; // Background color from variables
+      width: 100%; // Full width
+      padding: 10px 0; // Padding on top and bottom
+      margin-top: auto; // Align to the bottom of the container
+    }
   }
-}
-
-
-.partyImage {
-  width: 100%; // Ensures the image takes the full width of its container
-  height: 350px; // Sets a fixed height for all images
-  object-fit: cover; // Ensures the image covers the area without stretching
-  margin-bottom: 10px; // Adds some space between the image and the button below
-  border-radius: 8px;
-}
-
-.selectedButton {
-  background-color: $primary-color; // Sets the background color of the selected button to red
-  width: 100%; // Ensures the button fills the width of its container
-  padding: 10px 0; // Adds padding to the top and bottom of the button
-  margin-top: auto; // Pushes the button to the bottom of the container
 }

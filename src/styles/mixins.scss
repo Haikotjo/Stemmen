@@ -1,61 +1,62 @@
-// Extra small screens (mobile phones)
+// Extra small screens (mobile phones) mixin
 @mixin extra-small-screen {
   @media (max-width: 576px) {
-    @content;
+    @content; // Include the styles for screens smaller than 576px
   }
 }
 
-// Small screens (tablets in portrait mode)
+// Small screens (tablets in portrait mode) mixin
 @mixin small-screen {
   @media (min-width: 577px) and (max-width: 768px) {
-    @content;
+    @content; // Include the styles for screens between 577px and 768px
   }
 }
 
-// Medium screens (tablets in landscape mode and small laptops)
+// Medium screens (tablets in landscape mode and small laptops) mixin
 @mixin medium-screen {
   @media (min-width: 769px) and (max-width: 992px) {
-    @content;
+    @content; // Include the styles for screens between 769px and 992px
   }
 }
 
-// Large screens (desktops and large laptops)
+// Large screens (desktops and large laptops) mixin
 @mixin large-screen {
   @media (min-width: 993px) and (max-width: 1200px) {
-    @content;
+    @content; // Include the styles for screens between 993px and 1200px
   }
 }
 
-// Extra large screens (larger desktop screens)
+// Extra large screens (larger desktop screens) mixin
 @mixin extra-large-screen {
   @media (min-width: 1201px) {
-    @content;
+    @content; // Include the styles for screens larger than 1201px
   }
 }
 
-// Container width
+// Mixin to set a maximum container width
 @mixin max-container-width {
-  max-width: 1440px;
+  max-width: 1440px; // Set a maximum width of 1440px
 }
 
+// Mixin for responsive grid columns
 @mixin responsive-grid-columns {
   @include extra-small-screen {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; // One column grid for extra small screens
   }
 
   @include small-screen {
-    grid-template-columns: repeat(2, 1fr); // 2 kolommen voor kleine schermen
+    grid-template-columns: repeat(2, 1fr); // Two columns grid for small screens
   }
 
   @include medium-screen {
-    grid-template-columns: repeat(2, 1fr); // 2 kolommen voor medium schermen
+    grid-template-columns: repeat(2, 1fr); // Two columns grid for medium screens
   }
 
   @include large-screen {
-    grid-template-columns: repeat(3, 1fr); // 3 kolommen voor grote schermen
+    grid-template-columns: repeat(3, 1fr); // Three columns grid for large screens
   }
 
   @include extra-large-screen {
-    grid-template-columns: repeat(3, 1fr); // 3 kolommen voor extra grote schermen
+    grid-template-columns: repeat(3, 1fr); // Three columns grid for extra large screens
   }
 }

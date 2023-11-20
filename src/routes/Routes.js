@@ -27,7 +27,7 @@ function AppRoutes() {
                                 <Route path="/partij-pagina" element={<PartiesPage />} />
                                 <Route path="/standpunten-pagina" element={<PositionsPage />} />
                                 <Route path="/score-page" element={<ScorePage />} />
-                                {/* Meer routes */}
+                                {/* More routes */}
                             </Routes>
                             <Footer />
                         </ModeProvider>

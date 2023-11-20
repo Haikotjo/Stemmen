@@ -1,113 +1,127 @@
-@import '../../styles/mixins';
-@import '../../styles/globals';
+@import '../../styles/mixins'; /* Import mixins from the given path */
+@import '../../styles/globals'; /* Import global styles from the given path */
 
 .selectedPartyItemContainer {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
+  display: flex; /* Use flexbox layout */
+  justify-content: center; /* Center the items horizontally */
+  margin-bottom: 20px; /* Bottom margin of 20px */
 
-.selectedPartyItem {
-  display: flex; // Gebruik flex in plaats van grid
-  align-items: center; // Centreer items verticaal
-  justify-content: space-between;
-  width: 100%;
-  background: #f9f9f9;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  // Styling for each party item within the container
+  .selectedPartyItem {
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Align items vertically to the center */
+    justify-content: space-between; /* Space items evenly */
+    width: 100%; /* Full width */
+    background: #f9f9f9; /* Light grey background color */
+    padding: 10px; /* Padding of 10px */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 
-.partyName{
-  font-weight: bold;
-}
-
-.positionText{
-    @include extra-small-screen {
-      font-size: 0.9rem;
-    }
-    @include small-screen {
-      font-size: small;
-    }
-  }
-}
-
-.partyLogo {
-  flex: 0 0 auto; // Logo niet laten schalen
-  max-width: 200px; // Max breedte voor het logo
-  margin-inline: 2rem; // Afstand tussen logo en tekst
-  border-radius: 8px;
-}
-
-.partyInfo {
-  padding-right: 16px; // Afstand tussen partij info en knoppen
-  @include extra-small-screen {
-    margin-inline: 1rem;
-  }
-  @include small-screen {
-    margin-inline: 1rem;
-  }
-}
-
-
-
-
-.emojiContainer {
-  flex: 0 0 auto; // Knoppen niet laten schalen
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-
-  @include extra-small-screen {
-      margin-top: 1.5rem;
-    }
-  @include small-screen {
-      margin-top: 2rem;
+    // Styling for the party name
+    .partyName {
+      font-weight: bold; /* Bold font for the party name */
     }
 
-  & > .emoji {
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-  }
-  .happyEmoji {
-    font-size: xx-large;
-    color: #03cea4;
-  }
-  .neutralEmoji {
-    font-size: xx-large;
-    color: $secondary-color;
-  }
-  .sadEmoji {
-    font-size: xx-large;
-    color: $fourth-color;
+    // Styling for the text showing the party's position
+    .positionText {
+      @include extra-small-screen {
+        font-size: 0.9rem; /* Smaller font size for extra-small screens */
+      }
+      @include small-screen {
+        font-size: small; /* Small font size for small screens */
+      }
+    }
+
+    // Styling for the party logo
+    .partyLogo {
+      flex: 0 0 auto; /* Flexible item but doesn't grow or shrink */
+      max-width: 200px; /* Maximum width of 200px */
+      margin-inline: 2rem; /* Horizontal margin */
+      border-radius: 8px; /* Rounded corners */
+    }
+
+    // Styling for the party information section
+    .partyInfo {
+      padding-right: 16px; /* Right padding */
+
+      @include extra-small-screen {
+        margin-inline: 1rem; /* Horizontal margin for extra-small screens */
+      }
+      @include small-screen {
+        margin-inline: 1rem; /* Horizontal margin for small screens */
+      }
+    }
+
+    // Styling for emoji container
+    .emojiContainer {
+      flex: 0 0 auto; /* Flexible item but doesn't grow or shrink */
+      display: flex; /* Use flexbox layout */
+      flex-direction: row; /* Arrange items in a row */
+      justify-content: center; /* Center items horizontally */
+
+      @include extra-small-screen {
+        margin-top: 1.5rem; /* Top margin for extra-small screens */
+      }
+      @include small-screen {
+        margin-top: 2rem; /* Top margin for small screens */
+      }
+
+      // Individual emoji styling
+      .emoji {
+        margin-right: 1rem; /* Right margin */
+        margin-bottom: 1rem; /* Bottom margin */
+        transition: transform 0.3s ease, filter 0.3s ease; /* Transition effect for transform and filter */
+
+        &:hover {
+          transform: scale(1.3); /* Slightly enlarge on hover */
+          filter: brightness(1.2); /* Slightly increase brightness on hover */
+        }
+
+        // Custom styling for each emoji type
+        &.happyEmoji {
+          font-size: xx-large; /* Extra extra large font size */
+          color: #03cea4; /* Specific green shade */
+        }
+        &.neutralEmoji {
+          font-size: xx-large; /* Extra extra large font size */
+          color: $secondary-color; /* Use secondary color variable */
+        }
+        &.sadEmoji {
+          font-size: xx-large; /* Extra extra large font size */
+          color: $fourth-color; /* Use fourth color variable */
+        }
+      }
+    }
   }
 }
 
-
-
+// Responsive design for smaller screens
 @media (max-width: 768px) {
   .selectedPartyItem {
-    flex-direction: column; // Stapel de items op kleine schermen
-    align-items: center; // Uitlijnen naar de start
-  }
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items vertically */
 
-  .partyLogo {
-    max-width: 150px; // Kleinere max breedte voor het logo op kleine schermen
-    margin-right: 0; // Verwijder de marge rechts op mobiel
-    margin-bottom: 8px; // Voeg een marge toe aan de onderkant tussen logo en info
-    border-radius: 8px;
-  }
+    .partyLogo {
+      max-width: 150px; /* Reduce maximum width */
+      margin-right: 0; /* Remove right margin */
+      margin-bottom: 8px; /* Bottom margin of 8px */
+      border-radius: 8px; /* Rounded corners */
+    }
 
-  .partyInfo {
-    padding-right: 0; // Verwijder padding rechts op mobiel
+    .partyInfo {
+      padding-right: 0; /* Remove right padding */
+    }
   }
 }
-// Styling for the more text indicator (>>>)
+
+// Styling for the 'more text' indicator
 .moreText {
-  color: $fourth-color; // Change to your preferred highlight color
-  cursor: pointer; // Changes cursor to indicate clickable
-  margin-left: 4px; // Spacing for visual separation from the sentence
+  color: $fourth-color; /* Use fourth color variable */
+  cursor: pointer; /* Pointer cursor to indicate clickable */
+  margin-left: 4px; /* Left margin of 4px */
 }
 
+// Styling for the rest of the text container
 .restOfTextContainer {
-  margin-top: 20px;
+  margin-top: 20px; /* Top margin of 20px */
 }
