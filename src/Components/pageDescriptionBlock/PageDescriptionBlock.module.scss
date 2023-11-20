@@ -1,35 +1,38 @@
-@import '../../styles/globals';
-@import '../../styles/mixins';
+@import '../../styles/globals'; // Import global style variables and settings
+@import '../../styles/mixins'; // Import mixins for reusable style definitions
 
+// Styling for the page description block
 .pageDescriptionBlock {
-  cursor: pointer; // Cursor verandert naar handje
-  transition: all 0.3s ease; // Maakt hover-effecten soepeler
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
-  background-color: $fourth-color;
-  color: #f8f9fa;
+  cursor: pointer; // Change the cursor to a pointer to indicate clickability
+  transition: all 0.3s ease; // Smooth transition for hover effects
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4); // Shadow for depth
+  background-color: $fourth-color; // Background color
+  color: #f8f9fa; // Text color
 
+  // Hover and focus states
   &:hover, &:focus {
-    transform: scale(1.03); // Lichtelijk vergroot het blok bij hover of focus
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.7); // Voegt schaduw toe voor diepte
-    //border: 2px solid $fourth-color;
-    background-color: $fifth-color;
+    transform: scale(1.03); // Slightly enlarge the block on hover or focus
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.7); // Enhanced shadow for depth
+    background-color: $fifth-color; // Change background color
   }
 
-  // Aanvullende stijlen voor betere visuele indicatie
-  //border: 1px solid $fourth-color;
-  border-radius: 4px;
-  padding: 10px;
-  margin: 10px;
-  text-align: center; // Zorgt ervoor dat de tekst netjes gecentreerd is
+  // Additional visual styling
+  border-radius: 4px; // Rounded corners
+  padding: 10px; // Padding around content
+  margin: 10px; // Margin around the block
+  text-align: center; // Center align the text
 
+  // Styling for links within the block
   a {
-    text-decoration: none; // Verwijdert onderstreping van de link
-    color: #f8f9fa; // Verandert de tekstkleur
-  }
-  .pageLink{
-    margin-bottom: 10px;
-  }
-  .pageTitle {
-    margin-top: 10px;
+    text-decoration: none; // Remove underline from links
+    color: #f8f9fa; // Set link text color
+
+    // Nested styling for specific elements inside the block
+    .pageLink {
+      margin-bottom: 10px; // Bottom margin for page link
+    }
+    .pageTitle {
+      margin-top: 10px; // Top margin for page title
+    }
   }
 }

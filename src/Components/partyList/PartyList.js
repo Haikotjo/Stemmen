@@ -2,7 +2,6 @@
 import React from 'react';
 import StyledButton from '../button/StyledButton';
 import styles from './PartyList.module.scss';
-import ParallaxBackground from "../parallaxBackground/ParallaxBackground";
 import {getPartyImage} from "../../utils/utils";
 
 // PartyList component definition
@@ -37,9 +36,6 @@ const PartyList = ({ parties, selectedParties, togglePartySelection }) => {
                     </div>
                 );
             })}
-            {(parties.length % 3 === 0) && (
-                <ParallaxBackground backgroundImage="/images/backgrounds/allemaal.png" />
-            )}
         </div>
     );
 };

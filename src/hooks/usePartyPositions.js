@@ -1,10 +1,10 @@
-import { useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 // Importing utility function to get positions based on topic and selected party
-import { getPositions } from '../utils/utils';
+import {getPositions} from '../utils/utils';
 // Importing positions data from a JSON file
 import positionsData from '../data/positions.json';
 
-import { useLanguage } from '../context/LanguageContext';
+import {useLanguage} from '../context/LanguageContext';
 
 // Custom hook to get positions and current topics based on the selected party
 function usePartyPositions(selectedParty) {
@@ -29,9 +29,8 @@ function usePartyPositions(selectedParty) {
 
             Object.keys(positionsDataForLanguage).forEach((topic) => {
                 // Get the position of the selected party for the current topic
-                const position = getPositions(topic, selectedParty, language);
                 // Update the new positions object
-                newPositions[topic] = position;
+                newPositions[topic] = getPositions(topic, selectedParty, language);
                 // Update the new topics array
                 newTopics.push(topic);
             });
